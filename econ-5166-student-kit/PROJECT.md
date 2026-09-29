@@ -15,7 +15,7 @@
 
 ## Research Question
 
-- 待本組先用自己的話填寫：關心的現象或初步疑問，以及為什麼想研究。不必已有正式題目；AI 依本組想法協助釐清，教師範例不代表本組構想。
+- 本組已確認的研究方向：以夜間、無路燈情況下的死亡或重傷事故件數，篩選優先檢視地點；以嚴重事故占比作為輔助指標，並同時附上事故總數。由於沒有車流量資料，不將上述指標稱為事故率，也不據此推論照明改善的因果效果。
 
 ## Team
 
@@ -23,7 +23,7 @@
 
 AI 只整理學生提供或明確確認的姓名與工作，不自行指派 PM／DE／DA，也不從 Git 作者、電腦帳號、檔名、範本示例或檔案提供者推定作者或責任；保留有依據的既有作者，不自動改成本次提供檔案的學生。等待回答時可先進行不依賴歸屬的檢查或討論。保留下列既有欄位，按已確認名單一人一列；尚無名單時保持空表，不先填入 3 或 4 位假成員。`Role` 記錄學生提供的角色與實際工作，確認姓名與工作不需額外要求學號或 GitHub 帳號。
 
-目前對話的學生：待確認（依本次對話更新，不自動沿用上一次的對話者）。
+目前對話的學生：謝子詮（依本次對話更新，不自動沿用上一次的對話者）。
 
 | Name   | Student ID | GitHub Account | Role |
 |--------|------------|----------------|------|
@@ -33,7 +33,7 @@ AI 只整理學生提供或明確確認的姓名與工作，不自行指派 PM�
 
 ## Student Preferences
 
-- Tool / artifact format: 待詢問學生（Python／Jupyter、R／R Markdown；明確選用 Stata 時依專用格式）
+- Tool / artifact format: Python／Jupyter Notebook（謝子詮於 2026-09-29 本次對話確認）
 - Report language: 繁體中文（台灣用語，zh-TW；教師預設，學生明確指定其他語言時優先沿用）
 - Other explicit preferences: 尚未提供
 
@@ -45,15 +45,16 @@ AI 只整理學生提供或明確確認的姓名與工作，不自行指派 PM�
 
 | Student | AI tool / client | Model | Agent entrypoint | Source |
 | --- | --- | --- | --- | --- |
+| 謝子詮 | Codex | GPT-5 | `AGENTS.md` | 目前執行環境 |
 
 ## Data and Current Focus
 
 | Field | Details |
 | --- | --- |
-| Data sources / documentation | 待填 |
-| Unit of observation | 待填 |
-| Current task / target variables | 待填 |
-| Assignment constraints | 待填 |
+| Data sources / documentation | [臺北市資料大平臺－臺北市死傷交通事故資料](https://data.taipei/dataset/detail?id=2f238b4f-1b27-4085-93e9-d684ef0e2735)，提供機關為臺北市政府警察局交通大隊；目前檔案為民國 114 年（2025 年），詳見 [原始資料說明](data/raw/taipei_2025_casualty_crashes_documentation.ipynb)。 |
+| Unit of observation | 待確認。檔案每列皆為 `當事人序號 = 1`，同時包含事故層級死傷人數與第一當事者欄位；沒有事故唯一識別碼，尚不能確認每列是否等於一件事故，或可靠彙整到路口層級。 |
+| Current task / target variables | 以夜間、無路燈情況下的死亡或重傷事故件數篩選優先檢視地點；嚴重事故占比作為輔助，並附上事故總數。死亡人數與道路照明設備欄位可用，但夜間規則仍待確認，且現有受傷程度代碼沒有重傷分類。 |
+| Assignment constraints | 目前沒有車流量資料，因此不稱事故率；不據此推論照明改善的因果效果。事故觀察單位、去重／事故鍵、夜間定義、重傷定義與路口彙整方法仍須確認。 |
 
 ## Data Artifacts
 
@@ -61,6 +62,7 @@ AI 只整理學生提供或明確確認的姓名與工作，不自行指派 PM�
 
 | Dataset | Role | Data file | Documentation | Processing notebook | Verification | SHA-256 |
 | --- | --- | --- | --- | --- | --- | --- |
+| 臺北市 114 年死傷交通事故明細 | raw | [CSV](data/raw/114年-臺北市死傷交通事故明細.csv) | [Jupyter Notebook](data/raw/taipei_2025_casualty_crashes_documentation.ipynb) | not applicable (source) | 2026-09-29：已核對 UTF-8 with BOM、22,762 列、47 欄、民國 114 年 1–12 月、0 筆完整列重複、欄位缺失、候選事故鍵及主要代碼分布；觀察單位、事故唯一鍵、夜間與重傷定義、路口彙整仍 pending。 | `61f0bdb52a49176746ab8b66926224b294498c9e26b2dec6eefe44906fdffa0c` |
 
 路徑與連結相對於本專案根目錄。Role 記錄 raw／analysis／train／test 或已確認用途；Verification 說明實際執行的檢查、日期與限制，未完成時明列 pending／failed。SHA-256 由實際檔案計算。外部整理檔沒有產生程式可記 not available；原始來源可記 not applicable (source)。
 
@@ -76,4 +78,4 @@ AI 只整理學生提供或明確確認的姓名與工作，不自行指派 PM�
 
 | Name | Contribution | Commit reference |
 | --- | --- | --- |
-| 待填 | 待填 | 待填 |
+| 謝子詮 | 提供 [臺北市 114 年死傷交通事故原始資料](data/raw/114年-臺北市死傷交通事故明細.csv)，並建立及核對 [原始資料說明 Notebook](data/raw/taipei_2025_casualty_crashes_documentation.ipynb)。 | 待提交（貢獻紀錄未完成） |
