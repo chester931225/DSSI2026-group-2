@@ -27,8 +27,10 @@ AI 只整理學生提供或明確確認的姓名與工作，不自行指派 PM�
 
 | Name   | Student ID | GitHub Account | Role |
 |--------|------------|----------------|------|
-| 謝子詮 | B12303045  | chester931225  | PJM  |
-|曾翊涵| B12607049| 000000|PJM
+| 謝子詮 | B12303045  | chester931225  | DE  |
+| 曾翊涵 | B12607049  | TBD|PJM
+| 詹明翰 | B12302350  |hank94224-commits|DA
+
 ## Student Preferences
 
 - Tool / artifact format: 待詢問學生（Python／Jupyter、R／R Markdown；明確選用 Stata 時依專用格式）
