@@ -4,7 +4,7 @@
 - Date created: 2026-10-10
 - Source: 依據 [Econ 5166 Project Proposal 範例](../templates/report/econ-5516-proposal-template.md) 撰寫
 
-組別：待學生確認
+組別：第二組
 
 成員：
 
