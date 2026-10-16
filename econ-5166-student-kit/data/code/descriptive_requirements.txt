@@ -1,0 +1,7 @@
+pandas
+numpy
+scipy
+nbformat
+nbclient
+ipykernel
+astral==3.2
