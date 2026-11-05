@@ -59,6 +59,8 @@ AI 只整理學生提供或明確確認的姓名與工作，不自行指派 PM�
 
 ## Data Artifacts
 
+2026-11-05 同儕建議評估：依使用者委託判斷是否修訂 proposal，保留既定 PCA／階層式分群／k-means 主線，於 proposal 補充類別編碼、尺度與權重、主成分數敏感性及未降維比較的適用性檢查。唯讀核對既有衍生資料的 6,795 列夜間樣本，四個主要類別變數合計 46 個非缺失代碼，連同速限與時間週期欄位約 51 欄；這是欄位檢查，尚未執行 PCA 或分群。FAMD 僅為替代方法建議，尚非組內確認決定；類別合併及權重規則仍待正式分析前確認。
+
 資料建立或核對後，由 AI 依 [資料銜接規則](FINDING-RULES.md#資料銜接與檔案驗證) 填入實際紀錄，一個資料檔一列。尚無資料時保持空表，不把範例當成已完成結果。
 
 | Dataset | Role | Data file | Documentation | Processing notebook | Verification | SHA-256 |
@@ -82,6 +84,7 @@ AI 只整理學生提供或明確確認的姓名與工作，不自行指派 PM�
 
 | Name | Contribution | Commit reference |
 | --- | --- | --- |
+| 待確認 | 評估同儕對類別變數與 PCA 的建議，核對夜間樣本類別數並局部修訂 [Project Proposal](report/taipei-nighttime-unlit-crash-proposal.md) 的方法與限制；實際負責成員待確認。 | 待提交（貢獻紀錄未完成） |
 | 謝子詮 | 提供 [臺北市 114 年死傷交通事故原始資料](data/raw/114年-臺北市死傷交通事故明細.csv)與[事故對照表](data/raw/事故對照表.pdf)，並建立及核對 [原始資料說明 Notebook](data/raw/taipei_2025_casualty_crashes_documentation.ipynb)。 | 待提交（貢獻紀錄未完成） |
 | 詹明翰 | 在 Codex 協助下製作並執行 [樣本、光線及夜間照明敘述性統計](finding/敘述性統計.ipynb)、[資料整理程式](data/code/prepare_descriptive_statistics.ipynb)及[衍生資料說明](data/processed/taipei_2025_descriptive_documentation.ipynb)，核對 PDF 代碼與日出日落定義，保存六份表格 CSV，更新本次資料索引。後續補充四份工作 Notebook 的步驟說明與結果解讀，將資料說明的七個類別摘要分表呈現並重新執行驗證。 補充Astral方法定義，依確認改採全年最早日出／最晚日落固定時段並同步重跑三份Notebook及表格。 新增3×2照明與日夜交叉分析、不同分母比例及三份表格CSV，已重跑正式分析並核對原始代碼與缺值排除。 整合全部資料說明與七張類別摘要至正式finding，加入目錄、分章表格、簡報重點與CSV索引，已從乾淨kernel執行且既有九份表格及資料版本不變。 將文件重編為連續八節，移除重複表1/2與CSV及製作階段敘述，將交叉分析、夜間比較、敏感度及解讀融入各節，重跑後資料與保留八份CSV數值不變。 | 待提交（貢獻紀錄未完成） |
 | 待確認 | 確認六週研究改採 PCA、階層式分群輔助選群及 k-means 的事故情境 segmentation，並修訂 [Project Proposal](report/taipei-nighttime-unlit-crash-proposal.md)及專案研究脈絡。實際負責成員待學生確認。 | 待提交（貢獻紀錄未完成） |
