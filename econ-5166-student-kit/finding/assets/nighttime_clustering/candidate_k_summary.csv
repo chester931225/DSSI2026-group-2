@@ -1,0 +1,3 @@
+﻿matrix,k_best_silhouette,k_best_calinski_harabasz,k_best_davies_bouldin,k_best_mean_stability_ari,k_best_hierarchical_sample_silhouette
+一般 one-hot,6,2,6,2,2
+類別區塊加權,6,2,5,2,5
