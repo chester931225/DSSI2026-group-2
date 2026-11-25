@@ -1,0 +1,261 @@
+{
+  "scope": "Unit 0.4: environment validation only; synthetic results are not research findings",
+  "run_utc": "2026-11-25T14:06:58.601609+00:00",
+  "python": "3.12.2",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "bits": 64,
+  "python_project_relative": ".venv/Scripts/python.exe",
+  "tests": {
+    "A_packages": {
+      "status": "passed",
+      "detail": {
+        "imports": 19,
+        "isolated": true,
+        "stable_releases": true
+      }
+    },
+    "B_data_processing": {
+      "status": "passed",
+      "detail": {
+        "csv_rows": 3,
+        "group_sums": [
+          4,
+          6
+        ],
+        "missing_values": 1,
+        "merge": "one_to_one",
+        "numpy_dot": 14
+      }
+    },
+    "C_synthetic_GIS": {
+      "status": "passed",
+      "detail": {
+        "crs": "EPSG:3826",
+        "roundtrip": "3826 -> 4326 -> 3826",
+        "spatial_join": [
+          "A",
+          "B",
+          null
+        ],
+        "polygon_area_m2": 100,
+        "polygon_perimeter_m": 40,
+        "line_length_m": 5,
+        "intersection_area_m2": 50,
+        "union_area_m2": 150,
+        "make_valid": "invalid bowtie -> valid MultiPolygon, area 2"
+      }
+    },
+    "D_synthetic_ML": {
+      "status": "passed",
+      "detail": {
+        "seed": 5166,
+        "synthetic_rows": 90,
+        "clusters": 3,
+        "silhouette": 0.9908974668185732,
+        "ARI": 1.0,
+        "AMI": 1.0,
+        "PCA_explained_variance_sum": 1.0
+      }
+    },
+    "E_synthetic_statistics": {
+      "status": "passed",
+      "detail": {
+        "synthetic_ANOVA_F": 27.0,
+        "synthetic_Kruskal_H": 7.200000000000003,
+        "synthetic_chi2": 20.0,
+        "synthetic_Cramers_V": 1.0,
+        "BH_adjusted_p": [
+          0.04,
+          0.05333333333333334,
+          0.05333333333333334,
+          0.2
+        ],
+        "BH_rejected": [
+          true,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    "F_synthetic_spatial_statistics": {
+      "status": "passed",
+      "detail": {
+        "synthetic_grid": "4x4",
+        "Rook_n": 16,
+        "directed_neighbor_links": 48,
+        "weight_transform": "row standardized",
+        "Moran_I": 0.7500000000000002,
+        "expected_I": -0.06666666666666667,
+        "permutations": 99,
+        "seed": 5166,
+        "interpretation": "tool validation only; no research inference"
+      }
+    },
+    "G_visualization": {
+      "status": "passed",
+      "detail": {
+        "font": "Microsoft JhengHei",
+        "minus_fallback": "DejaVu Sans",
+        "font_file": "%WINDIR%/Fonts/msjh.ttc",
+        "Chinese_and_U2212_glyph_check": "passed",
+        "missing_glyph_warnings": [],
+        "temporary_image": "data/temp/urban_crash_environment/synthetic_visualization.png",
+        "visual_review": "requires human or image-tool inspection after rendering"
+      }
+    },
+    "raw_read_smoke": {
+      "status": "passed",
+      "detail": [
+        {
+          "path": "data/raw/113年-臺北市死傷交通事故明細.csv",
+          "encoding": "utf-8-sig",
+          "rows": 51810,
+          "columns": 49,
+          "sha256": "b6ad23f05658531998f34ba4995a190d03872940ea48013115da89bb2a4e92c5"
+        },
+        {
+          "path": "data/raw/114年-臺北市死傷交通事故明細.csv",
+          "encoding": "utf-8-sig",
+          "rows": 22762,
+          "columns": 47,
+          "sha256": "61f0bdb52a49176746ab8b66926224b294498c9e26b2dec6eefe44906fdffa0c"
+        },
+        {
+          "path": "data/raw/112迄今各里人口數按年齡分.csv",
+          "encoding": "cp950",
+          "rows": 64722,
+          "columns": 107,
+          "sha256": "a663a4f0329b18bb0514da7fd9f6845312d08fadef71e566faf1930c03541641"
+        },
+        {
+          "path": "data/raw/G97_A_CAVLGE_P.shp",
+          "encoding": "utf-8",
+          "rows": 456,
+          "columns": 29,
+          "geometry_types": [
+            "Polygon"
+          ],
+          "crs": "EPSG:3826",
+          "crs_epsg": 3826,
+          "limit": "read only; no geometry quality validation, CRS assignment or spatial integration"
+        },
+        {
+          "path": "data/raw/細計-面.shp",
+          "encoding": "cp950",
+          "rows": 15518,
+          "columns": 13,
+          "geometry_types": [
+            "MultiPolygon",
+            "Polygon"
+          ],
+          "crs": null,
+          "crs_epsg": null,
+          "limit": "read only; no geometry quality validation, CRS assignment or spatial integration"
+        },
+        {
+          "path": "data/raw/細計-文.shp",
+          "encoding": "cp950",
+          "rows": 3,
+          "columns": 13,
+          "geometry_types": [
+            "Point"
+          ],
+          "crs": null,
+          "crs_epsg": null,
+          "limit": "read only; no geometry quality validation, CRS assignment or spatial integration"
+        },
+        {
+          "path": "data/raw/事故對照表.pdf",
+          "pages": 4,
+          "text_characters_by_page": [
+            2411,
+            500,
+            2801,
+            1941
+          ],
+          "sha256": "f40ded1ded1c816a38f421bc972cdc1320bbd280e647792207ec037d05fd3670"
+        }
+      ]
+    },
+    "notebook": {
+      "status": "passed",
+      "detail": {
+        "kernel_name": "dssi-urban-crash",
+        "display_name": "DSSI Urban Crash",
+        "kernelspec": ".venv/share/jupyter/kernels/dssi-urban-crash/kernel.json",
+        "actual_python_matches_venv": true,
+        "executed_code_cells": 3,
+        "temporary_notebook": "data/temp/urban_crash_environment/minimal_executed.ipynb",
+        "VS_Code_UI_selection": "not observable from CLI; student must select interpreter/kernel"
+      }
+    },
+    "preservation": {
+      "status": "passed",
+      "detail": {
+        "preexisting_files_checked": 175,
+        "changed": [],
+        "allowed_exception": "PROJECT.md scoped update; no changes to existing raw data, notebooks, results or rules"
+      }
+    }
+  },
+  "packages": {
+    "pandas": "3.1.1",
+    "numpy": "2.5.5",
+    "scipy": "1.18.1",
+    "statsmodels": "0.15.0",
+    "geopandas": "1.2.0",
+    "shapely": "2.2.0",
+    "pyproj": "3.8.0",
+    "pyogrio": "0.13.0",
+    "scikit-learn": "1.9.1",
+    "libpysal": "4.15.1",
+    "esda": "2.10.0",
+    "matplotlib": "3.11.2",
+    "seaborn": "0.13.2",
+    "jupyterlab": "4.6.6",
+    "ipykernel": "7.4.0",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "pymupdf": "2.1",
+    "astral": "3.2"
+  },
+  "gis_libraries": {
+    "GDAL": "3.12.4",
+    "GEOS": "3.14.1",
+    "PROJ": "9.8.1"
+  },
+  "pip_check": "No broken requirements found.",
+  "all_automated_checks_passed": true,
+  "external_verification": {
+    "global_python_packages_unchanged": true,
+    "global_distribution_count": 127,
+    "global_kernels_unchanged": true,
+    "global_kernel_names": [
+      "python3"
+    ],
+    "comparison": "base Python importlib.metadata and kernelspec listing vs Unit 0.4 precheck",
+    "new_kernel_scope": "project .venv/share/jupyter/kernels only"
+  },
+  "manual_image_review": {
+    "status": "passed",
+    "method": "view_image: rendered PNG inspected in conversation",
+    "observations": "Chinese titles, axes, minus signs and heatmap/map numeric labels visible without missing glyphs",
+    "sha256": "b6e5cdc72eef6b09cba5f2545b884dd242c158acbb357f11a0e3f617656fe753"
+  },
+  "resolved_issues": [
+    "PIP_NO_INDEX=1 inherited; initial package installation failed before downloading. Enabled PyPI for installation process only; no package version changes or dependency overrides.",
+    "Initial synthetic merge assertion assumed group output order; corrected to compare key/value mapping.",
+    "Font check retried with Microsoft JhengHei and explicit DejaVu Sans minus fallback; rendered output reviewed.",
+    "Notebook initial sandbox run: WinError 5 in Jupyter SetFileSecurity. Authorized escalated execution passed without disabling secure file permissions."
+  ],
+  "nonblocking_runtime_notices": [
+    "Windows Proactor/ZMQ selector-thread fallback",
+    "IPKernelApp local TCP transport without encryption notice"
+  ],
+  "pending": [
+    "VS Code UI interpreter/kernel selection needs student verification",
+    "Real-data CRS/provenance/vintage/definitions and geometry quality are not validated by smoke reading",
+    "Student review, contribution attribution and student-controlled Git submission pending"
+  ]
+}
