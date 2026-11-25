@@ -125,21 +125,21 @@ AI 只整理學生提供或明確確認的姓名與工作，不自行指派 PM�
 
 | Field | Details |
 | --- | --- |
-| Data sources / documentation | [事故官方來源](https://data.taipei/dataset/detail?id=2f238b4f-1b27-4085-93e9-d684ef0e2735)：[2024 CSV](data/raw/113年-臺北市死傷交通事故明細.csv)、[2025 CSV](data/raw/114年-臺北市死傷交通事故明細.csv)、[事故對照表](data/raw/事故對照表.pdf)；[人口 CSV](data/raw/112迄今各里人口數按年齡分.csv)及[官方說明](https://data.taipei/dataset/detail?id=a6394e3f-3514-4542-87bd-de4310a40db3)；[里界 SHP](data/raw/G97_A_CAVLGE_P.shp)及[官方來源（學生提供）](https://data.taipei/dataset/detail?id=6b17b31d-4e16-495e-95b1-9fd1f47c80d8)；[細計-面](data/raw/細計-面.shp)、[細計-文](data/raw/細計-文.shp)及[官方來源（學生提供）](https://data.taipei/dataset/detail?id=3bab0a01-7936-4218-8cb5-f74dfcb43dda)。四個官方來源網址均由學生於 Unit 0.4 提供／確認；本機檔案版本、下載日期及歷史適用性仍未認證，GIS 配套及版本問題見下表。新研究原始資料正式文件與逐檔索引銜接待 Unit 0.5。 |
+| Data sources / documentation | [事故官方來源](https://data.taipei/dataset/detail?id=2f238b4f-1b27-4085-93e9-d684ef0e2735)：[2024 CSV](data/raw/113年-臺北市死傷交通事故明細.csv)、[2025 CSV](data/raw/114年-臺北市死傷交通事故明細.csv)、[事故對照表](data/raw/事故對照表.pdf)；[人口 CSV](data/raw/112迄今各里人口數按年齡分.csv)及[官方說明](https://data.taipei/dataset/detail?id=a6394e3f-3514-4542-87bd-de4310a40db3)；[里界 SHP](data/raw/G97_A_CAVLGE_P.shp)及[官方來源（學生提供）](https://data.taipei/dataset/detail?id=6b17b31d-4e16-495e-95b1-9fd1f47c80d8)；[細計-面](data/raw/細計-面.shp)、[細計-文](data/raw/細計-文.shp)及[官方來源（學生提供）](https://data.taipei/dataset/detail?id=3bab0a01-7936-4218-8cb5-f74dfcb43dda)。四個官方來源網址均由學生於 Unit 0.4 提供／確認；本機檔案版本、下載日期及歷史適用性仍未認證，GIS 配套及版本問題見下表。Unit 0.5 已建立並執行[兩年事故及 PDF 說明](data/raw/taipei_2024_2025_crashes_raw_documentation.ipynb)、[人口說明](data/raw/taipei_population_age_raw_documentation.ipynb)、[里界說明](data/raw/taipei_village_boundaries_raw_documentation.ipynb)及[都市計畫說明](data/raw/taipei_urban_planning_raw_documentation.ipynb)；15 個來源實體檔（含 GIS 配套）逐檔列於 Data Artifacts。2026-11-25 已查閱四官方頁的機關、欄名及更新日期；網頁更新日與本機下載／版本證明分開記錄。 |
 | Unit of observation | 基礎資料為行政里×年；由 2024 第一當事人 22,368 筆及 2025 現有第一當事人 22,762 筆候選事故建立。Unit 0.2 的檔內唯一性與一致性診斷支持此操作口徑，但無官方事故 ID；尚未完成 GIS 空間配對，不宣稱已有 45,130 筆可用分析樣本。 |
-| Current task / target variables | Unit 0.1–0.3 已完成並經學生審查（依本次 Unit 0.4 指示）。Unit 0.4 已建立獨立 .venv，完成套件、合成資料功能、原始資料唯讀讀取及最小 Notebook 驗證，待學生審查；[環境紀錄](data/code/urban_crash_environment.md)。D 原版仍為主案，A／B／C 均尚未建立；Unit 0.5 待學生審查本階段並明確授權後開始。 |
-| Assignment constraints | 按 Sequential Prompt Protocol 一次處理已授權單元；Unit 0.4 僅建立專案環境、安裝所需套件、合成功能測試、原始資料唯讀 smoke read 與必要環境文件及本文件更新。不得正式資料清理、事故歸里、土地使用疊合、研究分群或統計推論；不修改原始資料、舊 Notebook／成果、教師規範或分工，不變更全域 Python。PCA 非新案強制方法；不以舊夜間樣本、K=5 或排除規則直接建立新案結論。不作因果或居民個人事故機率推論；Git 提交與同步由學生自行操作。 |
+| Current task / target variables | Unit 0.1–0.4 已完成並經學生審查（依本次 Unit 0.5 指示）。Unit 0.5 已完成四份正式原始資料說明 Notebook，使用新 .venv 在四個乾淨 kernel 執行共 31 個 code cells、保存實際輸出及讀檔前後 SHA-256；目前待學生審查。D 原版仍為主案，A／B／C 及正式 crosswalk 尚未建立；下一階段為 Chapter 1 Data Validation，須另獲指示才開始。 |
+| Assignment constraints | 按 Sequential Prompt Protocol 一次處理已授權單元；Unit 0.5 僅新增 raw 說明 Notebook、唯讀診斷與必要 PROJECT.md／資料索引更新，全部程式使用 Unit 0.4 .venv。不安裝套件、不重新下載或修改原始資料、不覆寫或重跑舊研究、不建立 processed／正式 crosswalk、不指定未知 CRS、不修復幾何、不作事故歸里、分區疊合、模型或正式統計推論。不改組員角色；僅依學生本次確認記錄三人共同完成 Unit 0.5。Git 提交與同步由學生自行操作。 |
 
 ### Known Data Issues and Verification Status
 
-以下沿用 Unit 0.1、0.2 的實際檢查及學生審查結果；Unit 0.3 未重做資料診斷，未宣稱問題已解決。Unit 0.4 僅補充環境建置與原始資料可讀性驗證，未解除下列實質資料限制。
+以下沿用 Unit 0.1、0.2 的實際檢查及學生審查結果；Unit 0.3 未重做資料診斷，未宣稱問題已解決。Unit 0.4 僅補充環境建置與原始資料可讀性驗證，未解除下列實質資料限制。Unit 0.5 已在 raw 說明 Notebook 重算必要唯讀診斷並補充個體幾何有效性；下列已觀測結果與正式驗證待辦分列，不宣稱 Chapter 1 完成。
 
 | Area | 已知事實、限制及待驗證工作 |
 | --- | --- |
-| Accident Data | 無官方事故 ID；兩年發布的當事人口徑不同。Unit 0.2 檢查 2024 的 22,368 個完整時地候選群組各恰有一筆第一當事人，群內傷亡及主要事故情境一致，第一當事人完整候選鍵均不重複；這不是官方事件識別認證。候選樣本共 3 筆缺座標，事故座標 CRS 仍缺來源證據。部分事故類別、傷亡、年齡、速限缺失或異常（含 2024 速限 502）；不自行更正、不僅依相同時間／地址刪除事故，不將當事人受傷程度取代事故受傷總人數。 |
-| Village Boundary | 12 區、456 里，CPTVID 唯一；PRJ 支持 TWD97、中央經線 121°、公尺。圖資適用年度未確認；結構檢查未見空幾何，不代表已通過拓樸驗證。有效性、重疊、縫隙及重算面積待 GIS 環境驗證。 |
-| Population Data | 2024、2025 各月完整、里代碼集合一致；行政區＋里名精確配對 455／456，已配對部分一對一。人口「糖?里」與里界「糖蔀里」對官方名稱「糖廍里」仍須補正式代碼證據及 crosswalk；人口檔中的問號是原始字元，不靠換編碼自行修復。人口代碼 11 碼、CPTVID 10 碼，不未經驗證補零／刪字或只用里名合併，不修改 raw。 |
-| Urban Planning Data | 細計-面 15,518 筆 polygon、細計-文 3 筆 point；缺 PRJ、CPG，DBF 可按 CP950 解讀但 CRS／版本未認證。含計畫範圍、規劃範圍等非一般分區；5 組共 11 筆幾何內容完全相同，直接加總面積會重複計算。部分重疊與幾何有效性尚未檢查；正式分類表未建。來源、CRS、幾何及分類確認前，不作正式分區面積計算；不依座標範圍自行指定 CRS。 |
+| Accident Data | Unit 0.5 重算與 Unit 0.2 一致：2024 原始 51,810×49、第一當事人 22,368；2025 原始 22,762×47、全為第一當事人；合計 45,130 候選紀錄，3 筆缺座標。完整列及第一當事人候選鍵均無重複；2024 候選時地群組各恰一筆第一當事人、已檢查事故情境及傷亡欄群內一致，仍不是官方事故 ID 認證。共同欄 46；道路照明設備／光線為候選跨年映射，尚未認證等價。傷亡及分類缺失、速限 0／502、年齡 -1／0／逾 100 均保留，事故座標 CRS 與官方發布口徑待補；不得把當事人受傷程度取代事故傷亡總數。詳見[原始說明](data/raw/taipei_2024_2025_crashes_raw_documentation.ipynb)。 |
+| Village Boundary | Unit 0.5 核對 12 區、456 個 Polygon，CPTVID 為唯一 10 碼、區里名稱無缺失或空白；CPG=UTF-8，PRJ 辨識 EPSG:3826（TWD97、中央經線 121°、公尺）。無缺失、空、無效或完全相同 WKB 幾何；這不認證重疊／縫隙或 2024–2025 邊界一致。官方頁收錄迄 2025-06-17、資源更新 2026-09-21，不能作本機版本與歷史適用證明；原 AREA 定義／單位／計算版本與幾何面積仍未驗證。詳見[原始說明](data/raw/taipei_village_boundaries_raw_documentation.ipynb)。 |
+| Population Data | Unit 0.5 核對本機 112 年 1 月至 115 年 10 月；研究 2024、2025 共 24 個月各 456 里、每月 456×3 性別列，兩年里代碼集合一致。全檔 64,722×107，101 個年齡組合計與總計、男＋女與計均一致；無缺失、負值、完整列或年×月×區碼×性別重複。行政區＋里名精確配對仍 455／456，人口「糖?里」／里界「糖蔀里」與歷史紀錄「糖廍里」待官方碼表及正式 crosswalk；人口 11 碼與 CPTVID 10 碼不可自行截碼／補零。年度人口口徑已確認，但月內統計基準日待補；設籍人口不是交通暴露人口。詳見[原始說明](data/raw/taipei_population_age_raw_documentation.ipynb)。 |
+| Urban Planning Data | Unit 0.5 精確辨識細計-面 15,508 Polygon＋10 MultiPolygon（總 15,518），細計-文 3 Point；缺 PRJ／CPG、CP950 可讀、CRS=None。面層 143 筆無效幾何（67 自交、52 環自交、15 孔洞在殼外、9 巢狀外殼），未修復。5 組共 11 列原始 WKB 完全相同，部分重疊未檢查；使用分區空白的 4 筆為細部計畫範圍、規劃範圍兩筆及陽明山公園。官方頁描述更新至 114 年 1 月，未認證本機圖資版本；原包／CRS／分類規格仍缺。正式分類、重複／重疊及幾何處理前不計算面積比例，不把規劃分區當實際土地使用。詳見[原始說明](data/raw/taipei_urban_planning_raw_documentation.ipynb)。 |
 | Environment | 歷史狀態：Unit 0.1、0.2 所見 Python 3.12.2 預設環境缺 geopandas、shapely、pyproj、pyogrio、scikit-learn、seaborn。Unit 0.4 已以 Python 3.12.2 64-bit 建立 [.venv](.venv/pyvenv.cfg)，無 system-site-packages，不依賴舊 data/temp/python-deps；19 項指定套件及 pip check、GIS／分群／統計／繪圖與實際 Notebook 驗證均通過。[依賴清單](data/code/urban_crash_requirements.txt)及[驗證紀錄](data/code/urban_crash_environment_validation.json)已保存。原 Windows 受限權限曾阻擋 Notebook 連線檔 ACL；獲准提升該次執行權限後通過。VS Code 畫面的 interpreter／kernel 選擇仍需學生手動核對。 |
 | Historical Artifacts | 原始資料說明 Notebook 當前缺失；舊衍生資料索引與部分程式有 LF／CRLF 所致 SHA-256 差異，舊嚴格綁定可能停止。歷史索引、已知 hash 與原成果保留，不默默重設綁定、不重跑舊研究；新輸入版本及正式文件另待驗證。 |
 
@@ -147,15 +147,15 @@ AI 只整理學生提供或明確確認的姓名與工作，不自行指派 PM�
 
 ### Project Roadmap and Sequential Handoff
 
-PROJECT.md 是本次研究方向與單元狀態的承接文件，不另建 ROADMAP.md。Unit 0.1–0.3 的審查通過依據為學生本次 Unit 0.4 指示；Unit 0.4 本地建置及驗證完成後停止等待學生審查，不自動進入 Unit 0.5。後續章節及 Unit 拆分依資料品質與學生審查決定，不將規劃記為已執行。
+PROJECT.md 是本次研究方向與單元狀態的承接文件，不另建 ROADMAP.md。Unit 0.1–0.4 的審查通過依據為學生本次 Unit 0.5 指示；Unit 0.5 文件化本地完成後停止，等待學生審查，不自動進入 Chapter 1。後續章節及 Unit 拆分依資料品質與學生審查決定，不將規劃記為已執行。
 
 | Chapter / Unit | 狀態 | 研究範圍與條件 |
 | --- | --- | --- |
 | Chapter 0 / Unit 0.1 Existing Project Audit | 已完成；學生審查通過 | 唯讀盤點與歷史成果辨識，非新案正式分析。 |
 | Chapter 0 / Unit 0.2 Research Definition & Feasibility Assessment | 已完成；學生審查通過 | 研究定義、可行性與必要唯讀診斷，尚無正式里層級資料。 |
 | Chapter 0 / Unit 0.3 Project Documentation Update | 已完成；學生審查通過；待自行提交 | 依本次 Unit 0.4 指示確認審查通過；原階段僅更新 PROJECT.md，貢獻歸屬及 commit／push 仍待確認。 |
-| Chapter 0 / Unit 0.4 Environment Setup | 本地建置及驗證完成；待學生審查及自行提交 | 獨立 Python 3.12.2 64-bit .venv、19 項套件、合成功能驗證、原始資料唯讀 smoke read、專用 kernel 及已執行最小 Notebook 通過；完整版本／重現方式已記錄。VS Code 介面選擇待學生核對；不代表真實資料品質已通過。 |
-| Chapter 0 / Unit 0.5 Raw Data Documentation | 待執行 | 依教師 raw 範本記錄實際來源、欄位、版本、限制與逐檔索引；不預先宣稱 analysis-ready。 |
+| Chapter 0 / Unit 0.4 Environment Setup | 已完成；學生審查通過；既有貢獻索引待核對 | 依本次 Unit 0.5 指示確認審查通過。獨立 .venv、19 項套件及專用 kernel 的實際測試完成；保留環境紀錄、VS Code 手動核對及受限權限說明。 |
+| Chapter 0 / Unit 0.5 Raw Data Documentation | 四份 Notebook 執行及文件化完成；待學生審查及自行提交 | 15 個原始實體檔逐檔 hash／索引，31 個 code cells 在新 .venv 的乾淨 kernel 成功執行並保存輸出；基本診斷不等於正式資料驗證完成。 |
 | Chapter 1 Data Validation | 待執行 | 跨年事故正式驗證；里界來源及幾何；人口及代碼對照；都市計畫來源、CRS、分類及幾何；其他資料按需要補充。 |
 | Chapter 2 Data Processing | 待執行；依賴資料驗證 | 一致事故層級資料、事故歸里、Dataset A／B1／可用 B2 及其他環境／C，並驗證最終分析資料。 |
 | Chapter 3 Exploratory Data Analysis | 待執行 | 事故時空分布、各里樣本數與有效涵蓋率、事故及環境特徵、缺失／極端值／相關性，審查分群特徵與前處理。 |
@@ -168,6 +168,8 @@ PROJECT.md 是本次研究方向與單元狀態的承接文件，不另建 ROADM
 
 ### Unit 0.4 Environment Handoff — 2026-11-25
 
+Unit 0.5 銜接註：本節原「待審查」敘述保留當時狀態；學生已於 Unit 0.5 指示確認 Unit 0.4 審查通過，仍不代表 Git 提交或 VS Code 介面選擇已核對。
+
 - 新環境：工作包根目錄 `.venv/Scripts/python.exe`，Python 3.12.2 64-bit／Windows 11 AMD64，未使用 system-site-packages；全域套件、舊 kernel 及 175 個受保護既有檔案（排除本文件）經前後比較未變。
 - [環境與重現指令](data/code/urban_crash_environment.md)、[127 項固定版本依賴清單](data/code/urban_crash_requirements.txt)、[可重跑驗證程式](data/code/validate_urban_crash_environment.py)、[實際測試結果 JSON](data/code/urban_crash_environment_validation.json)。未改寫舊 descriptive_requirements.txt；.venv 與 data/temp 使用原有 Git 忽略規則。
 - 專案內 kernel `dssi-urban-crash`／**DSSI Urban Crash** 指向新環境；nbformat／nbclient 已實際執行三個測試 code cells 並核對 sys.executable。命令列不能確認 VS Code 介面目前選擇，學生依環境文件手動核對。
@@ -175,6 +177,18 @@ PROJECT.md 是本次研究方向與單元狀態的承接文件，不另建 ROADM
 - 實際唯讀讀取：2024 事故 51,810×49、2025 事故 22,762×47（UTF-8-SIG）；人口 64,722×107（CP950）；里界 456 筆、PRJ 辨識 EPSG:3826；細計-面 15,518 筆／細計-文 3 筆（CP950、CRS=None）；事故對照表 PDF 4 頁。讀取成功不等於資料定義、幾何品質或分析適用性通過；未指派都市計畫未知 CRS。
 - 未有未解依賴衝突或未安裝的指定套件；沙箱 Notebook 執行限制及 Windows 非阻斷提示詳見環境文件。既有 CRS／版本／資料口徑／代碼問題仍待驗證，正式 raw 文件化留待 Unit 0.5。
 - 本階段成果待學生審查，貢獻歸屬待確認，學生自行 commit／push；環境已具備 Unit 0.5 所需工具，尚未開始下一單元。
+
+### Unit 0.5 Raw Documentation Handoff — 2026-11-25
+
+- 本次起始工作區乾淨；目前 HEAD `56920e4` 已含前階段 PROJECT.md 與四份環境檔案。本次未變更 HEAD，未回填先前的貢獻 reference；舊「待提交」文字保留其歷史狀態，貢獻及遠端推送仍須另行核對，不以本機 tracking ref 認證推送。
+- 共同作者／貢獻者：詹明翰、謝子詮、曾翊涵；依學生本次回覆「三者共同完成」，不推定個別分工，不追溯改寫 Unit 0.3／0.4 歸屬。
+- 四份正式資料文件位於 data/raw/，依教師 raw 範本保留 Data Description／Change for Your Own Data／Summary／Sample／Summary Stats；完整欄位表、前十列、摘要、已知問題及 A／B／C 來源關係均有實際輸出或明確規劃標記。
+- 兩年事故＋PDF 共用事故說明；人口主檔另含里界名稱唯讀比對；兩份 GIS 說明逐一綁定全部現有配套。15 個來源實體檔各有 Data Artifacts 一列，未將正式說明本身當作 raw dataset。
+- 四個官方頁的機關、更新日期與欄名於本次查閱；未重新下載原始資料，下載／收到日期、本機版本與歷史適用性仍未知。原 AREA、部分編碼欄及精確統計／發布定義未取得，文件明列未知而未由欄名編造。
+- 四個乾淨 dssi-urban-crash kernel，31 個 code cells 全部完成；以 .venv/Scripts/python.exe、從 data/raw/ 工作目錄測試可攜定位，保存執行輸出與讀取前後 hash 檢查。無 processed、crosswalk、幾何修復、事故歸里、分區疊合或研究模型產出。
+- 與 Unit 0.2 的事故／人口／里數／精確名稱配對／重複幾何數一致；本次補正面幾何類型細分並新增 143 筆無效面幾何及里界個體有效性診斷。歷史 Notebook、成果、原始檔與教師規範未改寫。
+- Chapter 1 須處理：官方事故／座標及跨年欄位映射、傷亡／速限／年齡／缺失；里界版本、年度適用性、重疊／縫隙、AREA；人口正式代碼及糖廍里 crosswalk、統計基準；都市計畫原包、CRS、年代、圖層／分類、無效與重複／重疊幾何。
+- Chapter 0 工具與文件已備妥供審查；Unit 0.5 與 Chapter 0 結束仍待學生審查確認，沒有開始 Chapter 1。貢獻 commit reference 由學生自行提交後再核對。
 
 ## Historical Research Context
 
@@ -202,9 +216,9 @@ PROJECT.md 是本次研究方向與單元狀態的承接文件，不另建 ROADM
 
 ## Data Artifacts
 
-以下原有七欄資料索引及其日期、驗證敘述與 SHA-256 保留，以追溯夜間研究；`analysis` 是當時用途，不代表已成為新行政里研究的可用輸入。原始 2025 CSV 仍是新案來源之一，但新研究的正式 raw 文件／索引銜接待 Unit 0.5，Dataset A／B／C 不登記為已建立。
+以下保留原有七欄格式與夜間研究的衍生資料紀錄／SHA-256。Unit 0.5 已更新同一份 2025 raw 的正式文件連結與本次核對，並補入其餘原始實體檔；原 2025 raw 歷史敘述與缺失文件路徑仍保留。analysis 是舊案用途，不代表已成為新行政里研究輸入；Dataset A／B／C 均未建立。
 
-**已知缺件／版本限制（Unit 0.1、0.2 診斷，非本次重新驗證）：**下表連結的 `data/raw/taipei_2025_casualty_crashes_documentation.ipynb` 當前缺失，保留歷史路徑與已知身分，狀態為 missing／pending。歷史 hash 不靜默覆寫；Unit 0.1 所見全年衍生檔為 `09c8...`，分群三檔為 `d409...`、`179d...`、`ba81...`，與下表部分紀錄因 LF／CRLF 不同；期中 Notebook 已列接受版本，部分舊綁定仍會停止。這不等於本次重現或所有下游成果已更新。
+**已知缺件／版本限制（Unit 0.1、0.2 診斷，非本次重新驗證）：**下表連結的 `data/raw/taipei_2025_casualty_crashes_documentation.ipynb` 當前缺失，保留歷史路徑與已知身分，狀態為 missing／pending。歷史 hash 不靜默覆寫；Unit 0.1 所見全年衍生檔為 `09c8...`，分群三檔為 `d409...`、`179d...`、`ba81...`，與下表部分紀錄因 LF／CRLF 不同；期中 Notebook 已列接受版本，部分舊綁定仍會停止。這不等於本次重現或所有下游成果已更新。Unit 0.5 新事故說明提供兩年 raw 現況，但未重建該缺失的歷史文件，也未改寫任何舊 finding 的綁定或索引 hash。
 
 2026-11-05 同儕建議評估：依使用者委託判斷是否修訂 proposal，保留既定 PCA／階層式分群／k-means 主線，於 proposal 補充類別編碼、尺度與權重、主成分數敏感性及未降維比較的適用性檢查。唯讀核對既有衍生資料的 6,795 列夜間樣本，四個主要類別變數合計 46 個非缺失代碼，連同速限與時間週期欄位約 51 欄；這是欄位檢查，尚未執行 PCA 或分群。FAMD 僅為替代方法建議，尚非組內確認決定；類別合併及權重規則仍待正式分析前確認。
 
@@ -212,7 +226,21 @@ PROJECT.md 是本次研究方向與單元狀態的承接文件，不另建 ROADM
 
 | Dataset | Role | Data file | Documentation | Processing notebook | Verification | SHA-256 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 臺北市 114 年死傷交通事故明細 | raw | [CSV](data/raw/114年-臺北市死傷交通事故明細.csv) | [Jupyter Notebook](data/raw/taipei_2025_casualty_crashes_documentation.ipynb)；[事故對照表](data/raw/事故對照表.pdf) | not applicable (source) | 2026-09-29：已核對 UTF-8 with BOM、22,762 列、47 欄、民國 114 年 1–12 月、0 筆完整列重複、欄位缺失、候選事故鍵及主要代碼分布；另已核對 4 頁事故對照表（SHA-256：`f40ded1ded1c816a38f421bc972cdc1320bbd280e647792207ec037d05fd3670`）。夜間規則後續已確認為臺北市當日日落後至隔日日出前，固定 18:00–06:00 作敏感度分析，但尚未實際計算與驗證；觀察單位、事故唯一鍵、重傷所需的其他資料來源或辨識方式、路口彙整仍 pending。 | `61f0bdb52a49176746ab8b66926224b294498c9e26b2dec6eefe44906fdffa0c` |
+| 臺北市 114 年死傷交通事故明細 | raw | [CSV](data/raw/114年-臺北市死傷交通事故明細.csv) | [2024–2025 新研究原始說明](data/raw/taipei_2024_2025_crashes_raw_documentation.ipynb)；[歷史文件（缺失／pending）](data/raw/taipei_2025_casualty_crashes_documentation.ipynb)；[事故對照表](data/raw/事故對照表.pdf) | not applicable (source) | 2026-11-25：重新計算本機 SHA-256，UTF-8-SIG、22,762×47、全為第一當事人，候選鍵與完整列無重複、2 筆候選紀錄缺座標；已執行新 raw 文件，CRS／官方事件及跨年映射待驗證。歷史驗證紀錄保留：2026-09-29：已核對 UTF-8 with BOM、22,762 列、47 欄、民國 114 年 1–12 月、0 筆完整列重複、欄位缺失、候選事故鍵及主要代碼分布；另已核對 4 頁事故對照表（SHA-256：`f40ded1ded1c816a38f421bc972cdc1320bbd280e647792207ec037d05fd3670`）。夜間規則後續已確認為臺北市當日日落後至隔日日出前，固定 18:00–06:00 作敏感度分析，但尚未實際計算與驗證；觀察單位、事故唯一鍵、重傷所需的其他資料來源或辨識方式、路口彙整仍 pending。 | `61f0bdb52a49176746ab8b66926224b294498c9e26b2dec6eefe44906fdffa0c` |
+| 各里人口年齡原始統計 | raw | [112迄今各里人口數按年齡分.csv](data/raw/112迄今各里人口數按年齡分.csv) | [原始資料說明](data/raw/taipei_population_age_raw_documentation.ipynb) | not applicable (source) | 2026-11-25：CP950、64,722×107、112年1月–115年10月；研究24個月各456里，101年齡組加總及男＋女一致，無缺失／負值／鍵重複；455／456精確名稱配對，正式碼表及月基準待驗證。未建立年度人口表。 | `a663a4f0329b18bb0514da7fd9f6845312d08fadef71e566faf1930c03541641` |
+| 臺北市 113 年死傷交通事故原始明細 | raw | [113年-臺北市死傷交通事故明細.csv](data/raw/113年-臺北市死傷交通事故明細.csv) | [原始資料說明](data/raw/taipei_2024_2025_crashes_raw_documentation.ipynb) | not applicable (source) | 2026-11-25：UTF-8-SIG、51,810×49；第一當事人 22,368，候選時地群各恰一筆；完整列與第一當事人候選鍵無重複，1 筆候選紀錄缺座標。傷亡／速限／年齡／CRS 等限制見已執行文件；非正式事故表。 | `b6ad23f05658531998f34ba4995a190d03872940ea48013115da89bb2a4e92c5` |
+| 臺北市行政里界圖資配套 CPG | raw | [G97_A_CAVLGE_P.cpg](data/raw/G97_A_CAVLGE_P.cpg) | [原始資料說明](data/raw/taipei_village_boundaries_raw_documentation.ipynb) | not applicable (source) | 2026-11-25：文字編碼宣告：UTF-8；本機里名糖蔀里仍保留，正式名稱／碼表待驗證。 五個配套檔均逐檔hash並綁定於已執行文件。 | `3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824` |
+| 臺北市行政里界圖資配套 DBF | raw | [G97_A_CAVLGE_P.dbf](data/raw/G97_A_CAVLGE_P.dbf) | [原始資料說明](data/raw/taipei_village_boundaries_raw_documentation.ipynb) | not applicable (source) | 2026-11-25：屬性表：456×28；CPTVID唯一10碼、區里名完整；AREA及其他正式碼定義待補。 五個配套檔均逐檔hash並綁定於已執行文件。 | `2f43f92e84279a45b2512cf453e9b72f706d1ad1402665c946b1a354f75d8577` |
+| 臺北市行政里界圖資配套 PRJ | raw | [G97_A_CAVLGE_P.prj](data/raw/G97_A_CAVLGE_P.prj) | [原始資料說明](data/raw/taipei_village_boundaries_raw_documentation.ipynb) | not applicable (source) | 2026-11-25：座標定義：本機WKT辨識EPSG:3826（TWD97、TM中央經線121°、公尺）；不證明事故或都市計畫CRS。 五個配套檔均逐檔hash並綁定於已執行文件。 | `8dac7d82ea889063f9eaa7df408fcaeb7307d32831ea973b6534d0139a4523c5` |
+| 臺北市行政里界圖資配套 SHP | raw | [G97_A_CAVLGE_P.shp](data/raw/G97_A_CAVLGE_P.shp) | [原始資料說明](data/raw/taipei_village_boundaries_raw_documentation.ipynb) | not applicable (source) | 2026-11-25：幾何主檔：456 Polygon、12區；無缺失／空／無效／完全相同WKB幾何；年度適用性、重疊／縫隙未認證。 五個配套檔均逐檔hash並綁定於已執行文件。 | `f7fb4813a2283198ca564f5686823c454c5fd832d2f6981a2ee88a94719be3cc` |
+| 臺北市行政里界圖資配套 SHX | raw | [G97_A_CAVLGE_P.shx](data/raw/G97_A_CAVLGE_P.shx) | [原始資料說明](data/raw/taipei_village_boundaries_raw_documentation.ipynb) | not applicable (source) | 2026-11-25：幾何索引：與同名SHP／DBF可共同讀取；不以索引可讀認證拓樸。 五個配套檔均逐檔hash並綁定於已執行文件。 | `ab7bc5e63229f676d3580b68e98db59b91a2d327c74ca23b0000ca1c568d414e` |
+| 事故代碼對照表參考文件 | raw | [事故對照表.pdf](data/raw/事故對照表.pdf) | [原始資料說明](data/raw/taipei_2024_2025_crashes_raw_documentation.ipynb) | not applicable (source) | 2026-11-25：PyMuPDF 讀取4頁及文字，表單印有112.07.01後適用；主要代碼及逐欄定義附於事故文件。原始下載日期／本機與官方位元組版本未認證，CSV映射及完整職業等碼表仍待補。 | `f40ded1ded1c816a38f421bc972cdc1320bbd280e647792207ec037d05fd3670` |
+| 都市計畫 細計-文 DBF | raw | [細計-文.dbf](data/raw/細計-文.dbf) | [原始資料說明](data/raw/taipei_urban_planning_raw_documentation.ipynb) | not applicable (source) | 2026-11-25：3 Point，無無效／完全相同WKB幾何；SHP／SHX／DBF組合以CP950讀取，12屬性欄；缺PRJ／CPG、CRS=None，未指定CRS／修復／算面積／正式分類。來源版本與部分重疊待驗證；本檔hash及組合見已執行文件。 | `eba92881fc11e574f24024380c946d73cf213e86040663c4070d15b1d552a7be` |
+| 都市計畫 細計-文 SHP | raw | [細計-文.shp](data/raw/細計-文.shp) | [原始資料說明](data/raw/taipei_urban_planning_raw_documentation.ipynb) | not applicable (source) | 2026-11-25：3 Point，無無效／完全相同WKB幾何；SHP／SHX／DBF組合以CP950讀取，12屬性欄；缺PRJ／CPG、CRS=None，未指定CRS／修復／算面積／正式分類。來源版本與部分重疊待驗證；本檔hash及組合見已執行文件。 | `fa1767fc78c69b7683ec53e0fab8937bac6c33868bedee3c3dcc2ed38dcab731` |
+| 都市計畫 細計-文 SHX | raw | [細計-文.shx](data/raw/細計-文.shx) | [原始資料說明](data/raw/taipei_urban_planning_raw_documentation.ipynb) | not applicable (source) | 2026-11-25：3 Point，無無效／完全相同WKB幾何；SHP／SHX／DBF組合以CP950讀取，12屬性欄；缺PRJ／CPG、CRS=None，未指定CRS／修復／算面積／正式分類。來源版本與部分重疊待驗證；本檔hash及組合見已執行文件。 | `32d642964d494f49d08830f9c12857f9f4995b56eebf09ef2be994034b864760` |
+| 都市計畫 細計-面 DBF | raw | [細計-面.dbf](data/raw/細計-面.dbf) | [原始資料說明](data/raw/taipei_urban_planning_raw_documentation.ipynb) | not applicable (source) | 2026-11-25：15,508 Polygon＋10 MultiPolygon，143無效；5組11列相同WKB；SHP／SHX／DBF組合以CP950讀取，12屬性欄；缺PRJ／CPG、CRS=None，未指定CRS／修復／算面積／正式分類。來源版本與部分重疊待驗證；本檔hash及組合見已執行文件。 | `29b0484feef66c6c8417821ada8a28ed1edc0efcdffb492476fe7ada8739e1d4` |
+| 都市計畫 細計-面 SHP | raw | [細計-面.shp](data/raw/細計-面.shp) | [原始資料說明](data/raw/taipei_urban_planning_raw_documentation.ipynb) | not applicable (source) | 2026-11-25：15,508 Polygon＋10 MultiPolygon，143無效；5組11列相同WKB；SHP／SHX／DBF組合以CP950讀取，12屬性欄；缺PRJ／CPG、CRS=None，未指定CRS／修復／算面積／正式分類。來源版本與部分重疊待驗證；本檔hash及組合見已執行文件。 | `67d2ecc469383459e43f2609cf384a4129e09b27c590cbbb82dfa750eba758ee` |
+| 都市計畫 細計-面 SHX | raw | [細計-面.shx](data/raw/細計-面.shx) | [原始資料說明](data/raw/taipei_urban_planning_raw_documentation.ipynb) | not applicable (source) | 2026-11-25：15,508 Polygon＋10 MultiPolygon，143無效；5組11列相同WKB；SHP／SHX／DBF組合以CP950讀取，12屬性欄；缺PRJ／CPG、CRS=None，未指定CRS／修復／算面積／正式分類。來源版本與部分重疊待驗證；本檔hash及組合見已執行文件。 | `277e5f623c5c81865aa7288fac979a279b340899a4b3bc4335638f797fc5fd69` |
 | 臺北市 114 年事故敘述性統計輸入 | analysis | [CSV](data/processed/taipei_2025_descriptive.csv) | [資料說明 Notebook](data/processed/taipei_2025_descriptive_documentation.ipynb)；[完整整合版](finding/敘述性統計.ipynb#data-description) | [處理 Notebook](data/code/prepare_descriptive_statistics.ipynb) | 2026-10-16：原始47欄及22,762列完整保留，衍生資料58欄。主要夜間6,795筆、未知2筆。2026-11-06 為建立分群輸入重新核對目前磁碟檔案，列數、欄數、`record_id` 唯一性與夜間樣本數符合既有紀錄，但實際位元組 SHA-256 為 `e98f...`，不同於既有資料說明與 finding 綁定的 `09c8...`；新分群處理明確綁定目前版本，舊敘述分析尚未重新執行或宣稱版本一致。官方事故識別碼、重傷與速限0定義仍待確認。 | `e98fb4c4d62bd08440d58bbe17af7f3c03b48b4bb91e02bf306e48dda8250465` |
 | 臺北市 114 年夜間事故分群正式輸入 | analysis | [CSV](data/processed/taipei_2025_nighttime_clustering_input.csv) | [資料說明 Notebook](data/processed/taipei_2025_nighttime_clustering_documentation.ipynb) | [處理 Notebook](data/code/prepare_nighttime_clustering_data.ipynb) | 2026-11-06：由6,795筆主要夜間事故排除3筆關鍵類別欄位缺失及91筆速限為0紀錄，保留6,701筆、11欄；低頻類別未合併。重新讀檔後列數與欄序相符、`record_id` 唯一、無缺失，且不含照明、傷亡、行政區或座標。速限0官方意義仍待確認，後續應作敏感度分析。 | `02869cf20f9362a6bf3d54ca2ca8e4b75dca983069d220bc527d6dbe9122b0f1` |
 | 臺北市 114 年夜間事故一般 one-hot 分群矩陣 | analysis | [CSV](data/processed/taipei_2025_nighttime_clustering_matrix_unweighted.csv) | [資料說明 Notebook](data/processed/taipei_2025_nighttime_clustering_documentation.ipynb) | [處理 Notebook](data/code/prepare_nighttime_clustering_data.ipynb) | 2026-11-06：6,701筆、50欄（`record_id`、5個標準化數值欄、44個 one-hot 欄）；重新讀檔、唯一鍵、無缺失、有限值、每個類別區塊列和為1及結果變數排除檢查均通過。 | `6a6d92299d333cce4dcc9b1f425faa28e0d8a20ba2b76dc7221ecc1d85328ab6` |
@@ -240,3 +268,4 @@ PROJECT.md 是本次研究方向與單元狀態的承接文件，不另建 ROADM
 | 待確認 | 確認六週研究改採 PCA、階層式分群輔助選群及 k-means 的事故情境 segmentation，並修訂 [Project Proposal](report/taipei-nighttime-unlit-crash-proposal.md)及專案研究脈絡。實際負責成員待學生確認。 | 待提交（貢獻紀錄未完成） |
 | 待確認 | 2026-11-25 Unit 0.3：依學生已審查的 Unit 0.1、0.2 及本次決策更新 [PROJECT.md](PROJECT.md)，記錄新行政里研究的題目、RQ、確立設定、候選特徵／方法、資料限制及單元規劃，保留舊夜間研究與索引；僅完成文件維護，無新正式資料處理或分析。本次實際負責成員待學生確認，不由舊對話或 Git 作者推定。 | 待提交（貢獻紀錄未完成） |
 | 待確認 | 2026-11-25 Unit 0.4：建立獨立 Python 3.12 環境，安裝及驗證所需套件、GIS／分群／統計／繪圖、原始資料唯讀讀取及專用 kernel 的最小 Notebook；保存[環境文件](data/code/urban_crash_environment.md)、[依賴清單](data/code/urban_crash_requirements.txt)、[驗證程式](data/code/validate_urban_crash_environment.py)與[結果](data/code/urban_crash_environment_validation.json)，更新本文件；未執行正式研究分析。實際負責成員待學生確認，未自行改寫作者或分工。 | 待提交（貢獻紀錄未完成） |
+| 詹明翰、謝子詮、曾翊涵 | 2026-11-25 Unit 0.5：依學生本次確認共同完成[事故與PDF說明](data/raw/taipei_2024_2025_crashes_raw_documentation.ipynb)、[人口說明](data/raw/taipei_population_age_raw_documentation.ipynb)、[里界說明](data/raw/taipei_village_boundaries_raw_documentation.ipynb)及[都市計畫說明](data/raw/taipei_urban_planning_raw_documentation.ipynb)，保存31個code cells的乾淨kernel實際輸出、15個原始檔hash與唯讀診斷，更新本文件／逐檔索引；未執行正式清理或研究分析。共同貢獻不推定個別分工，未追溯改寫先前單元歸屬。 | 待提交（貢獻紀錄未完成） |
