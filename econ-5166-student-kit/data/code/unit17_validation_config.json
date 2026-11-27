@@ -1,0 +1,2985 @@
+{
+  "created_at": "2026-11-26",
+  "research_date": "2024–2025",
+  "fixed_villages": 456,
+  "raw_inventory": [
+    {
+      "family": "historical_boundaries",
+      "path": "data/raw/113村里界.zip",
+      "bytes": 22267184,
+      "sha256": "32d7f1d611f91b1c63bea7290dd4db93b919bf380cce92b634fca992c974dd94",
+      "status": "present",
+      "members": [
+        {
+          "member": "村里界歷史圖資_113/",
+          "bytes": 0,
+          "compressed": 0,
+          "crc32": "00000000",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            15,
+            4,
+            38
+          ]
+        },
+        {
+          "member": "村里界歷史圖資_113/VILLAGE_NLSC_1131128.cpg",
+          "bytes": 5,
+          "compressed": 7,
+          "crc32": "0e813c50",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            14,
+            35,
+            48
+          ]
+        },
+        {
+          "member": "村里界歷史圖資_113/VILLAGE_NLSC_1131128.dbf",
+          "bytes": 1447800,
+          "compressed": 145538,
+          "crc32": "5a7e5aa7",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            14,
+            35,
+            48
+          ]
+        },
+        {
+          "member": "村里界歷史圖資_113/VILLAGE_NLSC_1131128.prj",
+          "bytes": 145,
+          "compressed": 125,
+          "crc32": "fe828af0",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            14,
+            35,
+            48
+          ]
+        },
+        {
+          "member": "村里界歷史圖資_113/VILLAGE_NLSC_1131128.qmd",
+          "bytes": 687,
+          "compressed": 340,
+          "crc32": "1b871eba",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            14,
+            35,
+            48
+          ]
+        },
+        {
+          "member": "村里界歷史圖資_113/VILLAGE_NLSC_1131128.shp",
+          "bytes": 33103956,
+          "compressed": 22074757,
+          "crc32": "720ea753",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            14,
+            35,
+            48
+          ]
+        },
+        {
+          "member": "村里界歷史圖資_113/VILLAGE_NLSC_1131128.shx",
+          "bytes": 63724,
+          "compressed": 42058,
+          "crc32": "59b73956",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            14,
+            35,
+            48
+          ]
+        },
+        {
+          "member": "村里界歷史圖資_113/Village_Sanhe.cpg",
+          "bytes": 5,
+          "compressed": 7,
+          "crc32": "0e813c50",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            14,
+            42,
+            26
+          ]
+        },
+        {
+          "member": "村里界歷史圖資_113/Village_Sanhe.dbf",
+          "bytes": 536,
+          "compressed": 186,
+          "crc32": "bc1a138a",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            14,
+            42,
+            26
+          ]
+        },
+        {
+          "member": "村里界歷史圖資_113/Village_Sanhe.prj",
+          "bytes": 147,
+          "compressed": 128,
+          "crc32": "294651ef",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            14,
+            42,
+            26
+          ]
+        },
+        {
+          "member": "村里界歷史圖資_113/Village_Sanhe.qmd",
+          "bytes": 687,
+          "compressed": 340,
+          "crc32": "1b871eba",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            14,
+            42,
+            26
+          ]
+        },
+        {
+          "member": "村里界歷史圖資_113/Village_Sanhe.shp",
+          "bytes": 732,
+          "compressed": 542,
+          "crc32": "aa6ebfa9",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            14,
+            42,
+            26
+          ]
+        },
+        {
+          "member": "村里界歷史圖資_113/Village_Sanhe.shx",
+          "bytes": 108,
+          "compressed": 58,
+          "crc32": "8abe3487",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            14,
+            42,
+            26
+          ]
+        }
+      ]
+    },
+    {
+      "family": "historical_boundaries",
+      "path": "data/raw/114村里界.zip",
+      "bytes": 22200490,
+      "sha256": "08d2feeced98473215703defdbe9da8f8d551f2fb221029557b813e1a3dd8845",
+      "status": "present",
+      "members": [
+        {
+          "member": "村里界歷史圖資_114/",
+          "bytes": 0,
+          "compressed": 0,
+          "crc32": "00000000",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            15,
+            9,
+            2
+          ]
+        },
+        {
+          "member": "村里界歷史圖資_114/VILLAGE_NLSC_11401031.cpg",
+          "bytes": 5,
+          "compressed": 7,
+          "crc32": "0e813c50",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            15,
+            8,
+            44
+          ]
+        },
+        {
+          "member": "村里界歷史圖資_114/VILLAGE_NLSC_11401031.dbf",
+          "bytes": 1448346,
+          "compressed": 145301,
+          "crc32": "89670951",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            15,
+            8,
+            44
+          ]
+        },
+        {
+          "member": "村里界歷史圖資_114/VILLAGE_NLSC_11401031.prj",
+          "bytes": 145,
+          "compressed": 125,
+          "crc32": "fe828af0",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            15,
+            8,
+            44
+          ]
+        },
+        {
+          "member": "村里界歷史圖資_114/VILLAGE_NLSC_11401031.qmd",
+          "bytes": 687,
+          "compressed": 340,
+          "crc32": "1b871eba",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            15,
+            8,
+            44
+          ]
+        },
+        {
+          "member": "村里界歷史圖資_114/VILLAGE_NLSC_11401031.shp",
+          "bytes": 33122012,
+          "compressed": 22008258,
+          "crc32": "309608f7",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            15,
+            8,
+            44
+          ]
+        },
+        {
+          "member": "村里界歷史圖資_114/VILLAGE_NLSC_11401031.shx",
+          "bytes": 63748,
+          "compressed": 42091,
+          "crc32": "3de0896d",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            15,
+            8,
+            44
+          ]
+        },
+        {
+          "member": "村里界歷史圖資_114/Village_Sanhe.cpg",
+          "bytes": 5,
+          "compressed": 7,
+          "crc32": "0e813c50",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            15,
+            9,
+            2
+          ]
+        },
+        {
+          "member": "村里界歷史圖資_114/Village_Sanhe.dbf",
+          "bytes": 536,
+          "compressed": 186,
+          "crc32": "bc1a138a",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            15,
+            9,
+            2
+          ]
+        },
+        {
+          "member": "村里界歷史圖資_114/Village_Sanhe.prj",
+          "bytes": 145,
+          "compressed": 125,
+          "crc32": "fe828af0",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            15,
+            9,
+            2
+          ]
+        },
+        {
+          "member": "村里界歷史圖資_114/Village_Sanhe.qmd",
+          "bytes": 687,
+          "compressed": 340,
+          "crc32": "1b871eba",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            15,
+            9,
+            2
+          ]
+        },
+        {
+          "member": "村里界歷史圖資_114/Village_Sanhe.shp",
+          "bytes": 732,
+          "compressed": 542,
+          "crc32": "aa6ebfa9",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            15,
+            9,
+            2
+          ]
+        },
+        {
+          "member": "村里界歷史圖資_114/Village_Sanhe.shx",
+          "bytes": 108,
+          "compressed": 58,
+          "crc32": "8abe3487",
+          "zip_datetime": [
+            2026,
+            8,
+            27,
+            15,
+            9,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "family": "accident_points",
+      "path": "data/raw/113年臺北市道路交通事故斑點圖 .csv",
+      "bytes": 1580764,
+      "sha256": "63dbff7974735ab16ed000f344b72d5a7b9ffc6106e1dfb8030b666e99ddd45c",
+      "status": "present",
+      "encoding_checks": {
+        "utf-8-sig": {
+          "strict": false,
+          "start": 0,
+          "end": 1,
+          "reason": "invalid start byte",
+          "hex": "b56fa5cdaec9b6a12c"
+        },
+        "cp950": {
+          "strict": true
+        }
+      }
+    },
+    {
+      "family": "accident_points",
+      "path": "data/raw/114年臺北市道路交通事故斑點圖.csv",
+      "bytes": 1606943,
+      "sha256": "30851896b0df6000c5bca3032ecf5ad05baae04fa6973bd563ee77341cb958eb",
+      "status": "present",
+      "encoding_checks": {
+        "utf-8-sig": {
+          "strict": false,
+          "start": 0,
+          "end": 1,
+          "reason": "invalid start byte",
+          "hex": "b56fa5cdaec9b6a12c"
+        },
+        "cp950": {
+          "strict": false,
+          "start": 42947,
+          "end": 42948,
+          "reason": "illegal multibyte sequence",
+          "hex": "aa65a55fb8f4a56080b944292c3132312e"
+        }
+      }
+    },
+    {
+      "family": "national_accidents",
+      "path": "data/raw/113年傷亡道路交通事故資料.zip",
+      "bytes": 40598237,
+      "sha256": "f5a8802333ebbd5ba6573e3d7d14e3d8fb1e57be238272140e39d07c66a89e63",
+      "status": "present",
+      "members": [
+        {
+          "member": "113年度A1交通事故資料.csv",
+          "bytes": 2758536,
+          "compressed": 200063,
+          "crc32": "8e3ce3f2",
+          "zip_datetime": [
+            2025,
+            7,
+            1,
+            3,
+            33,
+            58
+          ]
+        },
+        {
+          "member": "113年度A2交通事故資料_1.csv",
+          "bytes": 51106105,
+          "compressed": 3667430,
+          "crc32": "67676712",
+          "zip_datetime": [
+            2025,
+            7,
+            1,
+            3,
+            35,
+            52
+          ]
+        },
+        {
+          "member": "113年度A2交通事故資料_10.csv",
+          "bytes": 44717771,
+          "compressed": 3226488,
+          "crc32": "edb4709b",
+          "zip_datetime": [
+            2025,
+            7,
+            1,
+            3,
+            37,
+            32
+          ]
+        },
+        {
+          "member": "113年度A2交通事故資料_11.csv",
+          "bytes": 48771828,
+          "compressed": 3515439,
+          "crc32": "5dccaae3",
+          "zip_datetime": [
+            2025,
+            7,
+            1,
+            3,
+            39,
+            22
+          ]
+        },
+        {
+          "member": "113年度A2交通事故資料_12.csv",
+          "bytes": 53830421,
+          "compressed": 3853226,
+          "crc32": "3c36156b",
+          "zip_datetime": [
+            2025,
+            7,
+            1,
+            3,
+            41,
+            24
+          ]
+        },
+        {
+          "member": "113年度A2交通事故資料_2.csv",
+          "bytes": 42399040,
+          "compressed": 3039959,
+          "crc32": "09ae872b",
+          "zip_datetime": [
+            2025,
+            7,
+            1,
+            3,
+            43,
+            0
+          ]
+        },
+        {
+          "member": "113年度A2交通事故資料_3.csv",
+          "bytes": 45854217,
+          "compressed": 3296591,
+          "crc32": "05ea9a04",
+          "zip_datetime": [
+            2025,
+            7,
+            1,
+            3,
+            44,
+            38
+          ]
+        },
+        {
+          "member": "113年度A2交通事故資料_4.csv",
+          "bytes": 43659909,
+          "compressed": 3141554,
+          "crc32": "3a0c79c7",
+          "zip_datetime": [
+            2025,
+            7,
+            1,
+            3,
+            46,
+            14
+          ]
+        },
+        {
+          "member": "113年度A2交通事故資料_5.csv",
+          "bytes": 46068215,
+          "compressed": 3307626,
+          "crc32": "872d7821",
+          "zip_datetime": [
+            2025,
+            7,
+            1,
+            3,
+            47,
+            56
+          ]
+        },
+        {
+          "member": "113年度A2交通事故資料_6.csv",
+          "bytes": 46464008,
+          "compressed": 3349295,
+          "crc32": "33fd3821",
+          "zip_datetime": [
+            2025,
+            7,
+            1,
+            3,
+            49,
+            38
+          ]
+        },
+        {
+          "member": "113年度A2交通事故資料_7.csv",
+          "bytes": 46434571,
+          "compressed": 3345051,
+          "crc32": "89eb4113",
+          "zip_datetime": [
+            2025,
+            7,
+            1,
+            3,
+            51,
+            18
+          ]
+        },
+        {
+          "member": "113年度A2交通事故資料_8.csv",
+          "bytes": 46250639,
+          "compressed": 3328229,
+          "crc32": "05159263",
+          "zip_datetime": [
+            2025,
+            7,
+            1,
+            3,
+            53,
+            0
+          ]
+        },
+        {
+          "member": "113年度A2交通事故資料_9.csv",
+          "bytes": 46073699,
+          "compressed": 3323264,
+          "crc32": "19aae157",
+          "zip_datetime": [
+            2025,
+            7,
+            1,
+            3,
+            54,
+            42
+          ]
+        },
+        {
+          "member": "file.csv",
+          "bytes": 924,
+          "compressed": 160,
+          "crc32": "4ab26933",
+          "zip_datetime": [
+            2025,
+            7,
+            1,
+            14,
+            11,
+            42
+          ]
+        },
+        {
+          "member": "manifest.csv",
+          "bytes": 79,
+          "compressed": 79,
+          "crc32": "6b72895a",
+          "zip_datetime": [
+            2026,
+            7,
+            31,
+            11,
+            27,
+            6
+          ]
+        },
+        {
+          "member": "schema-file.csv",
+          "bytes": 49,
+          "compressed": 49,
+          "crc32": "ba4eb62e",
+          "zip_datetime": [
+            2018,
+            1,
+            29,
+            16,
+            20,
+            50
+          ]
+        }
+      ]
+    },
+    {
+      "family": "national_accidents",
+      "path": "data/raw/114年傷亡道路交通事故資料.zip",
+      "bytes": 43253520,
+      "sha256": "2a8e32266708fba9bd9764cefc07717ded978f65bae834c3b6795a992d04fbc7",
+      "status": "present",
+      "members": [
+        {
+          "member": "114年度A1交通事故資料.csv",
+          "bytes": 2727709,
+          "compressed": 197235,
+          "crc32": "da8e431c",
+          "zip_datetime": [
+            2026,
+            7,
+            1,
+            3,
+            33,
+            4
+          ]
+        },
+        {
+          "member": "114年度A2交通事故資料_1.csv",
+          "bytes": 54645085,
+          "compressed": 3858307,
+          "crc32": "7d2d1310",
+          "zip_datetime": [
+            2026,
+            7,
+            1,
+            3,
+            35,
+            8
+          ]
+        },
+        {
+          "member": "114年度A2交通事故資料_10.csv",
+          "bytes": 51828723,
+          "compressed": 3679717,
+          "crc32": "19ce5424",
+          "zip_datetime": [
+            2026,
+            7,
+            1,
+            3,
+            37,
+            4
+          ]
+        },
+        {
+          "member": "114年度A2交通事故資料_11.csv",
+          "bytes": 52792159,
+          "compressed": 3730143,
+          "crc32": "3e9c8770",
+          "zip_datetime": [
+            2026,
+            7,
+            1,
+            3,
+            39,
+            6
+          ]
+        },
+        {
+          "member": "114年度A2交通事故資料_12.csv",
+          "bytes": 57497084,
+          "compressed": 4060054,
+          "crc32": "e62edd94",
+          "zip_datetime": [
+            2026,
+            7,
+            1,
+            3,
+            41,
+            18
+          ]
+        },
+        {
+          "member": "114年度A2交通事故資料_2.csv",
+          "bytes": 44416225,
+          "compressed": 3147165,
+          "crc32": "628e44f3",
+          "zip_datetime": [
+            2026,
+            7,
+            1,
+            3,
+            43,
+            0
+          ]
+        },
+        {
+          "member": "114年度A2交通事故資料_3.csv",
+          "bytes": 51012794,
+          "compressed": 3615027,
+          "crc32": "5735fffb",
+          "zip_datetime": [
+            2026,
+            7,
+            1,
+            3,
+            44,
+            54
+          ]
+        },
+        {
+          "member": "114年度A2交通事故資料_4.csv",
+          "bytes": 48953889,
+          "compressed": 3458798,
+          "crc32": "c6a4a3ee",
+          "zip_datetime": [
+            2026,
+            7,
+            1,
+            3,
+            46,
+            46
+          ]
+        },
+        {
+          "member": "114年度A2交通事故資料_5.csv",
+          "bytes": 50247504,
+          "compressed": 3560967,
+          "crc32": "96c95d10",
+          "zip_datetime": [
+            2026,
+            7,
+            1,
+            3,
+            48,
+            40
+          ]
+        },
+        {
+          "member": "114年度A2交通事故資料_6.csv",
+          "bytes": 49355221,
+          "compressed": 3505912,
+          "crc32": "47304984",
+          "zip_datetime": [
+            2026,
+            7,
+            1,
+            3,
+            50,
+            30
+          ]
+        },
+        {
+          "member": "114年度A2交通事故資料_7.csv",
+          "bytes": 47967105,
+          "compressed": 3424394,
+          "crc32": "2a487b97",
+          "zip_datetime": [
+            2026,
+            7,
+            1,
+            3,
+            52,
+            18
+          ]
+        },
+        {
+          "member": "114年度A2交通事故資料_8.csv",
+          "bytes": 49689917,
+          "compressed": 3527070,
+          "crc32": "8182aec7",
+          "zip_datetime": [
+            2026,
+            7,
+            1,
+            3,
+            54,
+            12
+          ]
+        },
+        {
+          "member": "114年度A2交通事故資料_9.csv",
+          "bytes": 49249844,
+          "compressed": 3484708,
+          "crc32": "06a0d4ed",
+          "zip_datetime": [
+            2026,
+            7,
+            1,
+            3,
+            56,
+            4
+          ]
+        },
+        {
+          "member": "file.csv",
+          "bytes": 924,
+          "compressed": 161,
+          "crc32": "53c6f22b",
+          "zip_datetime": [
+            2026,
+            7,
+            1,
+            10,
+            8,
+            58
+          ]
+        },
+        {
+          "member": "manifest.csv",
+          "bytes": 79,
+          "compressed": 79,
+          "crc32": "ebaf7b83",
+          "zip_datetime": [
+            2026,
+            7,
+            31,
+            11,
+            27,
+            56
+          ]
+        },
+        {
+          "member": "schema-file.csv",
+          "bytes": 49,
+          "compressed": 49,
+          "crc32": "ba4eb62e",
+          "zip_datetime": [
+            2018,
+            1,
+            29,
+            16,
+            20,
+            50
+          ]
+        }
+      ]
+    },
+    {
+      "family": "osm",
+      "path": "data/raw/taiwan-250101-free.shp.zip",
+      "bytes": 215526345,
+      "sha256": "ad19e79129efc0a447db5fe5d684e732199a900251f04f2aacef821cfa9ff1ab",
+      "status": "present",
+      "members": [
+        {
+          "member": "README",
+          "bytes": 652,
+          "compressed": 370,
+          "crc32": "e4c9f514",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_buildings_a_free_1.cpg",
+          "bytes": 6,
+          "compressed": 6,
+          "crc32": "59b2d65b",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_buildings_a_free_1.dbf",
+          "bytes": 79360574,
+          "compressed": 2959775,
+          "crc32": "a25aa1bd",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_buildings_a_free_1.prj",
+          "bytes": 144,
+          "compressed": 122,
+          "crc32": "0bbee490",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_buildings_a_free_1.shp",
+          "bytes": 80380524,
+          "compressed": 37849952,
+          "crc32": "614a9303",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_buildings_a_free_1.shx",
+          "bytes": 3847876,
+          "compressed": 1527234,
+          "crc32": "7be93ab7",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_landuse_a_free_1.cpg",
+          "bytes": 6,
+          "compressed": 6,
+          "crc32": "59b2d65b",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_landuse_a_free_1.dbf",
+          "bytes": 14430852,
+          "compressed": 737230,
+          "crc32": "12b9d0d6",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_landuse_a_free_1.prj",
+          "bytes": 144,
+          "compressed": 122,
+          "crc32": "0bbee490",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_landuse_a_free_1.shp",
+          "bytes": 41808000,
+          "compressed": 26466826,
+          "crc32": "af3e9073",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_landuse_a_free_1.shx",
+          "bytes": 796276,
+          "compressed": 395015,
+          "crc32": "f7bdc3d4",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_natural_a_free_1.cpg",
+          "bytes": 6,
+          "compressed": 6,
+          "crc32": "59b2d65b",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_natural_a_free_1.dbf",
+          "bytes": 46562,
+          "compressed": 3019,
+          "crc32": "c0d37f01",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_natural_a_free_1.prj",
+          "bytes": 144,
+          "compressed": 122,
+          "crc32": "0bbee490",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_natural_a_free_1.shp",
+          "bytes": 154440,
+          "compressed": 105720,
+          "crc32": "b3646a86",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_natural_a_free_1.shx",
+          "bytes": 2660,
+          "compressed": 1431,
+          "crc32": "3274876f",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_natural_free_1.cpg",
+          "bytes": 6,
+          "compressed": 6,
+          "crc32": "59b2d65b",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_natural_free_1.dbf",
+          "bytes": 2309142,
+          "compressed": 125444,
+          "crc32": "7cb969ae",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_natural_free_1.prj",
+          "bytes": 144,
+          "compressed": 122,
+          "crc32": "0bbee490",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_natural_free_1.shp",
+          "bytes": 445972,
+          "compressed": 252213,
+          "crc32": "dc687170",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_natural_free_1.shx",
+          "bytes": 127492,
+          "compressed": 36529,
+          "crc32": "c1e03c44",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_places_a_free_1.cpg",
+          "bytes": 6,
+          "compressed": 6,
+          "crc32": "59b2d65b",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_places_a_free_1.dbf",
+          "bytes": 12439,
+          "compressed": 1389,
+          "crc32": "6119906e",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_places_a_free_1.prj",
+          "bytes": 144,
+          "compressed": 122,
+          "crc32": "0bbee490",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_places_a_free_1.shp",
+          "bytes": 812020,
+          "compressed": 571708,
+          "crc32": "6d470c0e",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_places_a_free_1.shx",
+          "bytes": 732,
+          "compressed": 494,
+          "crc32": "92be0339",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_places_free_1.cpg",
+          "bytes": 6,
+          "compressed": 6,
+          "crc32": "59b2d65b",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_places_free_1.dbf",
+          "bytes": 2626979,
+          "compressed": 173225,
+          "crc32": "9cccd865",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_places_free_1.prj",
+          "bytes": 144,
+          "compressed": 122,
+          "crc32": "0bbee490",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_places_free_1.shp",
+          "bytes": 474616,
+          "compressed": 257731,
+          "crc32": "f22302d6",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_places_free_1.shx",
+          "bytes": 135676,
+          "compressed": 38921,
+          "crc32": "ab46ff69",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_pofw_a_free_1.cpg",
+          "bytes": 6,
+          "compressed": 6,
+          "crc32": "59b2d65b",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_pofw_a_free_1.dbf",
+          "bytes": 601477,
+          "compressed": 60826,
+          "crc32": "93b70585",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_pofw_a_free_1.prj",
+          "bytes": 144,
+          "compressed": 122,
+          "crc32": "0bbee490",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_pofw_a_free_1.shp",
+          "bytes": 713920,
+          "compressed": 383937,
+          "crc32": "1adb57d5",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_pofw_a_free_1.shx",
+          "bytes": 33276,
+          "compressed": 13845,
+          "crc32": "99b172be",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_pofw_free_1.cpg",
+          "bytes": 6,
+          "compressed": 6,
+          "crc32": "59b2d65b",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_pofw_free_1.dbf",
+          "bytes": 438352,
+          "compressed": 43057,
+          "crc32": "df45775c",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_pofw_free_1.prj",
+          "bytes": 144,
+          "compressed": 122,
+          "crc32": "0bbee490",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_pofw_free_1.shp",
+          "bytes": 84716,
+          "compressed": 51751,
+          "crc32": "478765f9",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_pofw_free_1.shx",
+          "bytes": 24276,
+          "compressed": 6548,
+          "crc32": "f16ef3c8",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_pois_a_free_1.cpg",
+          "bytes": 6,
+          "compressed": 6,
+          "crc32": "59b2d65b",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_pois_a_free_1.dbf",
+          "bytes": 7188102,
+          "compressed": 706445,
+          "crc32": "f4a0d9b6",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_pois_a_free_1.prj",
+          "bytes": 144,
+          "compressed": 122,
+          "crc32": "0bbee490",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_pois_a_free_1.shp",
+          "bytes": 12261164,
+          "compressed": 7178190,
+          "crc32": "f56c8336",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_pois_a_free_1.shx",
+          "bytes": 396676,
+          "compressed": 185645,
+          "crc32": "f96e28e5",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_pois_free_1.cpg",
+          "bytes": 6,
+          "compressed": 6,
+          "crc32": "59b2d65b",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_pois_free_1.dbf",
+          "bytes": 20029882,
+          "compressed": 2025016,
+          "crc32": "1999e500",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_pois_free_1.prj",
+          "bytes": 144,
+          "compressed": 122,
+          "crc32": "0bbee490",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_pois_free_1.shp",
+          "bytes": 3867908,
+          "compressed": 2207015,
+          "crc32": "50f6b357",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_pois_free_1.shx",
+          "bytes": 1105188,
+          "compressed": 319530,
+          "crc32": "9346988a",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_railways_free_1.cpg",
+          "bytes": 6,
+          "compressed": 6,
+          "crc32": "59b2d65b",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_railways_free_1.dbf",
+          "bytes": 1283547,
+          "compressed": 50919,
+          "crc32": "60b3a729",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_railways_free_1.prj",
+          "bytes": 144,
+          "compressed": 122,
+          "crc32": "0bbee490",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_railways_free_1.shp",
+          "bytes": 1417260,
+          "compressed": 806118,
+          "crc32": "2022d5d4",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_railways_free_1.shx",
+          "bytes": 64668,
+          "compressed": 28038,
+          "crc32": "bfb23df0",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_roads_free_1.cpg",
+          "bytes": 6,
+          "compressed": 6,
+          "crc32": "59b2d65b",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_roads_free_1.dbf",
+          "bytes": 135020865,
+          "compressed": 5822459,
+          "crc32": "e1bc1e43",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_roads_free_1.prj",
+          "bytes": 144,
+          "compressed": 122,
+          "crc32": "0bbee490",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_roads_free_1.shp",
+          "bytes": 152891996,
+          "compressed": 90830147,
+          "crc32": "4ca48f81",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_roads_free_1.shx",
+          "bytes": 5902636,
+          "compressed": 2679199,
+          "crc32": "b1e01296",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_traffic_a_free_1.cpg",
+          "bytes": 6,
+          "compressed": 6,
+          "crc32": "59b2d65b",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_traffic_a_free_1.dbf",
+          "bytes": 2242007,
+          "compressed": 141886,
+          "crc32": "129913de",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_traffic_a_free_1.prj",
+          "bytes": 144,
+          "compressed": 122,
+          "crc32": "0bbee490",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_traffic_a_free_1.shp",
+          "bytes": 2809616,
+          "compressed": 1540771,
+          "crc32": "25319f2c",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_traffic_a_free_1.shx",
+          "bytes": 123788,
+          "compressed": 53810,
+          "crc32": "04c65120",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_traffic_free_1.cpg",
+          "bytes": 6,
+          "compressed": 6,
+          "crc32": "59b2d65b",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_traffic_free_1.dbf",
+          "bytes": 14780012,
+          "compressed": 521934,
+          "crc32": "cad92de6",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_traffic_free_1.prj",
+          "bytes": 144,
+          "compressed": 122,
+          "crc32": "0bbee490",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_traffic_free_1.shp",
+          "bytes": 2854140,
+          "compressed": 1610924,
+          "crc32": "44e45fe7",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_traffic_free_1.shx",
+          "bytes": 815540,
+          "compressed": 235455,
+          "crc32": "a834d856",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_transport_a_free_1.cpg",
+          "bytes": 6,
+          "compressed": 6,
+          "crc32": "59b2d65b",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_transport_a_free_1.dbf",
+          "bytes": 75707,
+          "compressed": 6754,
+          "crc32": "675a61a0",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_transport_a_free_1.prj",
+          "bytes": 144,
+          "compressed": 122,
+          "crc32": "0bbee490",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_transport_a_free_1.shp",
+          "bytes": 159056,
+          "compressed": 88156,
+          "crc32": "748c276c",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_transport_a_free_1.shx",
+          "bytes": 4268,
+          "compressed": 1925,
+          "crc32": "303e635d",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_transport_free_1.cpg",
+          "bytes": 6,
+          "compressed": 6,
+          "crc32": "59b2d65b",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_transport_free_1.dbf",
+          "bytes": 6982492,
+          "compressed": 487334,
+          "crc32": "72783a29",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_transport_free_1.prj",
+          "bytes": 144,
+          "compressed": 122,
+          "crc32": "0bbee490",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_transport_free_1.shp",
+          "bytes": 1348412,
+          "compressed": 763168,
+          "crc32": "c8ab7b30",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_transport_free_1.shx",
+          "bytes": 385332,
+          "compressed": 111145,
+          "crc32": "590116f0",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_water_a_free_1.cpg",
+          "bytes": 6,
+          "compressed": 6,
+          "crc32": "59b2d65b",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_water_a_free_1.dbf",
+          "bytes": 8363617,
+          "compressed": 248599,
+          "crc32": "ec62dbf5",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_water_a_free_1.prj",
+          "bytes": 144,
+          "compressed": 122,
+          "crc32": "0bbee490",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_water_a_free_1.shp",
+          "bytes": 15605236,
+          "compressed": 9259890,
+          "crc32": "75b6640e",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_water_a_free_1.shx",
+          "bytes": 461532,
+          "compressed": 210016,
+          "crc32": "eea660c0",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_waterways_free_1.cpg",
+          "bytes": 6,
+          "compressed": 6,
+          "crc32": "59b2d65b",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_waterways_free_1.dbf",
+          "bytes": 7164644,
+          "compressed": 276587,
+          "crc32": "306a9ed7",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_waterways_free_1.prj",
+          "bytes": 144,
+          "compressed": 122,
+          "crc32": "0bbee490",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            20
+          ]
+        },
+        {
+          "member": "gis_osm_waterways_free_1.shp",
+          "bytes": 21646828,
+          "compressed": 14849226,
+          "crc32": "3ae06173",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        },
+        {
+          "member": "gis_osm_waterways_free_1.shx",
+          "bytes": 382204,
+          "compressed": 197098,
+          "crc32": "85f4dc7c",
+          "zip_datetime": [
+            2025,
+            1,
+            2,
+            2,
+            55,
+            50
+          ]
+        }
+      ]
+    },
+    {
+      "family": "signals",
+      "path": "data/raw/號誌路口經緯度一覽20230706.csv",
+      "bytes": 150844,
+      "sha256": "4de42a369f6b6ba38df29ff2d357f8ad5aec7a237b8709edc431d77c3cfb29a7",
+      "status": "present",
+      "encoding_checks": {
+        "utf-8-sig": {
+          "strict": false,
+          "start": 0,
+          "end": 1,
+          "reason": "invalid start byte",
+          "hex": "ac79a4f4b8b909a661"
+        },
+        "cp950": {
+          "strict": true
+        }
+      }
+    },
+    {
+      "family": "crossings",
+      "path": "data/raw/(交工處)行人穿越線圖資_202407121519.zip",
+      "bytes": 2005308,
+      "sha256": "a7f4241ea1ecccfb09050fb38f4d8537a7f5ec1d4134eb7b8929217601ba0493",
+      "status": "present",
+      "members": [
+        {
+          "member": "斑馬紋行人穿越線/grapline_09.cpg",
+          "bytes": 5,
+          "compressed": 7,
+          "crc32": "0e813c50",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            58
+          ]
+        },
+        {
+          "member": "斑馬紋行人穿越線/grapline_09.dbf",
+          "bytes": 450662,
+          "compressed": 13864,
+          "crc32": "cfad892e",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            58
+          ]
+        },
+        {
+          "member": "斑馬紋行人穿越線/grapline_09.prj",
+          "bytes": 399,
+          "compressed": 256,
+          "crc32": "90c78104",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            58
+          ]
+        },
+        {
+          "member": "斑馬紋行人穿越線/grapline_09.shp",
+          "bytes": 66772,
+          "compressed": 15782,
+          "crc32": "6d22eb0d",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            58
+          ]
+        },
+        {
+          "member": "斑馬紋行人穿越線/grapline_09.shx",
+          "bytes": 3012,
+          "compressed": 1279,
+          "crc32": "39672823",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            58
+          ]
+        },
+        {
+          "member": "斑馬紋行人穿越線/grapline_A9.cpg",
+          "bytes": 5,
+          "compressed": 7,
+          "crc32": "0e813c50",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            58
+          ]
+        },
+        {
+          "member": "斑馬紋行人穿越線/grapline_A9.dbf",
+          "bytes": 486477,
+          "compressed": 15500,
+          "crc32": "f3cff593",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            58
+          ]
+        },
+        {
+          "member": "斑馬紋行人穿越線/grapline_A9.prj",
+          "bytes": 399,
+          "compressed": 256,
+          "crc32": "90c78104",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            58
+          ]
+        },
+        {
+          "member": "斑馬紋行人穿越線/grapline_A9.shp",
+          "bytes": 71756,
+          "compressed": 17027,
+          "crc32": "17a1ef22",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            58
+          ]
+        },
+        {
+          "member": "斑馬紋行人穿越線/grapline_A9.shx",
+          "bytes": 3244,
+          "compressed": 1351,
+          "crc32": "302bae1b",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            58
+          ]
+        },
+        {
+          "member": "枕木紋行人穿越線-間隔80cm/grapline_18.cpg",
+          "bytes": 5,
+          "compressed": 7,
+          "crc32": "0e813c50",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            56
+          ]
+        },
+        {
+          "member": "枕木紋行人穿越線-間隔80cm/grapline_18.dbf",
+          "bytes": 2049987,
+          "compressed": 51665,
+          "crc32": "f1140685",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            56
+          ]
+        },
+        {
+          "member": "枕木紋行人穿越線-間隔80cm/grapline_18.prj",
+          "bytes": 399,
+          "compressed": 256,
+          "crc32": "90c78104",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            56
+          ]
+        },
+        {
+          "member": "枕木紋行人穿越線-間隔80cm/grapline_18.shp",
+          "bytes": 227788,
+          "compressed": 99142,
+          "crc32": "132d351b",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            56
+          ]
+        },
+        {
+          "member": "枕木紋行人穿越線-間隔80cm/grapline_18.shx",
+          "bytes": 13372,
+          "compressed": 4458,
+          "crc32": "ecb8f241",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            56
+          ]
+        },
+        {
+          "member": "枕木紋行人穿越線-間隔80cm-/grapline_B8.cpg",
+          "bytes": 5,
+          "compressed": 7,
+          "crc32": "0e813c50",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            58
+          ]
+        },
+        {
+          "member": "枕木紋行人穿越線-間隔80cm-/grapline_B8.dbf",
+          "bytes": 1793107,
+          "compressed": 44563,
+          "crc32": "69552b2d",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            58
+          ]
+        },
+        {
+          "member": "枕木紋行人穿越線-間隔80cm-/grapline_B8.prj",
+          "bytes": 399,
+          "compressed": 256,
+          "crc32": "90c78104",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            58
+          ]
+        },
+        {
+          "member": "枕木紋行人穿越線-間隔80cm-/grapline_B8.shp",
+          "bytes": 198876,
+          "compressed": 82037,
+          "crc32": "80c29f37",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            58
+          ]
+        },
+        {
+          "member": "枕木紋行人穿越線-間隔80cm-/grapline_B8.shx",
+          "bytes": 11708,
+          "compressed": 3883,
+          "crc32": "59ea1036",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            58
+          ]
+        },
+        {
+          "member": "枕木紋行人穿越線-間隔40cm/grapline_08.cpg",
+          "bytes": 5,
+          "compressed": 7,
+          "crc32": "0e813c50",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            54
+          ]
+        },
+        {
+          "member": "枕木紋行人穿越線-間隔40cm/grapline_08.dbf",
+          "bytes": 9083312,
+          "compressed": 280329,
+          "crc32": "c9c29a91",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            56
+          ]
+        },
+        {
+          "member": "枕木紋行人穿越線-間隔40cm/grapline_08.prj",
+          "bytes": 399,
+          "compressed": 256,
+          "crc32": "90c78104",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            54
+          ]
+        },
+        {
+          "member": "枕木紋行人穿越線-間隔40cm/grapline_08.shp",
+          "bytes": 1033064,
+          "compressed": 469068,
+          "crc32": "8de2ff37",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            56
+          ]
+        },
+        {
+          "member": "枕木紋行人穿越線-間隔40cm/grapline_08.shx",
+          "bytes": 58932,
+          "compressed": 21048,
+          "crc32": "aeb98f70",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            56
+          ]
+        },
+        {
+          "member": "枕木紋行人穿越線-間隔40cm-/grapline_A8.cpg",
+          "bytes": 5,
+          "compressed": 7,
+          "crc32": "0e813c50",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            56
+          ]
+        },
+        {
+          "member": "枕木紋行人穿越線-間隔40cm-/grapline_A8.dbf",
+          "bytes": 10402292,
+          "compressed": 318107,
+          "crc32": "5d94f807",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            56
+          ]
+        },
+        {
+          "member": "枕木紋行人穿越線-間隔40cm-/grapline_A8.prj",
+          "bytes": 399,
+          "compressed": 256,
+          "crc32": "90c78104",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            56
+          ]
+        },
+        {
+          "member": "枕木紋行人穿越線-間隔40cm-/grapline_A8.shp",
+          "bytes": 1178984,
+          "compressed": 535215,
+          "crc32": "323cc5e6",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            56
+          ]
+        },
+        {
+          "member": "枕木紋行人穿越線-間隔40cm-/grapline_A8.shx",
+          "bytes": 67476,
+          "compressed": 24070,
+          "crc32": "7e207982",
+          "zip_datetime": [
+            2024,
+            7,
+            12,
+            15,
+            19,
+            56
+          ]
+        }
+      ]
+    },
+    {
+      "family": "road_width",
+      "path": "data/raw/路寬檔_提供.zip",
+      "bytes": 1062574,
+      "sha256": "a92d7b7225509489181606158d1d9cbe3b1a4c83b120ee12d577460109852d70",
+      "status": "present",
+      "members": [
+        {
+          "member": "roadsize2.cpg",
+          "bytes": 5,
+          "compressed": 5,
+          "crc32": "0e813c50",
+          "zip_datetime": [
+            2023,
+            3,
+            13,
+            10,
+            10,
+            56
+          ]
+        },
+        {
+          "member": "roadsize2.dbf",
+          "bytes": 476294,
+          "compressed": 82632,
+          "crc32": "a949b803",
+          "zip_datetime": [
+            2023,
+            12,
+            28,
+            17,
+            11,
+            40
+          ]
+        },
+        {
+          "member": "roadsize2.prj",
+          "bytes": 399,
+          "compressed": 256,
+          "crc32": "90c78104",
+          "zip_datetime": [
+            2021,
+            3,
+            29,
+            16,
+            56,
+            6
+          ]
+        },
+        {
+          "member": "roadsize2.sbn",
+          "bytes": 225964,
+          "compressed": 119367,
+          "crc32": "0a36a320",
+          "zip_datetime": [
+            2021,
+            3,
+            29,
+            16,
+            56,
+            12
+          ]
+        },
+        {
+          "member": "roadsize2.sbx",
+          "bytes": 12500,
+          "compressed": 5987,
+          "crc32": "e21cb836",
+          "zip_datetime": [
+            2021,
+            3,
+            29,
+            16,
+            56,
+            12
+          ]
+        },
+        {
+          "member": "roadsize2.shp",
+          "bytes": 1995588,
+          "compressed": 799994,
+          "crc32": "fcf93d71",
+          "zip_datetime": [
+            2023,
+            12,
+            28,
+            3,
+            0,
+            26
+          ]
+        },
+        {
+          "member": "roadsize2.shp.xml",
+          "bytes": 6131,
+          "compressed": 2088,
+          "crc32": "394cd1ff",
+          "zip_datetime": [
+            2021,
+            3,
+            29,
+            17,
+            8,
+            12
+          ]
+        },
+        {
+          "member": "roadsize2.shx",
+          "bytes": 181508,
+          "compressed": 51399,
+          "crc32": "fa73f5f0",
+          "zip_datetime": [
+            2023,
+            12,
+            28,
+            3,
+            0,
+            26
+          ]
+        }
+      ]
+    },
+    {
+      "family": "sidewalk",
+      "path": "data/raw/(交工處)標線型人行道圖資_202610300914.zip",
+      "bytes": 4487594,
+      "sha256": "c17a853905ee242f88a9cbdefd4cf59130c08ab0eae40495365b6d36857a70a9",
+      "status": "present",
+      "members": [
+        {
+          "member": "grapline_202610300914.cpg",
+          "bytes": 5,
+          "compressed": 7,
+          "crc32": "0e813c50",
+          "zip_datetime": [
+            2026,
+            10,
+            30,
+            9,
+            14,
+            48
+          ]
+        },
+        {
+          "member": "grapline_202610300914.dbf",
+          "bytes": 54588426,
+          "compressed": 1601110,
+          "crc32": "3004b4ac",
+          "zip_datetime": [
+            2026,
+            10,
+            30,
+            9,
+            14,
+            52
+          ]
+        },
+        {
+          "member": "grapline_202610300914.prj",
+          "bytes": 399,
+          "compressed": 256,
+          "crc32": "90c78104",
+          "zip_datetime": [
+            2026,
+            10,
+            30,
+            9,
+            14,
+            48
+          ]
+        },
+        {
+          "member": "grapline_202610300914.shp",
+          "bytes": 6034424,
+          "compressed": 2761677,
+          "crc32": "3dd6195b",
+          "zip_datetime": [
+            2026,
+            10,
+            30,
+            9,
+            14,
+            52
+          ]
+        },
+        {
+          "member": "grapline_202610300914.shx",
+          "bytes": 344228,
+          "compressed": 123892,
+          "crc32": "e751d06f",
+          "zip_datetime": [
+            2026,
+            10,
+            30,
+            9,
+            14,
+            52
+          ]
+        }
+      ]
+    },
+    {
+      "family": "mrt",
+      "path": "data/raw/臺北捷運車站出入口座標_1150804.csv",
+      "bytes": 17633,
+      "sha256": "134d8488c240fb23e04535db6a94da73006f890c83617eeedaa9b26c9f120015",
+      "status": "present",
+      "encoding_checks": {
+        "utf-8-sig": {
+          "strict": false,
+          "start": 0,
+          "end": 1,
+          "reason": "invalid start byte",
+          "hex": "b6b5a6b82ca558a44a"
+        },
+        "cp950": {
+          "strict": true
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "historical_boundaries": {
+      "title": "歷史村里界",
+      "provider": "內政部地政司／國土測繪中心",
+      "url": "https://data.gov.tw/dataset/130549",
+      "publication": "資料集2020-09-21；各版次實際發布日另未認證",
+      "period": "官方113／114年版；內部名稱1131128／11401031；後者日期字串不作強制日曆解讀，非全年逐日有效界證明",
+      "limitation": "主圖層與獨立Sanhe層分開；以既有crosswalk人口官方碼連接，不截碼或重開糖廍爭議",
+      "license": "政府資料開放授權條款第1版；依官方頁，來源與版本須保留"
+    },
+    "accident_points": {
+      "title": "臺北事故斑點圖",
+      "provider": "臺北市警察局交通大隊",
+      "url": "https://data.taipei/dataset/detail?id=0554bac7-cbc2-4ef3-a55e-0aad3dd4ee1d",
+      "publication": "113資源2025-04-10；114資源2026-04-21",
+      "period": "事故發生期間2024／2025；下載日未知",
+      "limitation": "114原始CP950含非法byte；可逆surrogateescape只作診斷，受損地址不得確認精確配對",
+      "license": "政府資料開放授權條款第1版；依官方頁，來源與版本須保留"
+    },
+    "national_accidents": {
+      "title": "全國傷亡事故",
+      "provider": "內政部警政署",
+      "url": "https://data.gov.tw/dataset/172969 ; https://data.gov.tw/dataset/177136",
+      "publication": "113資料集2025-03-03；114資料集2026-03-06；metadata更新2026-08",
+      "period": "事故發生2024／2025；A1全年＋A2逐月，實際月份由檔內驗證",
+      "limitation": "每列當事人，先臺北篩選再順位1；不同公開版本不能附加重複事件或當獨立位置認證",
+      "license": "政府資料開放授權條款第1版；依官方頁，來源與版本須保留"
+    },
+    "osm": {
+      "title": "Geofabrik OSM道路",
+      "provider": "Geofabrik／OpenStreetMap contributors",
+      "url": "https://download.geofabrik.de/asia/taiwan.html",
+      "publication": "歷史資源檔名250101；精確發布時間未認證",
+      "period": "包內README明示2025-01-01T21:21:00Z快照；非2024／2025逐年獨立路網",
+      "limitation": "僅讀道路及研究區外圍bbox；線表示密度非實體中心線、交通流量或VKT；免費格式欠完整OSM節點拓樸",
+      "license": "Open Database License 1.0；需OpenStreetMap contributors標示及遵守ODbL"
+    },
+    "signals": {
+      "title": "號誌路口位置",
+      "provider": "臺北市交通局交通管制工程處",
+      "url": "https://data.taipei/dataset/detail?id=4a599738-6550-448a-9a78-03b26c67e249",
+      "publication": "資源更新2025-07-15",
+      "period": "檔名20230706非每筆觀測／設置時間；實際快照時點仍未認證",
+      "limitation": "原檔為tab分隔；路口位置紀錄不等於燈頭或設備數，完整歷史號誌存量未證",
+      "license": "政府資料開放授權條款第1版；依官方頁，來源與版本須保留"
+    },
+    "crossings": {
+      "title": "行人穿越線圖資",
+      "provider": "臺北市交通局交通管制工程處",
+      "url": "https://data.taipei/dataset/detail?id=4d6bd0c6-9f56-408b-bb96-ac41134a95d5",
+      "publication": "目前資源頁更新2026-03-19；本機ZIP成員時間2024-07-12",
+      "period": "2024-07-12封裝標記，非全年有效或2025新增完整紀錄；RDDATE需排除1899占位",
+      "limitation": "六個明示行穿線圖層，Polygon構件不先假定完整設施；長寬欄0與單位未證，面積以有效幾何聯集診斷",
+      "license": "政府資料開放授權條款第1版；依官方頁，來源與版本須保留"
+    },
+    "road_width": {
+      "title": "道路路寬標註",
+      "provider": "臺北市都市發展局",
+      "url": "https://data.taipei/dataset/detail?id=068be2c7-eea1-4303-91f8-fbf50c9b2aec",
+      "publication": "資源2023-12-28；metadata2026-06-17",
+      "period": "ZIP內資料修改2023-12-28，XML製作2021；非2024／2025完整年度實測",
+      "limitation": "官方稱依都市計畫參酌地籍標註；線長與標註寬度相近，不能當道路縱向長度作權重或實測車行空間",
+      "license": "政府資料開放授權條款第1版；依官方頁，來源與版本須保留"
+    },
+    "sidewalk": {
+      "title": "標線型人行道來源候選",
+      "provider": "臺北市交通局交通管制工程處",
+      "url": "https://data.taipei/dataset/detail?id=d647b3af-4bbd-4e8f-b420-8f6c1bc1b597",
+      "publication": "資源2026-10-30",
+      "period": "2026-10-30快照；RDDATE僅現存紀錄歷史資格，不含拆除／遷移歷史",
+      "limitation": "實檔含多種LICODE並重現行穿線；缺確切人行道代碼篩選依據，不能全部43016面當人行道",
+      "license": "政府資料開放授權條款第1版；依官方頁，來源與版本須保留"
+    },
+    "mrt": {
+      "title": "臺北捷運出入口",
+      "provider": "臺北大眾捷運股份有限公司",
+      "url": "https://data.taipei/dataset/detail?id=cfa4778c-62c1-497b-b704-756231de348b",
+      "publication": "資源2026-08-04",
+      "period": "1150804檔名及更新快照，無逐出入口設置／撤除日期",
+      "limitation": "固定設施快照，不證明研究年存在；站名與入口分開、保留跨市點，直線緩衝非實際步行可及性",
+      "license": "政府資料開放授權條款第1版；依官方頁，來源與版本須保留"
+    }
+  },
+  "existing_bindings": {
+    "data/raw/113年-臺北市死傷交通事故明細.csv": "b6ad23f05658531998f34ba4995a190d03872940ea48013115da89bb2a4e92c5",
+    "data/raw/114年-臺北市死傷交通事故明細.csv": "61f0bdb52a49176746ab8b66926224b294498c9e26b2dec6eefe44906fdffa0c",
+    "data/raw/事故對照表.pdf": "f40ded1ded1c816a38f421bc972cdc1320bbd280e647792207ec037d05fd3670",
+    "data/raw/112迄今各里人口數按年齡分.csv": "a663a4f0329b18bb0514da7fd9f6845312d08fadef71e566faf1930c03541641",
+    "data/raw/G97_A_CAVLGE_P.shp": "f7fb4813a2283198ca564f5686823c454c5fd832d2f6981a2ee88a94719be3cc",
+    "data/raw/G97_A_CAVLGE_P.shx": "ab7bc5e63229f676d3580b68e98db59b91a2d327c74ca23b0000ca1c568d414e",
+    "data/raw/G97_A_CAVLGE_P.dbf": "2f43f92e84279a45b2512cf453e9b72f706d1ad1402665c946b1a354f75d8577",
+    "data/raw/G97_A_CAVLGE_P.prj": "8dac7d82ea889063f9eaa7df408fcaeb7307d32831ea973b6534d0139a4523c5",
+    "data/raw/G97_A_CAVLGE_P.cpg": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824",
+    "data/processed/village_crosswalk.csv": "dd9e762419c302cf5b4bb19daad2673d7d54d0bb750204e7e33ecbf1a9983f69",
+    "data/processed/urban_zoning_crosswalk.csv": "4326d92d1567167ca67c13dc1c083426bf6d4d789b88ed5da1feec422306383f",
+    "data/code/taipei_2024_2025_crash_validation.ipynb": "3674d0043289f75079b46b90076795967563d721a91e303a568ecf85a25c0c6d",
+    "data/code/taipei_data_integration_readiness.ipynb": "6048ff52d7653c9ec9d4b32cf2b78da2fb1b22dc0db0164cc48c4d2d98dd338b"
+  },
+  "evidence": {
+    "path": "data/raw/unit17_supplementary_source_evidence.zip",
+    "sha256": "f5394c215f0db5a0124ea831d0552fe9aa26ea1c5901797a5a8fcce042f6b3bf"
+  },
+  "history_source_identity": [
+    {
+      "year_label": "113",
+      "local_path": "data/raw/113村里界.zip",
+      "official_wrapper": "history_113_landing.html",
+      "actual_media": "ZIP wrapper, not HTML",
+      "inner_member": "202609301102412236.zip",
+      "inner_sha256": "32d7f1d611f91b1c63bea7290dd4db93b919bf380cce92b634fca992c974dd94",
+      "local_sha256": "32d7f1d611f91b1c63bea7290dd4db93b919bf380cce92b634fca992c974dd94",
+      "byte_identical_inner": true,
+      "acquisition_note": "候選說明URL意外直接回傳ZIP；保留原始回應、不再重取、不替換學生檔案"
+    },
+    {
+      "year_label": "114",
+      "local_path": "data/raw/114村里界.zip",
+      "official_wrapper": "history_114_landing.html",
+      "actual_media": "ZIP wrapper, not HTML",
+      "inner_member": "202609301104109864.zip",
+      "inner_sha256": "08d2feeced98473215703defdbe9da8f8d551f2fb221029557b813e1a3dd8845",
+      "local_sha256": "08d2feeced98473215703defdbe9da8f8d551f2fb221029557b813e1a3dd8845",
+      "byte_identical_inner": true,
+      "acquisition_note": "候選說明URL意外直接回傳ZIP；保留原始回應、不再重取、不替換學生檔案"
+    }
+  ],
+  "rules": {
+    "formal_dataset_exports": false,
+    "original_accident_crs": "4326 working assumption, not official datum certification",
+    "projection": 3826,
+    "outside_buffer_m": 2000,
+    "mrt_buffer_candidates_m": [
+      300,
+      500,
+      800
+    ],
+    "raw_receive_date": "學生於本單元提供；實際收到／下載日未提供，首次檢視2026-11-26"
+  }
+}

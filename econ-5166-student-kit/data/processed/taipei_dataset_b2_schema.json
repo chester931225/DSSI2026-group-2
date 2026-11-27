@@ -1,0 +1,1159 @@
+{
+  "unit": "2.5",
+  "created_at": "2026-11-27",
+  "dataset_path": "data/processed/taipei_dataset_b2.csv",
+  "producer": "data/code/prepare_taipei_dataset_b2.ipynb",
+  "helper": "data/code/unit25_zoning_support.py",
+  "documentation": "data/processed/taipei_dataset_b2_documentation.ipynb",
+  "role": "supplementary_external_zoning",
+  "observation_unit": "one fixed research village; one snapshot, no year/specification duplication",
+  "expected_rows": 456,
+  "primary_key": [
+    "village_id"
+  ],
+  "csv": {
+    "encoding": "utf-8-sig",
+    "line_terminator": "LF",
+    "missing_sentinel": "__MISSING__",
+    "keep_default_na": false,
+    "boolean_values": [
+      "True",
+      "False"
+    ],
+    "original_empty_strings": "preserved"
+  },
+  "columns": [
+    {
+      "name": "village_id",
+      "dtype": "string",
+      "definition": "Unit2.2固定里主表之village_id",
+      "unit": "not applicable",
+      "source": "Unit2.2 village base",
+      "missing_rule": "不可缺失，糖廍正常納入"
+    },
+    {
+      "name": "boundary_code",
+      "dtype": "string",
+      "definition": "Unit2.2固定里主表之boundary_code",
+      "unit": "not applicable",
+      "source": "Unit2.2 village base",
+      "missing_rule": "不可缺失，糖廍正常納入"
+    },
+    {
+      "name": "district_name",
+      "dtype": "string",
+      "definition": "Unit2.2固定里主表之district_name",
+      "unit": "not applicable",
+      "source": "Unit2.2 village base",
+      "missing_rule": "不可缺失，糖廍正常納入"
+    },
+    {
+      "name": "standard_village_name",
+      "dtype": "string",
+      "definition": "Unit2.2固定里主表之standard_village_name",
+      "unit": "not applicable",
+      "source": "Unit2.2 village base",
+      "missing_rule": "不可缺失，糖廍正常納入"
+    },
+    {
+      "name": "verification_status",
+      "dtype": "string",
+      "definition": "Unit2.2固定里主表之verification_status",
+      "unit": "not applicable",
+      "source": "Unit2.2 village base",
+      "missing_rule": "不可缺失，糖廍正常納入"
+    },
+    {
+      "name": "geometry_quality_flag",
+      "dtype": "string",
+      "definition": "Unit2.2固定里主表之geometry_quality_flag",
+      "unit": "not applicable",
+      "source": "Unit2.2 village base",
+      "missing_rule": "不可缺失，糖廍正常納入"
+    },
+    {
+      "name": "fixed_village_area_m2",
+      "dtype": "Float64",
+      "definition": "完整原固定里幾何面積，所有比例的共同分母",
+      "unit": "m²",
+      "source": "Unit2.2 village_area_m2",
+      "missing_rule": "正值不可缺失"
+    },
+    {
+      "name": "fixed_village_area_km2",
+      "dtype": "Float64",
+      "definition": "原固定里面積，無修補／填洞／去重疊",
+      "unit": "km²",
+      "source": "Unit2.2 village_area_km2",
+      "missing_rule": "正值不可缺失"
+    },
+    {
+      "name": "crosswalk_version",
+      "dtype": "string",
+      "definition": "指定兩鍵修訂，非法定分區變更",
+      "unit": "not applicable",
+      "source": "Unit1.4–1.6 evidence / Unit2.5 working specification",
+      "missing_rule": "原時間語義限制保留"
+    },
+    {
+      "name": "working_crs",
+      "dtype": "string",
+      "definition": "記憶體工作CRS，不補原PRJ",
+      "unit": "not applicable",
+      "source": "Unit1.4–1.6 evidence / Unit2.5 working specification",
+      "missing_rule": "原時間語義限制保留"
+    },
+    {
+      "name": "crs_evidence_grade",
+      "dtype": "string",
+      "definition": "strongly supported工作假設，非A級官方認證",
+      "unit": "not applicable",
+      "source": "Unit1.4–1.6 evidence / Unit2.5 working specification",
+      "missing_rule": "原時間語義限制保留"
+    },
+    {
+      "name": "snapshot_source_description",
+      "dtype": "string",
+      "definition": "沿Unit1.4官方頁內容時間，非個案生效日",
+      "unit": "not applicable",
+      "source": "Unit1.4–1.6 evidence / Unit2.5 working specification",
+      "missing_rule": "原時間語義限制保留"
+    },
+    {
+      "name": "snapshot_resource_version",
+      "dtype": "string",
+      "definition": "Unit1.4已逐bytes核對官方資源版本，非生效日",
+      "unit": "not applicable",
+      "source": "Unit1.4–1.6 evidence / Unit2.5 working specification",
+      "missing_rule": "原時間語義限制保留"
+    },
+    {
+      "name": "analysis_role",
+      "dtype": "string",
+      "definition": "補充環境，不直接入A或排除其他資料集",
+      "unit": "not applicable",
+      "source": "Unit1.4–1.6 evidence / Unit2.5 working specification",
+      "missing_rule": "原時間語義限制保留"
+    },
+    {
+      "name": "source_dbf_header_date",
+      "dtype": "string",
+      "definition": "DBF標頭記錄日期，與資源／網頁／法定生效日不同",
+      "unit": "not applicable",
+      "source": "raw DBF header bytes",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "legal_snapshot_effective_date",
+      "dtype": "string",
+      "definition": "所有個案分區共同法定生效日尚未取得",
+      "unit": "not applicable",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "未知為NA，不能宣稱事故前環境"
+    },
+    {
+      "name": "year_specific_observation",
+      "dtype": "boolean",
+      "definition": "單一固定快照，無獨立2024／2025分區觀測",
+      "unit": "not applicable",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "candidate_zoning_area_m2",
+      "dtype": "Float64",
+      "definition": "candidate_zoning幾何與原里實際交集面積；來源集合可能相互重疊",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "candidate_zoning_area_km2",
+      "dtype": "Float64",
+      "definition": "candidate_zoning交集面積",
+      "unit": "km²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "candidate_zoning_coverage_share",
+      "dtype": "Float64",
+      "definition": "candidate_zoning交集／完整里面積，非各來源可相加的互斥分類",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "classified_candidate_area_m2",
+      "dtype": "Float64",
+      "definition": "classified_candidate幾何與原里實際交集面積；來源集合可能相互重疊",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "classified_candidate_area_km2",
+      "dtype": "Float64",
+      "definition": "classified_candidate交集面積",
+      "unit": "km²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "classified_candidate_coverage_share",
+      "dtype": "Float64",
+      "definition": "classified_candidate交集／完整里面積，非各來源可相加的互斥分類",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "identified_zoning_area_m2",
+      "dtype": "Float64",
+      "definition": "identified_zoning幾何與原里實際交集面積；來源集合可能相互重疊",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "identified_zoning_area_km2",
+      "dtype": "Float64",
+      "definition": "identified_zoning交集面積",
+      "unit": "km²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "identified_zoning_coverage_share",
+      "dtype": "Float64",
+      "definition": "identified_zoning交集／完整里面積，非各來源可相加的互斥分類",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "uncertain_union_area_m2",
+      "dtype": "Float64",
+      "definition": "uncertain_union幾何與原里實際交集面積；來源集合可能相互重疊",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "uncertain_union_area_km2",
+      "dtype": "Float64",
+      "definition": "uncertain_union交集面積",
+      "unit": "km²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "uncertain_union_share",
+      "dtype": "Float64",
+      "definition": "uncertain_union交集／完整里面積，非各來源可相加的互斥分類",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "unclassified_area_m2",
+      "dtype": "Float64",
+      "definition": "unclassified幾何與原里實際交集面積；來源集合可能相互重疊",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "unclassified_area_km2",
+      "dtype": "Float64",
+      "definition": "unclassified交集面積",
+      "unit": "km²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "unclassified_coverage_share",
+      "dtype": "Float64",
+      "definition": "unclassified交集／完整里面積，非各來源可相加的互斥分類",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "cross_class_overlap_area_m2",
+      "dtype": "Float64",
+      "definition": "cross_class_overlap幾何與原里實際交集面積；來源集合可能相互重疊",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "cross_class_overlap_area_km2",
+      "dtype": "Float64",
+      "definition": "cross_class_overlap交集面積",
+      "unit": "km²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "cross_class_overlap_share",
+      "dtype": "Float64",
+      "definition": "cross_class_overlap交集／完整里面積，非各來源可相加的互斥分類",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "classified_unclassified_overlap_area_m2",
+      "dtype": "Float64",
+      "definition": "classified_unclassified_overlap幾何與原里實際交集面積；來源集合可能相互重疊",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "classified_unclassified_overlap_area_km2",
+      "dtype": "Float64",
+      "definition": "classified_unclassified_overlap交集面積",
+      "unit": "km²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "classified_unclassified_overlap_share",
+      "dtype": "Float64",
+      "definition": "classified_unclassified_overlap交集／完整里面積，非各來源可相加的互斥分類",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "geometry_sensitive_area_m2",
+      "dtype": "Float64",
+      "definition": "geometry_sensitive幾何與原里實際交集面積；來源集合可能相互重疊",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "geometry_sensitive_area_km2",
+      "dtype": "Float64",
+      "definition": "geometry_sensitive交集面積",
+      "unit": "km²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "geometry_sensitive_coverage_share",
+      "dtype": "Float64",
+      "definition": "geometry_sensitive交集／完整里面積，非各來源可相加的互斥分類",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "uncovered_area_m2",
+      "dtype": "Float64",
+      "definition": "uncovered幾何與原里實際交集面積；來源集合可能相互重疊",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "uncovered_area_km2",
+      "dtype": "Float64",
+      "definition": "uncovered交集面積",
+      "unit": "km²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "uncovered_share",
+      "dtype": "Float64",
+      "definition": "uncovered交集／完整里面積，非各來源可相加的互斥分類",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "non_zoning_boundary_area_m2",
+      "dtype": "Float64",
+      "definition": "non_zoning_boundary幾何與原里實際交集面積；來源集合可能相互重疊",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "non_zoning_boundary_area_km2",
+      "dtype": "Float64",
+      "definition": "non_zoning_boundary交集面積",
+      "unit": "km²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "non_zoning_boundary_share",
+      "dtype": "Float64",
+      "definition": "non_zoning_boundary交集／完整里面積，非各來源可相加的互斥分類",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "quality_share_roundoff_flag",
+      "dtype": "boolean",
+      "definition": "品質覆蓋比例因浮點交集略超0–1；不clip數值，超額須在每里0.1m²內",
+      "unit": "not applicable",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "quality_share_roundoff_max_excess_m2",
+      "dtype": "Float64",
+      "definition": "十個品質來源中超過完整里面積之最大正超額，零代表無超額；只作數值稽核",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "agriculture_conservation_identified_area_m2",
+      "dtype": "Float64",
+      "definition": "agriculture_conservation經同類union及方案B扣除不確定範圍後已辨識面積",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "agriculture_conservation_identified_area_km2",
+      "dtype": "Float64",
+      "definition": "agriculture_conservation可靠工作分類面積，不等同實際土地使用",
+      "unit": "km²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "agriculture_conservation_identified_share",
+      "dtype": "Float64",
+      "definition": "agriculture_conservation已辨識面積／完整里面積，不以已辨識總面積為分母",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "commercial_identified_area_m2",
+      "dtype": "Float64",
+      "definition": "commercial經同類union及方案B扣除不確定範圍後已辨識面積",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "commercial_identified_area_km2",
+      "dtype": "Float64",
+      "definition": "commercial可靠工作分類面積，不等同實際土地使用",
+      "unit": "km²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "commercial_observed_share",
+      "dtype": "Float64",
+      "definition": "commercial已辨識面積／完整里面積，不以已辨識總面積為分母",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "educational_identified_area_m2",
+      "dtype": "Float64",
+      "definition": "educational經同類union及方案B扣除不確定範圍後已辨識面積",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "educational_identified_area_km2",
+      "dtype": "Float64",
+      "definition": "educational可靠工作分類面積，不等同實際土地使用",
+      "unit": "km²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "educational_observed_share",
+      "dtype": "Float64",
+      "definition": "educational已辨識面積／完整里面積，不以已辨識總面積為分母",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "industrial_identified_area_m2",
+      "dtype": "Float64",
+      "definition": "industrial經同類union及方案B扣除不確定範圍後已辨識面積",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "industrial_identified_area_km2",
+      "dtype": "Float64",
+      "definition": "industrial可靠工作分類面積，不等同實際土地使用",
+      "unit": "km²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "industrial_observed_share",
+      "dtype": "Float64",
+      "definition": "industrial已辨識面積／完整里面積，不以已辨識總面積為分母",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "mixed_special_use_identified_area_m2",
+      "dtype": "Float64",
+      "definition": "mixed_special_use經同類union及方案B扣除不確定範圍後已辨識面積",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "mixed_special_use_identified_area_km2",
+      "dtype": "Float64",
+      "definition": "mixed_special_use可靠工作分類面積，不等同實際土地使用",
+      "unit": "km²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "mixed_special_use_identified_share",
+      "dtype": "Float64",
+      "definition": "mixed_special_use已辨識面積／完整里面積，不以已辨識總面積為分母",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "other_classified_identified_area_m2",
+      "dtype": "Float64",
+      "definition": "other_classified經同類union及方案B扣除不確定範圍後已辨識面積",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "other_classified_identified_area_km2",
+      "dtype": "Float64",
+      "definition": "other_classified可靠工作分類面積，不等同實際土地使用",
+      "unit": "km²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "other_classified_identified_share",
+      "dtype": "Float64",
+      "definition": "other_classified已辨識面積／完整里面積，不以已辨識總面積為分母",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "other_public_facilities_identified_area_m2",
+      "dtype": "Float64",
+      "definition": "other_public_facilities經同類union及方案B扣除不確定範圍後已辨識面積",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "other_public_facilities_identified_area_km2",
+      "dtype": "Float64",
+      "definition": "other_public_facilities可靠工作分類面積，不等同實際土地使用",
+      "unit": "km²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "other_public_facilities_identified_share",
+      "dtype": "Float64",
+      "definition": "other_public_facilities已辨識面積／完整里面積，不以已辨識總面積為分母",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "park_green_identified_area_m2",
+      "dtype": "Float64",
+      "definition": "park_green經同類union及方案B扣除不確定範圍後已辨識面積",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "park_green_identified_area_km2",
+      "dtype": "Float64",
+      "definition": "park_green可靠工作分類面積，不等同實際土地使用",
+      "unit": "km²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "park_green_observed_share",
+      "dtype": "Float64",
+      "definition": "park_green已辨識面積／完整里面積，不以已辨識總面積為分母",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "residential_identified_area_m2",
+      "dtype": "Float64",
+      "definition": "residential經同類union及方案B扣除不確定範圍後已辨識面積",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "residential_identified_area_km2",
+      "dtype": "Float64",
+      "definition": "residential可靠工作分類面積，不等同實際土地使用",
+      "unit": "km²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "residential_observed_share",
+      "dtype": "Float64",
+      "definition": "residential已辨識面積／完整里面積，不以已辨識總面積為分母",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "transportation_identified_area_m2",
+      "dtype": "Float64",
+      "definition": "transportation經同類union及方案B扣除不確定範圍後已辨識面積",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "transportation_identified_area_km2",
+      "dtype": "Float64",
+      "definition": "transportation可靠工作分類面積，不等同實際土地使用",
+      "unit": "km²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "transportation_identified_share",
+      "dtype": "Float64",
+      "definition": "transportation已辨識面積／完整里面積，不以已辨識總面積為分母",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "water_identified_area_m2",
+      "dtype": "Float64",
+      "definition": "water經同類union及方案B扣除不確定範圍後已辨識面積",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "water_identified_area_km2",
+      "dtype": "Float64",
+      "definition": "water可靠工作分類面積，不等同實際土地使用",
+      "unit": "km²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "water_identified_share",
+      "dtype": "Float64",
+      "definition": "water已辨識面積／完整里面積，不以已辨識總面積為分母",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "core_five_identified_area_m2",
+      "dtype": "Float64",
+      "definition": "五核心已辨識面積，不重新正規化",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "core_five_identified_share",
+      "dtype": "Float64",
+      "definition": "五核心已辨識面積，不重新正規化／完整里面積",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "other_noncore_identified_area_m2",
+      "dtype": "Float64",
+      "definition": "其餘六個已分類類別合計，與other_classified單一類別分開；混合特殊是已知類別，不當未知",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "other_noncore_identified_share",
+      "dtype": "Float64",
+      "definition": "其餘六個已分類類別合計，與other_classified單一類別分開；混合特殊是已知類別，不當未知／完整里面積",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "residential_conditional_lower_bound",
+      "dtype": "Float64",
+      "definition": "條件式L等於已辨識覆蓋；假定既有工作分類及包絡足夠，不是信賴區間",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "residential_conditional_upper_bound",
+      "dtype": "Float64",
+      "definition": "條件式U=min(1,L+不確定聯集比例)，非官方真值認證且各類上界不能同時實現",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "residential_conditional_bound_width",
+      "dtype": "Float64",
+      "definition": "U−L；不以中點補成最佳估計",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "residential_observed_zero_flag",
+      "dtype": "boolean",
+      "definition": "已辨識面積為0，不等於已證實該分區不存在",
+      "unit": "not applicable",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "residential_interpretation_state",
+      "dtype": "string",
+      "definition": "區分已觀測零／部分覆蓋／處理失敗，不宣稱實際分區確定零",
+      "unit": "not applicable",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "commercial_conditional_lower_bound",
+      "dtype": "Float64",
+      "definition": "條件式L等於已辨識覆蓋；假定既有工作分類及包絡足夠，不是信賴區間",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "commercial_conditional_upper_bound",
+      "dtype": "Float64",
+      "definition": "條件式U=min(1,L+不確定聯集比例)，非官方真值認證且各類上界不能同時實現",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "commercial_conditional_bound_width",
+      "dtype": "Float64",
+      "definition": "U−L；不以中點補成最佳估計",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "commercial_observed_zero_flag",
+      "dtype": "boolean",
+      "definition": "已辨識面積為0，不等於已證實該分區不存在",
+      "unit": "not applicable",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "commercial_interpretation_state",
+      "dtype": "string",
+      "definition": "區分已觀測零／部分覆蓋／處理失敗，不宣稱實際分區確定零",
+      "unit": "not applicable",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "industrial_conditional_lower_bound",
+      "dtype": "Float64",
+      "definition": "條件式L等於已辨識覆蓋；假定既有工作分類及包絡足夠，不是信賴區間",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "industrial_conditional_upper_bound",
+      "dtype": "Float64",
+      "definition": "條件式U=min(1,L+不確定聯集比例)，非官方真值認證且各類上界不能同時實現",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "industrial_conditional_bound_width",
+      "dtype": "Float64",
+      "definition": "U−L；不以中點補成最佳估計",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "industrial_observed_zero_flag",
+      "dtype": "boolean",
+      "definition": "已辨識面積為0，不等於已證實該分區不存在",
+      "unit": "not applicable",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "industrial_interpretation_state",
+      "dtype": "string",
+      "definition": "區分已觀測零／部分覆蓋／處理失敗，不宣稱實際分區確定零",
+      "unit": "not applicable",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "educational_conditional_lower_bound",
+      "dtype": "Float64",
+      "definition": "條件式L等於已辨識覆蓋；假定既有工作分類及包絡足夠，不是信賴區間",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "educational_conditional_upper_bound",
+      "dtype": "Float64",
+      "definition": "條件式U=min(1,L+不確定聯集比例)，非官方真值認證且各類上界不能同時實現",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "educational_conditional_bound_width",
+      "dtype": "Float64",
+      "definition": "U−L；不以中點補成最佳估計",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "educational_observed_zero_flag",
+      "dtype": "boolean",
+      "definition": "已辨識面積為0，不等於已證實該分區不存在",
+      "unit": "not applicable",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "educational_interpretation_state",
+      "dtype": "string",
+      "definition": "區分已觀測零／部分覆蓋／處理失敗，不宣稱實際分區確定零",
+      "unit": "not applicable",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "park_green_conditional_lower_bound",
+      "dtype": "Float64",
+      "definition": "條件式L等於已辨識覆蓋；假定既有工作分類及包絡足夠，不是信賴區間",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "park_green_conditional_upper_bound",
+      "dtype": "Float64",
+      "definition": "條件式U=min(1,L+不確定聯集比例)，非官方真值認證且各類上界不能同時實現",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "park_green_conditional_bound_width",
+      "dtype": "Float64",
+      "definition": "U−L；不以中點補成最佳估計",
+      "unit": "fraction",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "park_green_observed_zero_flag",
+      "dtype": "boolean",
+      "definition": "已辨識面積為0，不等於已證實該分區不存在",
+      "unit": "not applicable",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "park_green_interpretation_state",
+      "dtype": "string",
+      "definition": "區分已觀測零／部分覆蓋／處理失敗，不宣稱實際分區確定零",
+      "unit": "not applicable",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "area_partition_residual_m2",
+      "dtype": "Float64",
+      "definition": "I＋Q−A，只供浮點稽核；不clip數值掩蓋差異",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "classified_sum_residual_m2",
+      "dtype": "Float64",
+      "definition": "各類已辨識面積和−已辨識聯集I",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "candidate_uncovered_residual_m2",
+      "dtype": "Float64",
+      "definition": "候選覆蓋＋未覆蓋−完整里面積",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "identified_uncertain_overlap_m2",
+      "dtype": "Float64",
+      "definition": "I與Q實際交集之面積部分；線／點不算面積，只容許已明示浮點誤差",
+      "unit": "m²",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "coverage_ge_50",
+      "dtype": "boolean",
+      "definition": "可靠辨識覆蓋≥50%候選旗標，不是正式排除政策",
+      "unit": "not applicable",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "coverage_ge_70",
+      "dtype": "boolean",
+      "definition": "可靠辨識覆蓋≥70%候選旗標，不是正式排除政策",
+      "unit": "not applicable",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "coverage_ge_80",
+      "dtype": "boolean",
+      "definition": "可靠辨識覆蓋≥80%候選旗標，不是正式排除政策",
+      "unit": "not applicable",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "coverage_ge_90",
+      "dtype": "boolean",
+      "definition": "可靠辨識覆蓋≥90%候選旗標，不是正式排除政策",
+      "unit": "not applicable",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "coverage_ge_95",
+      "dtype": "boolean",
+      "definition": "可靠辨識覆蓋≥95%候選旗標，不是正式排除政策",
+      "unit": "not applicable",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "coverage_ge_99",
+      "dtype": "boolean",
+      "definition": "可靠辨識覆蓋≥99%候選旗標，不是正式排除政策",
+      "unit": "not applicable",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "invalid_source_reference_intersection_count",
+      "dtype": "Int64",
+      "definition": "原無效143筆linework面參考與里正面積相交數；不是官方認證修復",
+      "unit": "source feature count",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "adopted_repair_intersection_count",
+      "dtype": "Int64",
+      "definition": "105算法一致linework候選與里正面積相交數；不是官方認證修復",
+      "unit": "source feature count",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "method_sensitive_intersection_count",
+      "dtype": "Int64",
+      "definition": "38方法敏感的三候選面聯集與里正面積相交數；不是官方認證修復",
+      "unit": "source feature count",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "overlay_failed_flag",
+      "dtype": "boolean",
+      "definition": "幾何交集實際失敗，保留ID與NA；不將失敗當0",
+      "unit": "not applicable",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "processing_status",
+      "dtype": "string",
+      "definition": "成功呈現可靠資訊與不確定性，不代表完整分區已知",
+      "unit": "not applicable",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    },
+    {
+      "name": "processing_failure_reason",
+      "dtype": "string",
+      "definition": "交集失敗訊息JSON；[]表示本輪未失敗",
+      "unit": "not applicable",
+      "source": "Unit2.5 Scheme B derived geometry",
+      "missing_rule": "處理失敗保留NA，不補零"
+    }
+  ],
+  "source_inputs": {
+    "data/raw/細計-面.shp": "67d2ecc469383459e43f2609cf384a4129e09b27c590cbbb82dfa750eba758ee",
+    "data/raw/細計-面.shx": "277e5f623c5c81865aa7288fac979a279b340899a4b3bc4335638f797fc5fd69",
+    "data/raw/細計-面.dbf": "29b0484feef66c6c8417821ada8a28ed1edc0efcdffb492476fe7ada8739e1d4",
+    "data/raw/細計-文.shp": "fa1767fc78c69b7683ec53e0fab8937bac6c33868bedee3c3dcc2ed38dcab731",
+    "data/raw/細計-文.shx": "32d642964d494f49d08830f9c12857f9f4995b56eebf09ef2be994034b864760",
+    "data/raw/細計-文.dbf": "eba92881fc11e574f24024380c946d73cf213e86040663c4070d15b1d552a7be",
+    "data/raw/G97_A_CAVLGE_P.shp": "f7fb4813a2283198ca564f5686823c454c5fd832d2f6981a2ee88a94719be3cc",
+    "data/raw/G97_A_CAVLGE_P.shx": "ab7bc5e63229f676d3580b68e98db59b91a2d327c74ca23b0000ca1c568d414e",
+    "data/raw/G97_A_CAVLGE_P.dbf": "2f43f92e84279a45b2512cf453e9b72f706d1ad1402665c946b1a354f75d8577",
+    "data/raw/G97_A_CAVLGE_P.prj": "8dac7d82ea889063f9eaa7df408fcaeb7307d32831ea973b6534d0139a4523c5",
+    "data/raw/G97_A_CAVLGE_P.cpg": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824",
+    "data/processed/taipei_village_base.csv": "db0a225df3568ddb2a47eab1e1d28843e1594dec37956c57eea926e444968209",
+    "data/processed/taipei_village_base_schema.json": "a7e5e3b4d77ab506736ecc940e26a87df6cace3a738cbdaeef1e835e6bed7070",
+    "data/processed/taipei_village_base_documentation.ipynb": "a843d587788b4ea6a943cc05d9413908cf8b66b2f73f9fdbec01e2ab52edd535",
+    "data/processed/urban_zoning_crosswalk.csv": "4326d92d1567167ca67c13dc1c083426bf6d4d789b88ed5da1feec422306383f",
+    "data/processed/urban_zoning_crosswalk_documentation.ipynb": "b931add933d943890b9ec8fbed463836d28838632cec3a5f0636ff0f6b9fa36d",
+    "data/raw/taipei_urban_planning_raw_documentation.ipynb": "bb3dd6bca248ce866b30766762d100cd926e7cbed30f0165381f531709b8aa8f",
+    "data/raw/unit14_urban_planning_evidence.zip": "695e15f7230c076b2b827f72b4337273ff795f6fc7e9c52680641c972dd72730",
+    "data/raw/unit14_urban_planning_evidence_documentation.ipynb": "ec2e9b002441d10b26b426f6d43cf6c5dd9c598ca058cda81a2f9f058e02dc55",
+    "data/raw/unit15_zoning_classification_evidence.zip": "82effe1535fc7577d73accf81ee0663daa78944a11517b9e50c7bc2e197ba9b9",
+    "data/raw/unit15_zoning_classification_evidence_documentation.ipynb": "15f164fd91f2b6459c56e789001bc928e8dd96f01e14e2ff4c311e758ce14c35",
+    "data/code/taipei_urban_planning_crs_validation.ipynb": "cf9cd6a6d46a943fab2f148db114d1ad49a605a664a2ee6109761df8e588b839",
+    "data/code/taipei_urban_planning_geometry_validation.ipynb": "b5c8b2358dc9774c744639c94d85961e44ec8230f223d63387cd6846605e04b7",
+    "data/code/taipei_data_integration_readiness.ipynb": "6048ff52d7653c9ec9d4b32cf2b78da2fb1b22dc0db0164cc48c4d2d98dd338b",
+    "data/code/unit25_zoning_support.py": "a5d1a8bbc8b0473921340b01af09506902123030502a61035def77c83af7b2a4"
+  },
+  "handoff_only_inputs": {
+    "data/processed/taipei_dataset_a_annual.csv": "4e264176c970263777eb4c564f427e1f839a45b31552a37bc4bdbfbed6b09422",
+    "data/processed/taipei_dataset_a_annual_schema.json": "4d0c5b7b307b1cca4261a9595cd1ca894f549d88e06bed1b0b071dcf7c40fb21",
+    "data/processed/taipei_dataset_a_pooled.csv": "081c7dd42c94e16a5684f27edaebd310a9c556bae7460783dd87fde8d26ea46a",
+    "data/processed/taipei_dataset_a_pooled_schema.json": "7878146fac39d4bfabee965b6001d0cf5e101ca1d76778599fec4b480ad59b5a",
+    "data/processed/taipei_dataset_b1_annual.csv": "d4ad76e82ad6f00d5b146c00c0e065d2095cd9fd36fe6bbbad5feb40705ae795",
+    "data/processed/taipei_dataset_b1_annual_schema.json": "89bb5ace9a7abf9bcedcc1ff0d6b2f91d45578f7c6cfe20a685bd6802d8fa7ca",
+    "data/processed/taipei_dataset_b1_pooled.csv": "3b02fb7b338b59f2552972ccb98efa0d723e525826b301cdda021efa9ddd4e50",
+    "data/processed/taipei_dataset_b1_pooled_schema.json": "63f46e1ae0cba9c19549ee5f8b9ad39084a22f5d2d738b62567b1b3f5e86f340",
+    "data/processed/taipei_dataset_c_annual.csv": "9ab1970ed0f790ebdf31e1726094493305da00ac4efaf84b8a554f7debfa560e",
+    "data/processed/taipei_dataset_c_annual_schema.json": "4a8151a9a5dcd716cc03312b303c4455cb47210192c43b86cf3a0e06d268cb6f",
+    "data/processed/taipei_dataset_c_pooled.csv": "caceea61ff906b3e2f0b4796a31af3373a929307a0c7f7094fb9373794f76bc6",
+    "data/processed/taipei_dataset_c_pooled_schema.json": "44baac19975650d792e23e81c5463b84e00f299c9c606ef0f95abf8b3756d3ab"
+  },
+  "classification_version": "v2_unit25",
+  "classification_targets": [
+    {
+      "compound_key": [
+        "25",
+        "IF",
+        "產業服務區",
+        "",
+        "產服"
+      ],
+      "old_category": "industrial",
+      "new_category": "mixed_special_use",
+      "records": 2,
+      "reference_union_m2": 39016.52886652798
+    },
+    {
+      "compound_key": [
+        "11",
+        "B",
+        "商業區",
+        "(供第二代展會中心使用)",
+        "商"
+      ],
+      "old_category": "commercial",
+      "new_category": "mixed_special_use",
+      "records": 1,
+      "reference_union_m2": 33594.4803410606
+    }
+  ],
+  "classification_evidence": "original verification_status retained; two keys / three features revised under research instruction, not legal zoning change",
+  "working_crs": {
+    "raw_urban_crs": null,
+    "memory_working": "EPSG:3826",
+    "grade": "B",
+    "fixed_village_source": "EPSG:3826",
+    "raw_PRJ_written": false
+  },
+  "geometry_policy": {
+    "original_valid_unchanged": true,
+    "invalid": 143,
+    "adopted_linework_algorithmic_candidates": 105,
+    "withheld_method_sensitive": 38,
+    "repair_agreement_symdiff_m2": 1e-06,
+    "sensitive_geometry": "union of polygon parts of linework / structure / buffer0 candidates, not bbox; buffer0 only for comparison",
+    "nonpolygon_parts": "recorded separately; never counted as area",
+    "overlap": "strict positive area >0; zero-area contacts separately recorded",
+    "area_partition_tolerance_m2": 0.1,
+    "city_partition_aggregate_tolerance_m2": 0.1,
+    "derived_city_overlap_tolerance_m2": 0.01,
+    "overlay_precision_grid_m": 0.0001,
+    "overlay_precision_scope": "consistent precision for derived zoning union/intersection/difference only; no set_precision or coordinate change on raw source or fixed villages; final village intersections use original geometry",
+    "derived_overlay_roundoff": "source positive overlaps all included; derived class-pair overlap must satisfy 0.01m², per-village and city area identities 0.1m²; legacy Unit1.6 double-precision reconstruction is diagnostic only",
+    "no_ratio_clipping": "no clip to hide geometry error; min(1,L+Q/A) is only the defined conditional upper bound"
+  },
+  "fraction_roundoff": "core observed and all conditional bounds are strictly [0,1]; ten quality-source shares may exceed [0,1] only within 0.1m² / original village area, with explicit roundoff flag and maximum excess in m²; raw ratios retained without clipping",
+  "scheme_B": "same-class union; remove cross-class positive overlap, classified-unclassified overlap and sensitive union from all reliable classes; no category priority",
+  "uncertainty": "geometric union of cross-class overlap, unknown coverage, classified-unknown overlap, sensitive union and uncovered; source sets may overlap, never directly sum them",
+  "conditional_bounds": "L=identified class/full original village area; U=min(1,L+uncertain union/full village area); width=U-L; assumptions conditional, not confidence intervals or certified legal truth",
+  "zero_NA_policy": "observed 0 is not confirmed absence; processing failure => retained village ID + NA and failure reason",
+  "limitations": [
+    "B2 supplementary external environment only, not Dataset A clustering input; no coverage-based deletion of other datasets",
+    "urban planning CRS EPSG:3826 is grade-B working convention only; raw has no PRJ and is not grade-A certified",
+    "fixed planning snapshot; 2025-01 description, 2026-04-09 resource and DBF dates are different metadata, not legal effective dates",
+    "not two independent annual zoning observations, not guaranteed pre-accident exposure, no causal or leakage-free prediction claim",
+    "observed identified zoning shares, not complete zoning or actual land use; five core shares are not renormalized",
+    "conditional bounds assume identified classifications and method-sensitive spatial envelope are adequate; not confidence intervals or certified legal/land-use truth",
+    "upper bounds cannot all be jointly attained; midpoint is not a best estimate; no full-share imputation",
+    "38 sensitive features use union of linework/structure/buffer0 polygon candidates as uncertainty, not a guaranteed true-error boundary",
+    "105 algorithmically consistent linework repairs are research working geometries, not official or human certification",
+    "fixed village overlap and holes preserved; village sums differ from city union; original AREA is not denominator",
+    "Yangmingshan park feature remains unclassified; no classification from landscape, location or similar names",
+    "observed zero is not confirmed absence; failed overlay retains village and NA, not zero",
+    "no final coverage exclusion threshold, feature transformation, model fitting or inference",
+    "Codex assisted execution; DE handoff / DA acceptance / PM review pending"
+  ]
+}

@@ -1,0 +1,734 @@
+{
+  "unit": "2.3",
+  "created_at": "2026-11-26",
+  "dataset_path": "data/processed/taipei_dataset_c_annual.csv",
+  "producer": "data/code/prepare_taipei_dataset_a_and_c.ipynb",
+  "helper": "data/code/unit23_feature_support.py",
+  "documentation": "data/processed/taipei_dataset_c_annual_documentation.ipynb",
+  "role": "external_accident_burden",
+  "observation_unit": "specification × fixed research village × year",
+  "expected_rows": 3648,
+  "primary_key": [
+    "specification",
+    "village_id",
+    "year"
+  ],
+  "csv": {
+    "encoding": "utf-8-sig",
+    "line_terminator": "LF",
+    "missing_sentinel": "__MISSING__",
+    "keep_default_na": false,
+    "boolean_values": [
+      "True",
+      "False"
+    ],
+    "original_empty_strings": "preserved"
+  },
+  "columns": [
+    {
+      "name": "specification",
+      "dtype": "string",
+      "definition": "S0主分析；S1必要保守程度敏感度；S2歷史界；S3共同敏感度",
+      "unit": "not applicable",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "village_id",
+      "dtype": "string",
+      "definition": "固定CPTVID共同10碼研究ID",
+      "unit": "identifier",
+      "source": "Unit2.2 village_id",
+      "missing_rule": "不可缺失，不轉數值"
+    },
+    {
+      "name": "year",
+      "dtype": "Int64",
+      "definition": "事故年度",
+      "unit": "year",
+      "source": "Unit2.1 source_year",
+      "missing_rule": "不可缺失"
+    },
+    {
+      "name": "period_start_year",
+      "dtype": "Int64",
+      "definition": "本列觀測期間起年",
+      "unit": "year",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "period_end_year",
+      "dtype": "Int64",
+      "definition": "本列觀測期間迄年",
+      "unit": "year",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "period_years",
+      "dtype": "Int64",
+      "definition": "觀測期間年數",
+      "unit": "year",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "period",
+      "dtype": "string",
+      "definition": "年度或兩年合併期間標示",
+      "unit": "not applicable",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "district_name",
+      "dtype": "string",
+      "definition": "固定研究行政區",
+      "unit": "not applicable",
+      "source": "Unit2.2 village base",
+      "missing_rule": "不可缺失"
+    },
+    {
+      "name": "standard_village_name",
+      "dtype": "string",
+      "definition": "標準里名，糖廍里已接受",
+      "unit": "not applicable",
+      "source": "Unit2.2 village base",
+      "missing_rule": "不可缺失"
+    },
+    {
+      "name": "boundary_version",
+      "dtype": "string",
+      "definition": "空間配對採固定或對應年歷史界",
+      "unit": "not applicable",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "assignment_rule",
+      "dtype": "string",
+      "definition": "沿用Unit2.2，不重新歸里",
+      "unit": "not applicable",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "observed_accident_count",
+      "dtype": "Int64",
+      "definition": "成功歸里之觀測事故數，非完整真實事故總數",
+      "unit": "accident",
+      "source": "Unit2.2 eligible and village_id",
+      "missing_rule": "無觀測配對事故為0"
+    },
+    {
+      "name": "has_observed_accident",
+      "dtype": "boolean",
+      "definition": "是否至少一筆觀測配對事故",
+      "unit": "not applicable",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "count_lt_5",
+      "dtype": "boolean",
+      "definition": "觀測事故數<5候選品質旗標；不排除任何里",
+      "unit": "not applicable",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "count_lt_10",
+      "dtype": "boolean",
+      "definition": "觀測事故數<10候選品質旗標；不排除任何里",
+      "unit": "not applicable",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "count_lt_20",
+      "dtype": "boolean",
+      "definition": "觀測事故數<20候選品質旗標；不排除任何里",
+      "unit": "not applicable",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "count_lt_30",
+      "dtype": "boolean",
+      "definition": "觀測事故數<30候選品質旗標；不排除任何里",
+      "unit": "not applicable",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "count_lt_50",
+      "dtype": "boolean",
+      "definition": "觀測事故數<50候選品質旗標；不排除任何里",
+      "unit": "not applicable",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "r20_true_count",
+      "dtype": "Int64",
+      "definition": "明確R20=True數",
+      "unit": "accident",
+      "source": "Unit2.1 conditional_casualty_inconsistency_flag",
+      "missing_rule": "三態分開計數"
+    },
+    {
+      "name": "r20_false_count",
+      "dtype": "Int64",
+      "definition": "明確R20=False數，未知不混入",
+      "unit": "accident",
+      "source": "Unit2.1 conditional_casualty_inconsistency_flag",
+      "missing_rule": "三態分開計數"
+    },
+    {
+      "name": "r20_unknown_count",
+      "dtype": "Int64",
+      "definition": "R20=NA數",
+      "unit": "accident",
+      "source": "Unit2.1 conditional_casualty_inconsistency_flag",
+      "missing_rule": "三態分開計數"
+    },
+    {
+      "name": "r20_excluded_accident_count",
+      "dtype": "Int64",
+      "definition": "敏感度僅排除明確True數，不改主事故數",
+      "unit": "accident",
+      "source": "Unit2.1 conditional_casualty_inconsistency_flag",
+      "missing_rule": "三態分開計數"
+    },
+    {
+      "name": "r20_retained_accident_count",
+      "dtype": "Int64",
+      "definition": "敏感度保留False及未知之事故數",
+      "unit": "accident",
+      "source": "Unit2.1 conditional_casualty_inconsistency_flag",
+      "missing_rule": "三態分開計數"
+    },
+    {
+      "name": "injuries_observed_sum",
+      "dtype": "Int64",
+      "definition": "主要原有效值口徑；受傷人數；已知有效值加總，部分缺失非完整總數",
+      "unit": "person",
+      "source": "Unit2.1 injured_count",
+      "missing_rule": "無觀測事故=0（空集合）；有事故但全缺失=NA"
+    },
+    {
+      "name": "injuries_valid_accident_count",
+      "dtype": "Int64",
+      "definition": "主要原有效值口徑；受傷人數；獨立有效事故數",
+      "unit": "accident",
+      "source": "Unit2.1 injured_count / injured_count_structural_valid",
+      "missing_rule": "0為計數，不補原傷亡值"
+    },
+    {
+      "name": "injuries_missing_accident_count",
+      "dtype": "Int64",
+      "definition": "主要原有效值口徑；受傷人數；獨立缺失事故數",
+      "unit": "accident",
+      "source": "Unit2.1 injured_count / injured_count_structural_valid",
+      "missing_rule": "0為計數，不補原傷亡值"
+    },
+    {
+      "name": "injuries_positive_accident_count",
+      "dtype": "Int64",
+      "definition": "主要原有效值口徑；受傷人數；有效且人數>0事故數",
+      "unit": "accident",
+      "source": "Unit2.1 injured_count / injured_count_structural_valid",
+      "missing_rule": "0為計數，不補原傷亡值"
+    },
+    {
+      "name": "injuries_coverage",
+      "dtype": "Float64",
+      "definition": "主要原有效值口徑；受傷人數；有效事故數／本口徑保留事故數",
+      "unit": "fraction",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "本口徑保留事故數0則NA"
+    },
+    {
+      "name": "injuries_all_missing_flag",
+      "dtype": "boolean",
+      "definition": "主要原有效值口徑；受傷人數；有觀測事故但本欄全缺失",
+      "unit": "not applicable",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "injuries_partial_missing_flag",
+      "dtype": "boolean",
+      "definition": "主要原有效值口徑；受傷人數；本欄部分缺失，總量僅已知部分",
+      "unit": "not applicable",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "fatalities_source_observed_sum",
+      "dtype": "Int64",
+      "definition": "主要原有效值口徑；原死亡欄人數，時間窗未認證，不稱24h；已知有效值加總，部分缺失非完整總數",
+      "unit": "person",
+      "source": "Unit2.1 fatalities_source_count",
+      "missing_rule": "無觀測事故=0（空集合）；有事故但全缺失=NA"
+    },
+    {
+      "name": "fatalities_source_valid_accident_count",
+      "dtype": "Int64",
+      "definition": "主要原有效值口徑；原死亡欄人數，時間窗未認證，不稱24h；獨立有效事故數",
+      "unit": "accident",
+      "source": "Unit2.1 fatalities_source_count / fatalities_source_count_structural_valid",
+      "missing_rule": "0為計數，不補原傷亡值"
+    },
+    {
+      "name": "fatalities_source_missing_accident_count",
+      "dtype": "Int64",
+      "definition": "主要原有效值口徑；原死亡欄人數，時間窗未認證，不稱24h；獨立缺失事故數",
+      "unit": "accident",
+      "source": "Unit2.1 fatalities_source_count / fatalities_source_count_structural_valid",
+      "missing_rule": "0為計數，不補原傷亡值"
+    },
+    {
+      "name": "fatalities_source_positive_accident_count",
+      "dtype": "Int64",
+      "definition": "主要原有效值口徑；原死亡欄人數，時間窗未認證，不稱24h；有效且人數>0事故數",
+      "unit": "accident",
+      "source": "Unit2.1 fatalities_source_count / fatalities_source_count_structural_valid",
+      "missing_rule": "0為計數，不補原傷亡值"
+    },
+    {
+      "name": "fatalities_source_coverage",
+      "dtype": "Float64",
+      "definition": "主要原有效值口徑；原死亡欄人數，時間窗未認證，不稱24h；有效事故數／本口徑保留事故數",
+      "unit": "fraction",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "本口徑保留事故數0則NA"
+    },
+    {
+      "name": "fatalities_source_all_missing_flag",
+      "dtype": "boolean",
+      "definition": "主要原有效值口徑；原死亡欄人數，時間窗未認證，不稱24h；有觀測事故但本欄全缺失",
+      "unit": "not applicable",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "fatalities_source_partial_missing_flag",
+      "dtype": "boolean",
+      "definition": "主要原有效值口徑；原死亡欄人數，時間窗未認證，不稱24h；本欄部分缺失，總量僅已知部分",
+      "unit": "not applicable",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "fatalities_2_30d_observed_sum",
+      "dtype": "Int64",
+      "definition": "主要原有效值口徑；2–30日死亡欄，獨立保存、不與原死亡相加；已知有效值加總，部分缺失非完整總數",
+      "unit": "person",
+      "source": "Unit2.1 fatalities_2_30d_count",
+      "missing_rule": "無觀測事故=0（空集合）；有事故但全缺失=NA"
+    },
+    {
+      "name": "fatalities_2_30d_valid_accident_count",
+      "dtype": "Int64",
+      "definition": "主要原有效值口徑；2–30日死亡欄，獨立保存、不與原死亡相加；獨立有效事故數",
+      "unit": "accident",
+      "source": "Unit2.1 fatalities_2_30d_count / fatalities_2_30d_count_structural_valid",
+      "missing_rule": "0為計數，不補原傷亡值"
+    },
+    {
+      "name": "fatalities_2_30d_missing_accident_count",
+      "dtype": "Int64",
+      "definition": "主要原有效值口徑；2–30日死亡欄，獨立保存、不與原死亡相加；獨立缺失事故數",
+      "unit": "accident",
+      "source": "Unit2.1 fatalities_2_30d_count / fatalities_2_30d_count_structural_valid",
+      "missing_rule": "0為計數，不補原傷亡值"
+    },
+    {
+      "name": "fatalities_2_30d_positive_accident_count",
+      "dtype": "Int64",
+      "definition": "主要原有效值口徑；2–30日死亡欄，獨立保存、不與原死亡相加；有效且人數>0事故數",
+      "unit": "accident",
+      "source": "Unit2.1 fatalities_2_30d_count / fatalities_2_30d_count_structural_valid",
+      "missing_rule": "0為計數，不補原傷亡值"
+    },
+    {
+      "name": "fatalities_2_30d_coverage",
+      "dtype": "Float64",
+      "definition": "主要原有效值口徑；2–30日死亡欄，獨立保存、不與原死亡相加；有效事故數／本口徑保留事故數",
+      "unit": "fraction",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "本口徑保留事故數0則NA"
+    },
+    {
+      "name": "fatalities_2_30d_all_missing_flag",
+      "dtype": "boolean",
+      "definition": "主要原有效值口徑；2–30日死亡欄，獨立保存、不與原死亡相加；有觀測事故但本欄全缺失",
+      "unit": "not applicable",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "fatalities_2_30d_partial_missing_flag",
+      "dtype": "boolean",
+      "definition": "主要原有效值口徑；2–30日死亡欄，獨立保存、不與原死亡相加；本欄部分缺失，總量僅已知部分",
+      "unit": "not applicable",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "mean_injuries_per_accident",
+      "dtype": "Float64",
+      "definition": "有效受傷人數和／受傷欄有效事故數",
+      "unit": "person / valid accident",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "受傷欄有效分母0則NA"
+    },
+    {
+      "name": "source_positive_fatality_ratio",
+      "dtype": "Float64",
+      "definition": "原死亡欄有效且>0事故數／原死亡欄有效事故數，非已認證死亡事故率",
+      "unit": "fraction",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "原死亡欄有效分母0則NA"
+    },
+    {
+      "name": "r20_excluded_injuries_observed_sum",
+      "dtype": "Int64",
+      "definition": "排除明確R20=True後；受傷人數；已知有效值加總，部分缺失非完整總數",
+      "unit": "person",
+      "source": "Unit2.1 injured_count",
+      "missing_rule": "無觀測事故=0（空集合）；有事故但全缺失=NA"
+    },
+    {
+      "name": "r20_excluded_injuries_valid_accident_count",
+      "dtype": "Int64",
+      "definition": "排除明確R20=True後；受傷人數；獨立有效事故數",
+      "unit": "accident",
+      "source": "Unit2.1 injured_count / injured_count_structural_valid",
+      "missing_rule": "0為計數，不補原傷亡值"
+    },
+    {
+      "name": "r20_excluded_injuries_missing_accident_count",
+      "dtype": "Int64",
+      "definition": "排除明確R20=True後；受傷人數；獨立缺失事故數",
+      "unit": "accident",
+      "source": "Unit2.1 injured_count / injured_count_structural_valid",
+      "missing_rule": "0為計數，不補原傷亡值"
+    },
+    {
+      "name": "r20_excluded_injuries_positive_accident_count",
+      "dtype": "Int64",
+      "definition": "排除明確R20=True後；受傷人數；有效且人數>0事故數",
+      "unit": "accident",
+      "source": "Unit2.1 injured_count / injured_count_structural_valid",
+      "missing_rule": "0為計數，不補原傷亡值"
+    },
+    {
+      "name": "r20_excluded_injuries_coverage",
+      "dtype": "Float64",
+      "definition": "排除明確R20=True後；受傷人數；有效事故數／本口徑保留事故數",
+      "unit": "fraction",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "本口徑保留事故數0則NA"
+    },
+    {
+      "name": "r20_excluded_injuries_all_missing_flag",
+      "dtype": "boolean",
+      "definition": "排除明確R20=True後；受傷人數；有觀測事故但本欄全缺失",
+      "unit": "not applicable",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "r20_excluded_injuries_partial_missing_flag",
+      "dtype": "boolean",
+      "definition": "排除明確R20=True後；受傷人數；本欄部分缺失，總量僅已知部分",
+      "unit": "not applicable",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "r20_excluded_fatalities_source_observed_sum",
+      "dtype": "Int64",
+      "definition": "排除明確R20=True後；原死亡欄人數，時間窗未認證，不稱24h；已知有效值加總，部分缺失非完整總數",
+      "unit": "person",
+      "source": "Unit2.1 fatalities_source_count",
+      "missing_rule": "無觀測事故=0（空集合）；有事故但全缺失=NA"
+    },
+    {
+      "name": "r20_excluded_fatalities_source_valid_accident_count",
+      "dtype": "Int64",
+      "definition": "排除明確R20=True後；原死亡欄人數，時間窗未認證，不稱24h；獨立有效事故數",
+      "unit": "accident",
+      "source": "Unit2.1 fatalities_source_count / fatalities_source_count_structural_valid",
+      "missing_rule": "0為計數，不補原傷亡值"
+    },
+    {
+      "name": "r20_excluded_fatalities_source_missing_accident_count",
+      "dtype": "Int64",
+      "definition": "排除明確R20=True後；原死亡欄人數，時間窗未認證，不稱24h；獨立缺失事故數",
+      "unit": "accident",
+      "source": "Unit2.1 fatalities_source_count / fatalities_source_count_structural_valid",
+      "missing_rule": "0為計數，不補原傷亡值"
+    },
+    {
+      "name": "r20_excluded_fatalities_source_positive_accident_count",
+      "dtype": "Int64",
+      "definition": "排除明確R20=True後；原死亡欄人數，時間窗未認證，不稱24h；有效且人數>0事故數",
+      "unit": "accident",
+      "source": "Unit2.1 fatalities_source_count / fatalities_source_count_structural_valid",
+      "missing_rule": "0為計數，不補原傷亡值"
+    },
+    {
+      "name": "r20_excluded_fatalities_source_coverage",
+      "dtype": "Float64",
+      "definition": "排除明確R20=True後；原死亡欄人數，時間窗未認證，不稱24h；有效事故數／本口徑保留事故數",
+      "unit": "fraction",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "本口徑保留事故數0則NA"
+    },
+    {
+      "name": "r20_excluded_fatalities_source_all_missing_flag",
+      "dtype": "boolean",
+      "definition": "排除明確R20=True後；原死亡欄人數，時間窗未認證，不稱24h；有觀測事故但本欄全缺失",
+      "unit": "not applicable",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "r20_excluded_fatalities_source_partial_missing_flag",
+      "dtype": "boolean",
+      "definition": "排除明確R20=True後；原死亡欄人數，時間窗未認證，不稱24h；本欄部分缺失，總量僅已知部分",
+      "unit": "not applicable",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "r20_excluded_fatalities_2_30d_observed_sum",
+      "dtype": "Int64",
+      "definition": "排除明確R20=True後；2–30日死亡欄，獨立保存、不與原死亡相加；已知有效值加總，部分缺失非完整總數",
+      "unit": "person",
+      "source": "Unit2.1 fatalities_2_30d_count",
+      "missing_rule": "無觀測事故=0（空集合）；有事故但全缺失=NA"
+    },
+    {
+      "name": "r20_excluded_fatalities_2_30d_valid_accident_count",
+      "dtype": "Int64",
+      "definition": "排除明確R20=True後；2–30日死亡欄，獨立保存、不與原死亡相加；獨立有效事故數",
+      "unit": "accident",
+      "source": "Unit2.1 fatalities_2_30d_count / fatalities_2_30d_count_structural_valid",
+      "missing_rule": "0為計數，不補原傷亡值"
+    },
+    {
+      "name": "r20_excluded_fatalities_2_30d_missing_accident_count",
+      "dtype": "Int64",
+      "definition": "排除明確R20=True後；2–30日死亡欄，獨立保存、不與原死亡相加；獨立缺失事故數",
+      "unit": "accident",
+      "source": "Unit2.1 fatalities_2_30d_count / fatalities_2_30d_count_structural_valid",
+      "missing_rule": "0為計數，不補原傷亡值"
+    },
+    {
+      "name": "r20_excluded_fatalities_2_30d_positive_accident_count",
+      "dtype": "Int64",
+      "definition": "排除明確R20=True後；2–30日死亡欄，獨立保存、不與原死亡相加；有效且人數>0事故數",
+      "unit": "accident",
+      "source": "Unit2.1 fatalities_2_30d_count / fatalities_2_30d_count_structural_valid",
+      "missing_rule": "0為計數，不補原傷亡值"
+    },
+    {
+      "name": "r20_excluded_fatalities_2_30d_coverage",
+      "dtype": "Float64",
+      "definition": "排除明確R20=True後；2–30日死亡欄，獨立保存、不與原死亡相加；有效事故數／本口徑保留事故數",
+      "unit": "fraction",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "本口徑保留事故數0則NA"
+    },
+    {
+      "name": "r20_excluded_fatalities_2_30d_all_missing_flag",
+      "dtype": "boolean",
+      "definition": "排除明確R20=True後；2–30日死亡欄，獨立保存、不與原死亡相加；有觀測事故但本欄全缺失",
+      "unit": "not applicable",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "r20_excluded_fatalities_2_30d_partial_missing_flag",
+      "dtype": "boolean",
+      "definition": "排除明確R20=True後；2–30日死亡欄，獨立保存、不與原死亡相加；本欄部分缺失，總量僅已知部分",
+      "unit": "not applicable",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "r20_excluded_mean_injuries_per_accident",
+      "dtype": "Float64",
+      "definition": "有效受傷人數和／受傷欄有效事故數",
+      "unit": "person / valid accident",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "受傷欄有效分母0則NA"
+    },
+    {
+      "name": "r20_excluded_source_positive_fatality_ratio",
+      "dtype": "Float64",
+      "definition": "原死亡欄有效且>0事故數／原死亡欄有效事故數，非已認證死亡事故率",
+      "unit": "fraction",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "原死亡欄有效分母0則NA"
+    },
+    {
+      "name": "injuries_sum_removed_by_r20",
+      "dtype": "Int64",
+      "definition": "主要已知人數和減R20敏感度已知人數和；任一未知則NA",
+      "unit": "person",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "fatalities_source_sum_removed_by_r20",
+      "dtype": "Int64",
+      "definition": "主要已知人數和減R20敏感度已知人數和；任一未知則NA",
+      "unit": "person",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "fatalities_2_30d_sum_removed_by_r20",
+      "dtype": "Int64",
+      "definition": "主要已知人數和減R20敏感度已知人數和；任一未知則NA",
+      "unit": "person",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "mean_injuries_r20_difference",
+      "dtype": "Float64",
+      "definition": "主要平均受傷減R20敏感度平均受傷；分母各自重算",
+      "unit": "person / valid accident",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "source_fatality_ratio_r20_difference",
+      "dtype": "Float64",
+      "definition": "主要原死亡正值比例減R20敏感度比例",
+      "unit": "fraction difference",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "fixed_village_area_km2",
+      "dtype": "Float64",
+      "definition": "原固定EPSG:3826幾何面積，共同分母，不使用AREA",
+      "unit": "km²",
+      "source": "Unit2.2 village_area_km2",
+      "missing_rule": "正值不可缺失"
+    },
+    {
+      "name": "historical_density_applicable",
+      "dtype": "boolean",
+      "definition": "僅S2/S3適用歷史地理密度",
+      "unit": "not applicable",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "historical_area_time_km2_year",
+      "dtype": "Float64",
+      "definition": "年度為該年歷史面積×1年；pooled為兩年歷史面積和",
+      "unit": "km² year",
+      "source": "Unit2.2 historical_area_km2_2024/2025",
+      "missing_rule": "S0/S1不適用為NA"
+    },
+    {
+      "name": "observed_accidents_per_fixed_km2",
+      "dtype": "Float64",
+      "definition": "觀測事故數／固定面積；年度為當年、pooled為兩年累計",
+      "unit": "accident / km² / observation period",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "mean_annual_observed_accidents_per_fixed_km2",
+      "dtype": "Float64",
+      "definition": "觀測事故數／（固定面積×期間年數），pooled平均每年",
+      "unit": "accident / km² / year",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "不補值；依欄定義保留NA"
+    },
+    {
+      "name": "historical_mean_annual_accidents_per_km2",
+      "dtype": "Float64",
+      "definition": "觀測事故數／歷史面積年總和；pooled為面積年加權平均年度密度，不是累計密度",
+      "unit": "accident / km² / year",
+      "source": "Unit2.3 deterministic aggregation",
+      "missing_rule": "S0/S1不適用為NA"
+    }
+  ],
+  "source_inputs": {
+    "data/processed/taipei_crashes_2024_2025_standardized.csv": "b2ac0704068319b74f9aef2a28ad810d0cef473894a2a5cd23976f3fa7d2c252",
+    "data/processed/taipei_crashes_2024_2025_standardized_schema.json": "c3f064b3572d940489bdc86bb5c49dfaea8a228a3e7addbc8f9544bad324b650",
+    "data/processed/taipei_crashes_2024_2025_standardized_documentation.ipynb": "7d5dd73cc2f33308c7b4cdc63ff47839feb34c35baef830b70114ae5e4cc6e0b",
+    "data/processed/taipei_village_base.csv": "db0a225df3568ddb2a47eab1e1d28843e1594dec37956c57eea926e444968209",
+    "data/processed/taipei_village_base_schema.json": "a7e5e3b4d77ab506736ecc940e26a87df6cace3a738cbdaeef1e835e6bed7070",
+    "data/processed/taipei_village_base_documentation.ipynb": "a843d587788b4ea6a943cc05d9413908cf8b66b2f73f9fdbec01e2ab52edd535",
+    "data/processed/taipei_crash_spatial_assignment_2024_2025.csv": "2abcb5a69c8998c2f8b40c975404b93d629fd725899f74afc991f349d9201ba5",
+    "data/processed/taipei_crash_spatial_assignment_2024_2025_schema.json": "d43e0e3bcc1af2b7683d9466ccb4c441c39a6d9ce56f957b0ed5a89c1b487ad3",
+    "data/processed/taipei_crash_spatial_assignment_2024_2025_documentation.ipynb": "5fa1ad1cbb7027493f77cbfdfa1ca4c0a8f39ecad721bae75c603062bc4c6182",
+    "data/code/prepare_taipei_crashes_2024_2025.ipynb": "c14dbd34bd3d776339e292b820a049b792a30ec49f2a8fc0173440ed6e146a9e",
+    "data/code/prepare_taipei_village_base_and_crash_spatial_assignment.ipynb": "ef8a3d21f38ecb902f9495720b0094363ebd57cf444b837176fe2b815992abc4",
+    "data/code/unit22_spatial_support.py": "06af690caf93af87b0f203d354fc894310aee87eca1d9f6f33df6930b13863fc",
+    "data/code/taipei_2024_2025_crash_validation.ipynb": "3674d0043289f75079b46b90076795967563d721a91e303a568ecf85a25c0c6d",
+    "data/code/unit23_feature_support.py": "0d2078a764239aba8035355b224193c3b4c073995c860575bf4ed19834607fcc"
+  },
+  "specifications": {
+    "S0": "PRIMARY fixed conservative",
+    "S1": "REQUIRED selection sensitivity, fixed geometry only",
+    "S2": "historical conservative sensitivity",
+    "S3": "historical geometry-only sensitivity"
+  },
+  "feature_sets": {
+    "A1": [
+      "morning_peak_ratio",
+      "evening_peak_ratio",
+      "late_night_ratio",
+      "weekend_ratio",
+      "intersection_ratio",
+      "rear_end_ratio",
+      "side_collision_ratio",
+      "pedestrian_collision_ratio"
+    ],
+    "A2": [
+      "morning_peak_ratio",
+      "evening_peak_ratio",
+      "late_night_ratio",
+      "weekend_ratio",
+      "intersection_ratio",
+      "rear_end_ratio",
+      "side_collision_ratio",
+      "pedestrian_collision_ratio",
+      "multi_injury_ratio"
+    ],
+    "strict_candidate": "strict_intersection_ratio"
+  },
+  "pooling": "sum raw numerators, valid denominators, false and missing counts; recompute ratios/coverage, never average yearly fractions",
+  "casualty_missing": "empty observed set sum=0; observed accidents but zero valid values sum=NA; partially missing sum covers known values only",
+  "r20": "primary unchanged; sensitivity removes explicit True only, retains unknown separately, recomputes each casualty valid denominator",
+  "density": "fixed period cumulative N/area; mean annual N/(period_years*fixed area); S2/S3 historical N/sum(yearly history area), area-year weighted; S0/S1 historical NA",
+  "low_count": "5/10/20/30/50 candidate flags, no exclusion threshold adopted",
+  "limitations": [
+    "S0 primary; S1 required selection sensitivity; S2/S3 alternate geography, not independent samples",
+    "all 456 villages retained; zero observations is not proof of no real accidents",
+    "no final low-count threshold, imputation, smoothing, scaling, PCA, weighting or model selection",
+    "registered population is not exposure; participants need not be local residents",
+    "source accident datum unconfirmed; fixed geometry overlap/holes unchanged; history editions are snapshots",
+    "source fatality time window and 2–30 day publication/follow-up semantics remain unconfirmed",
+    "R20 denotes a conditional inconsistency, does not identify which field is wrong",
+    "partial casualty sums describe known valid values only, not complete casualty totals",
+    "density is spatial burden, not exposure-adjusted risk or probability",
+    "A2 multi-injury and Dataset C injury burden are definitionally related, not independent validation",
+    "annual 2024 training must fit future model preprocessing without using 2025 validation information",
+    "Codex assisted execution; DE handoff, DA acceptance and PM review pending"
+  ]
+}

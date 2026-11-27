@@ -1,0 +1,494 @@
+{
+  "manifest_version": "1.0",
+  "created_at_utc": "2026-11-27T02:04:27.616800+00:00",
+  "review_date_local": "2026-11-27 Asia/Taipei",
+  "role": "source_traceability_and_delivery_restrictions; not a new upstream raw dataset",
+  "authorship_and_acceptance": {
+    "execution": "Codex assisted",
+    "primary_owner": "曾翊涵（PM，預定）",
+    "engineering_collaborator": "謝子詮（DE，預定）",
+    "analytical_reviewer": "詹明翰（DA，預定）",
+    "actual_student_contribution": "not inferred; human acceptance pending"
+  },
+  "original_evidence": {
+    "filename": "unit17_supplementary_source_evidence.zip",
+    "fixed_path": "data/raw/unit17_supplementary_source_evidence.zip",
+    "size_bytes": 44635308,
+    "sha256": "f5394c215f0db5a0124ea831d0552fe9aa26ea1c5901797a5a8fcce042f6b3bf",
+    "member_count": 14,
+    "local_preservation": "Keep exact original bytes at fixed path. Do not upload, redistribute, repackage or replace.",
+    "distribution_status": "not included in GitHub delivery",
+    "reason": "9 complete members have unconfirmed redistribution scope; private repository is not permission.",
+    "license_review_counts": {
+      "Allowed": 3,
+      "Conditional": 2,
+      "Unclear": 9,
+      "Not permitted": 0
+    }
+  },
+  "members": [
+    {
+      "name": "accident_points.html",
+      "size_bytes": 97207,
+      "sha256": "6fe5d1548197f66ad495912c6b37d7e203e2d401f719cd86f8bfc1ec0e0d2e78",
+      "format": "HTML",
+      "retrieved_at_utc": "2026-11-26T09:52:03.606227+00:00",
+      "source_urls": [
+        "https://data.taipei/dataset/detail?id=0554bac7-cbc2-4ef3-a55e-0aad3dd4ee1d"
+      ],
+      "time_basis": "source_manifest.retrieved_at_utc",
+      "official_licenses": [
+        {
+          "name": "政府資料開放授權條款第1版 (OGDL 1.0)",
+          "url": "https://data.gov.tw/license"
+        }
+      ],
+      "attribution_required": [
+        "就OGDL資料：提供機關／資料年度／名稱與版本、授權聲明及條款連結；不暗示官方背書。"
+      ],
+      "content_nature": "完整資料集介紹網頁HTML；不是資料集本體",
+      "unresolved_issues": [
+        "未確認完整HTML全部內容的再散布權利；資料集授權不自動擴張為網站各部分授權。"
+      ],
+      "provider": "臺北市政府警察局交通大隊",
+      "review_status": "Unclear",
+      "license_scope": "資料集開放授權已確認；完整網站HTML（含導覽、介面、內嵌程式等）是否全部涵蓋尚未確認。",
+      "license_evidence_urls": [
+        "https://data.taipei/rule",
+        "https://data.taipei/dataset/detail?id=0554bac7-cbc2-4ef3-a55e-0aad3dd4ee1d"
+      ]
+    },
+    {
+      "name": "signals.html",
+      "size_bytes": 83544,
+      "sha256": "41a2a627631ade4f98bfc56d357270ea16d274ef84624b6770130e4242f0fe0f",
+      "format": "HTML",
+      "retrieved_at_utc": "2026-11-26T09:52:04.143308+00:00",
+      "source_urls": [
+        "https://data.taipei/dataset/detail?id=4a599738-6550-448a-9a78-03b26c67e249"
+      ],
+      "time_basis": "source_manifest.retrieved_at_utc",
+      "official_licenses": [
+        {
+          "name": "政府資料開放授權條款第1版 (OGDL 1.0)",
+          "url": "https://data.gov.tw/license"
+        }
+      ],
+      "attribution_required": [
+        "就OGDL資料：提供機關／資料年度／名稱與版本、授權聲明及條款連結；不暗示官方背書。"
+      ],
+      "content_nature": "完整資料集介紹網頁HTML；不是資料集本體",
+      "unresolved_issues": [
+        "未確認完整HTML全部內容的再散布權利；資料集授權不自動擴張為網站各部分授權。"
+      ],
+      "provider": "臺北市交通管制工程處",
+      "review_status": "Unclear",
+      "license_scope": "資料集開放授權已確認；完整網站HTML（含導覽、介面、內嵌程式等）是否全部涵蓋尚未確認。",
+      "license_evidence_urls": [
+        "https://data.taipei/rule",
+        "https://data.taipei/dataset/detail?id=4a599738-6550-448a-9a78-03b26c67e249"
+      ]
+    },
+    {
+      "name": "crossings.html",
+      "size_bytes": 83759,
+      "sha256": "d0e4d1c40d4282486a8b9e394d2591a3a38695ab41173415558dc71dda7405e9",
+      "format": "HTML",
+      "retrieved_at_utc": "2026-11-26T09:52:03.519359+00:00",
+      "source_urls": [
+        "https://data.taipei/dataset/detail?id=4d6bd0c6-9f56-408b-bb96-ac41134a95d5"
+      ],
+      "time_basis": "source_manifest.retrieved_at_utc",
+      "official_licenses": [
+        {
+          "name": "政府資料開放授權條款第1版 (OGDL 1.0)",
+          "url": "https://data.gov.tw/license"
+        }
+      ],
+      "attribution_required": [
+        "就OGDL資料：提供機關／資料年度／名稱與版本、授權聲明及條款連結；不暗示官方背書。"
+      ],
+      "content_nature": "完整資料集介紹網頁HTML；不是資料集本體",
+      "unresolved_issues": [
+        "未確認完整HTML全部內容的再散布權利；資料集授權不自動擴張為網站各部分授權。"
+      ],
+      "provider": "臺北市交通管制工程處",
+      "review_status": "Unclear",
+      "license_scope": "資料集開放授權已確認；完整網站HTML（含導覽、介面、內嵌程式等）是否全部涵蓋尚未確認。",
+      "license_evidence_urls": [
+        "https://data.taipei/rule",
+        "https://data.taipei/dataset/detail?id=4d6bd0c6-9f56-408b-bb96-ac41134a95d5"
+      ]
+    },
+    {
+      "name": "road_width.html",
+      "size_bytes": 83525,
+      "sha256": "8549daf165960a13865f5fb7d2eb3028b7575e90dfe4f2caae9f52bd97d0d5f5",
+      "format": "HTML",
+      "retrieved_at_utc": "2026-11-26T09:52:04.349767+00:00",
+      "source_urls": [
+        "https://data.taipei/dataset/detail?id=068be2c7-eea1-4303-91f8-fbf50c9b2aec"
+      ],
+      "time_basis": "source_manifest.retrieved_at_utc",
+      "official_licenses": [
+        {
+          "name": "政府資料開放授權條款第1版 (OGDL 1.0)",
+          "url": "https://data.gov.tw/license"
+        }
+      ],
+      "attribution_required": [
+        "就OGDL資料：提供機關／資料年度／名稱與版本、授權聲明及條款連結；不暗示官方背書。"
+      ],
+      "content_nature": "完整資料集介紹網頁HTML；不是資料集本體",
+      "unresolved_issues": [
+        "未確認完整HTML全部內容的再散布權利；資料集授權不自動擴張為網站各部分授權。"
+      ],
+      "provider": "臺北市都市發展局",
+      "review_status": "Unclear",
+      "license_scope": "資料集開放授權已確認；完整網站HTML（含導覽、介面、內嵌程式等）是否全部涵蓋尚未確認。",
+      "license_evidence_urls": [
+        "https://data.taipei/rule",
+        "https://data.taipei/dataset/detail?id=068be2c7-eea1-4303-91f8-fbf50c9b2aec"
+      ]
+    },
+    {
+      "name": "sidewalk.html",
+      "size_bytes": 85853,
+      "sha256": "57ab9a77b74f577638164982ec3756361a7e2387cfaae42064916ecfd2614122",
+      "format": "HTML",
+      "retrieved_at_utc": "2026-11-26T09:52:04.183587+00:00",
+      "source_urls": [
+        "https://data.taipei/dataset/detail?id=d647b3af-4bbd-4e8f-b420-8f6c1bc1b597"
+      ],
+      "time_basis": "source_manifest.retrieved_at_utc",
+      "official_licenses": [
+        {
+          "name": "政府資料開放授權條款第1版 (OGDL 1.0)",
+          "url": "https://data.gov.tw/license"
+        }
+      ],
+      "attribution_required": [
+        "就OGDL資料：提供機關／資料年度／名稱與版本、授權聲明及條款連結；不暗示官方背書。"
+      ],
+      "content_nature": "完整資料集介紹網頁HTML；不是資料集本體",
+      "unresolved_issues": [
+        "未確認完整HTML全部內容的再散布權利；資料集授權不自動擴張為網站各部分授權。"
+      ],
+      "provider": "臺北市交通管制工程處",
+      "review_status": "Unclear",
+      "license_scope": "資料集開放授權已確認；完整網站HTML（含導覽、介面、內嵌程式等）是否全部涵蓋尚未確認。",
+      "license_evidence_urls": [
+        "https://data.taipei/rule",
+        "https://data.taipei/dataset/detail?id=d647b3af-4bbd-4e8f-b420-8f6c1bc1b597"
+      ]
+    },
+    {
+      "name": "mrt.html",
+      "size_bytes": 83939,
+      "sha256": "5af3c801f2bce3ae76e7361b393b2a858d113137bd63f1046e36b8c9547c68ec",
+      "format": "HTML",
+      "retrieved_at_utc": "2026-11-26T09:52:04.065162+00:00",
+      "source_urls": [
+        "https://data.taipei/dataset/detail?id=cfa4778c-62c1-497b-b704-756231de348b"
+      ],
+      "time_basis": "source_manifest.retrieved_at_utc",
+      "official_licenses": [
+        {
+          "name": "政府資料開放授權條款第1版 (OGDL 1.0)",
+          "url": "https://data.gov.tw/license"
+        }
+      ],
+      "attribution_required": [
+        "就OGDL資料：提供機關／資料年度／名稱與版本、授權聲明及條款連結；不暗示官方背書。"
+      ],
+      "content_nature": "完整資料集介紹網頁HTML；不是資料集本體",
+      "unresolved_issues": [
+        "未確認完整HTML全部內容的再散布權利；資料集授權不自動擴張為網站各部分授權。"
+      ],
+      "provider": "臺北大眾捷運股份有限公司",
+      "review_status": "Unclear",
+      "license_scope": "資料集開放授權已確認；完整網站HTML（含導覽、介面、內嵌程式等）是否全部涵蓋尚未確認。",
+      "license_evidence_urls": [
+        "https://data.taipei/rule",
+        "https://data.taipei/dataset/detail?id=cfa4778c-62c1-497b-b704-756231de348b"
+      ]
+    },
+    {
+      "name": "osm_copyright.html",
+      "size_bytes": 21314,
+      "sha256": "98f1ae74bbd894a405508c52e75104c9eced31575440041be56e7ac3dfe1014e",
+      "format": "HTML",
+      "retrieved_at_utc": "2026-11-26T09:52:05.114032+00:00",
+      "source_urls": [
+        "https://www.openstreetmap.org/copyright"
+      ],
+      "time_basis": "source_manifest.retrieved_at_utc",
+      "official_licenses": [
+        {
+          "name": "CC BY-SA 2.0 (documentation)",
+          "url": "https://creativecommons.org/licenses/by-sa/2.0/legalcode.en"
+        },
+        {
+          "name": "ODbL 1.0 (map data, not blanket HTML license)",
+          "url": "https://opendatacommons.org/licenses/odbl/1-0/"
+        }
+      ],
+      "attribution_required": [
+        "文件保留OpenStreetMap來源／作者、標題、著作權及授權通知、CC BY-SA 2.0連結；改作標示並遵循ShareAlike。"
+      ],
+      "content_nature": "完整授權說明網頁HTML",
+      "unresolved_issues": [
+        "不得僅用ODbL說明文件授權；文件授權是否涵蓋完整保存HTML尚未確認。"
+      ],
+      "provider": "OpenStreetMap Foundation / OpenStreetMap contributors",
+      "review_status": "Unclear",
+      "license_scope": "文件正文CC BY-SA 2.0；地圖資料ODbL，兩者不同。完整HTML各部分尚未全部對應授權。",
+      "license_evidence_urls": [
+        "https://www.openstreetmap.org/copyright"
+      ]
+    },
+    {
+      "name": "github_file_limits.html",
+      "size_bytes": 213608,
+      "sha256": "6bd7c4b1a0ac0a926b6e62f74b94ee3670a2ddfbf8c2368e0dfcd4e2333fe54a",
+      "format": "HTML",
+      "retrieved_at_utc": "2026-11-26T09:52:05.009044+00:00",
+      "source_urls": [
+        "https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github"
+      ],
+      "time_basis": "source_manifest.retrieved_at_utc",
+      "official_licenses": [
+        {
+          "name": "CC BY 4.0 (documentation/content)",
+          "url": "https://creativecommons.org/licenses/by/4.0/legalcode.en"
+        },
+        {
+          "name": "MIT (GitHub Docs repository code)",
+          "url": "https://raw.githubusercontent.com/github/docs/main/LICENSE-CODE"
+        }
+      ],
+      "attribution_required": [
+        "文件：作者／來源、著作權與授權連結、修改標示。",
+        "MIT程式：保留著作權及許可聲明。"
+      ],
+      "content_nature": "完整文件網頁HTML，含部署網站介面與內嵌內容",
+      "unresolved_issues": [
+        "一般網站條款另限制HTML/CSS/JavaScript與視覺設計複製；須確認具體開放授權涵蓋保存內容，不能直接套用全文。"
+      ],
+      "provider": "GitHub, Inc. / GitHub Docs contributors",
+      "review_status": "Unclear",
+      "license_scope": "GitHub Docs文件CC BY 4.0、repository程式MIT；未確認完整部署HTML的全部部分均受此授權涵蓋。",
+      "license_evidence_urls": [
+        "https://raw.githubusercontent.com/github/docs/main/README.md",
+        "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service"
+      ]
+    },
+    {
+      "name": "history_113_landing.html",
+      "size_bytes": 22238163,
+      "sha256": "3e9aaab531d77f632e87d78ed832645902c8189aead1f226eb27ce32261c1ab6",
+      "format": "ZIP",
+      "retrieved_at_utc": "2026-11-26T09:52:30.137056+00:00",
+      "source_urls": [
+        "https://www.land.moi.gov.tw/chhtml/DownloadGovDoc?gdid=532&gsno=BFYEW2"
+      ],
+      "time_basis": "source_manifest.retrieved_at_utc",
+      "official_licenses": [
+        {
+          "name": "政府資料開放授權條款第1版 (OGDL 1.0)",
+          "url": "https://data.gov.tw/license"
+        }
+      ],
+      "attribution_required": [
+        "內政部地政司／國土測繪中心；村里界歷史圖資民國113年；保存原始版本識別及來源；附OGDL聲明與連結。"
+      ],
+      "content_nature": "民國113年村里界官方ZIP外包，副檔名.html與實際格式不同",
+      "unresolved_issues": [],
+      "provider": "內政部地政司／國土測繪中心",
+      "review_status": "Conditional",
+      "license_scope": "官方開放歷史村里界下載資料；OGDL允許完整重製／再散布，須遵守顯名等條件。",
+      "license_evidence_urls": [
+        "https://data.gov.tw/dataset/130549"
+      ]
+    },
+    {
+      "name": "history_114_landing.html",
+      "size_bytes": 22171681,
+      "sha256": "3de4ac9b88e57754fd1d5b28ab6317486f87b9bc1cff38580ce01708a901d236",
+      "format": "ZIP",
+      "retrieved_at_utc": "2026-11-26T09:52:31.649496+00:00",
+      "source_urls": [
+        "https://www.land.moi.gov.tw/chhtml/DownloadGovDoc?gdid=533&gsno=PY9YAR"
+      ],
+      "time_basis": "source_manifest.retrieved_at_utc",
+      "official_licenses": [
+        {
+          "name": "政府資料開放授權條款第1版 (OGDL 1.0)",
+          "url": "https://data.gov.tw/license"
+        }
+      ],
+      "attribution_required": [
+        "內政部地政司／國土測繪中心；村里界歷史圖資民國114年；保存原始版本識別及來源；附OGDL聲明與連結。"
+      ],
+      "content_nature": "民國114年村里界官方ZIP外包，副檔名.html與實際格式不同",
+      "unresolved_issues": [],
+      "provider": "內政部地政司／國土測繪中心",
+      "review_status": "Conditional",
+      "license_scope": "官方開放歷史村里界下載資料；OGDL允許完整重製／再散布，須遵守顯名等條件。",
+      "license_evidence_urls": [
+        "https://data.gov.tw/dataset/130549"
+      ]
+    },
+    {
+      "name": "web_fallback_capture.json",
+      "size_bytes": 23222,
+      "sha256": "7aabf2bf7562fdd6a705b423c53defbbaceb1c415b8df80b389714270911d88d",
+      "format": "JSON",
+      "retrieved_at_utc": "2026-11-26T09:54:46.386Z",
+      "source_urls": [
+        "https://data.gov.tw/dataset/130549",
+        "https://data.gov.tw/dataset/172969",
+        "https://data.gov.tw/dataset/177136",
+        "https://download.geofabrik.de/asia/taiwan.html",
+        "https://download.geofabrik.de/static/osm-data-in-gis-formats-free.pdf"
+      ],
+      "time_basis": "embedded retrieved_at_utc",
+      "official_licenses": [
+        {
+          "name": "政府資料開放授權條款第1版 (OGDL 1.0)",
+          "url": "https://data.gov.tw/license"
+        },
+        {
+          "name": "Geofabrik web text: redistribution license unconfirmed",
+          "url": null
+        }
+      ],
+      "attribution_required": [
+        "各來源分別保留提供者、資料名稱／版本、URL及已確認授權；Geofabrik文字再散布範圍待確認。"
+      ],
+      "content_nature": "多來源工具擷取回應／摘要／失敗紀錄的JSON；非原始HTTP或PDF",
+      "unresolved_issues": [
+        "完整工具擷取內容的再散布權未確認；本manifest不複製該正文。"
+      ],
+      "provider": "本地工具紀錄；來源含內政部相關資料提供機關、Geofabrik",
+      "review_status": "Unclear",
+      "license_scope": "政府資料授權與Geofabrik網頁內容分開；JSON包裝不會授予第三方內容再散布權。",
+      "license_evidence_urls": [
+        "https://data.gov.tw/dataset/130549",
+        "https://data.gov.tw/dataset/172969",
+        "https://data.gov.tw/dataset/177136"
+      ]
+    },
+    {
+      "name": "geofabrik_road_fields_web.json",
+      "size_bytes": 448,
+      "sha256": "7450d8f953e8caef7f089507eb92065716219cd646961e91290968101e4563a1",
+      "format": "JSON",
+      "retrieved_at_utc": "2026-11-26T10:00:06.902Z",
+      "source_urls": [
+        "https://download.geofabrik.de/static/osm-data-in-gis-formats-free.pdf"
+      ],
+      "time_basis": "embedded retrieved_at_utc",
+      "official_licenses": [
+        {
+          "name": "No third-party PDF content; no separate public license declared for local log",
+          "url": null
+        }
+      ],
+      "attribution_required": [
+        "保留嘗試來源及失敗性質，不能稱已取得PDF或欄位文件。"
+      ],
+      "content_nature": "僅存取失敗、URL、時間；未包含PDF正文",
+      "unresolved_issues": [],
+      "provider": "專案本地產生的工具失敗紀錄",
+      "review_status": "Allowed",
+      "license_scope": "本地事實性技術紀錄；不宣稱取得Geofabrik PDF內容授權。",
+      "license_evidence_urls": []
+    },
+    {
+      "name": "source_manifest.json",
+      "size_bytes": 6664,
+      "sha256": "e566efba53592f5abc2e0d6367541fff63ce6163648ff593cf4fd61d75460357",
+      "format": "JSON",
+      "retrieved_at_utc": null,
+      "source_urls": [
+        "https://data.taipei/dataset/detail?id=0554bac7-cbc2-4ef3-a55e-0aad3dd4ee1d",
+        "https://data.taipei/dataset/detail?id=4a599738-6550-448a-9a78-03b26c67e249",
+        "https://data.taipei/dataset/detail?id=4d6bd0c6-9f56-408b-bb96-ac41134a95d5",
+        "https://data.taipei/dataset/detail?id=068be2c7-eea1-4303-91f8-fbf50c9b2aec",
+        "https://data.taipei/dataset/detail?id=d647b3af-4bbd-4e8f-b420-8f6c1bc1b597",
+        "https://data.taipei/dataset/detail?id=cfa4778c-62c1-497b-b704-756231de348b",
+        "https://www.openstreetmap.org/copyright",
+        "https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github",
+        "https://www.land.moi.gov.tw/chhtml/DownloadGovDoc?gdid=532&gsno=BFYEW2",
+        "https://www.land.moi.gov.tw/chhtml/DownloadGovDoc?gdid=533&gsno=PY9YAR"
+      ],
+      "time_basis": "unknown; no timestamp inferred from ZIP entry or filesystem",
+      "official_licenses": [
+        {
+          "name": "Local factual metadata; no separate license declared",
+          "url": null
+        }
+      ],
+      "attribution_required": [
+        "保留專案來源追溯；不當作政府官方認證或第三方授權書。"
+      ],
+      "content_nature": "事實性來源／下載／hash紀錄",
+      "unresolved_issues": [],
+      "provider": "專案本地產生（Codex協助）；成員人工驗收待完成",
+      "review_status": "Allowed",
+      "license_scope": "本地事實性metadata；未另宣告公開授權，不替第三方作品授權。",
+      "license_evidence_urls": []
+    },
+    {
+      "name": "historical_source_identity.json",
+      "size_bytes": 1116,
+      "sha256": "b4d29c4a1dcee139d6f80022545b6e2892f63e7aa461742739ca9be25f5d49f8",
+      "format": "JSON",
+      "retrieved_at_utc": null,
+      "source_urls": [
+        "https://www.land.moi.gov.tw/chhtml/DownloadGovDoc?gdid=532&gsno=BFYEW2",
+        "https://www.land.moi.gov.tw/chhtml/DownloadGovDoc?gdid=533&gsno=PY9YAR",
+        "https://data.gov.tw/dataset/130549"
+      ],
+      "time_basis": "unknown; no timestamp inferred from ZIP entry or filesystem",
+      "official_licenses": [
+        {
+          "name": "Local factual metadata; no separate license declared",
+          "url": null
+        }
+      ],
+      "attribution_required": [
+        "保留專案來源追溯；不當作政府官方認證或第三方授權書。"
+      ],
+      "content_nature": "事實性歷史下載內包與本地檔案hash一致性紀錄",
+      "unresolved_issues": [],
+      "provider": "專案本地產生（Codex協助）；成員人工驗收待完成",
+      "review_status": "Allowed",
+      "license_scope": "本地事實性metadata；未另宣告公開授權，不替第三方作品授權。",
+      "license_evidence_urls": []
+    }
+  ],
+  "content_policy": {
+    "included": "factual URLs/provider/time/format/size/hash/license pointers and researcher-written scope notes only",
+    "excluded": [
+      "complete HTML",
+      "website prose or code",
+      "full tool responses",
+      "ZIP bytes or base64",
+      "reconstruction payload"
+    ],
+    "replaces_original_zip": false
+  },
+  "reproduction": {
+    "mode_a": "Five pinned Final CSV/schema/Registry outputs may be independently read and validated; does not certify upstream files.",
+    "mode_b": "Full original dependency checks remain mandatory; manifest is not a replacement.",
+    "authorized_acquisition_only": true,
+    "external_upload_or_sharing_performed": false,
+    "restore_path": "data/raw/unit17_supplementary_source_evidence.zip",
+    "verification": "hashlib.sha256(path.read_bytes()).hexdigest() must equal original_evidence.sha256; exact size and 14 members must also match.",
+    "expected_sha256": "f5394c215f0db5a0124ea831d0552fe9aa26ea1c5901797a5a8fcce042f6b3bf",
+    "no_skip_or_hash_replacement": true
+  },
+  "teacher_requirement_status": "Local rules require exact input binding and student Git commits; no explicit clause found mandating this entire evidence ZIP in GitHub or repository-only reproduction of every notebook. Other unverified course requirements need teacher confirmation."
+}

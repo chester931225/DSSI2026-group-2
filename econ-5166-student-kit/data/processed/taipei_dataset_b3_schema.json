@@ -1,0 +1,2362 @@
+{
+  "unit": "2.6",
+  "created_at": "2026-11-27",
+  "dataset_path": "data/processed/taipei_dataset_b3.csv",
+  "producer": "data/code/prepare_taipei_dataset_b3.ipynb",
+  "helper": "data/code/unit26_transportation_support.py",
+  "documentation": "data/processed/taipei_dataset_b3_documentation.ipynb",
+  "role": "external_environment_transportation",
+  "expected_rows": 456,
+  "processing_environment": {
+    "python": "3.12.2",
+    "pandas": "3.1.1",
+    "numpy": "2.5.5",
+    "geopandas": "1.2.0",
+    "shapely": "2.2.0",
+    "GEOS": "3.14.1",
+    "pyproj": "3.8.0",
+    "pyogrio": "0.13.0"
+  },
+  "reviewed_project_context": {
+    "path": "PROJECT.md",
+    "before_unit26_sha256": "9edafab5f10a3cd6a4b4157eecf6f65f1a95ecd6c9ce71c1dd6bf18f566ec91f",
+    "role": "reviewed mutable research context, authorized updates in Unit2.6; not transportation numeric input"
+  },
+  "observation_unit": "one fixed research village, one mixed-date source snapshot; no annual/pooled or S0-S3 duplication",
+  "primary_key": [
+    "village_id"
+  ],
+  "csv": {
+    "encoding": "utf-8-sig",
+    "line_terminator": "LF",
+    "missing_sentinel": "__MISSING__",
+    "keep_default_na": false,
+    "boolean_values": [
+      "True",
+      "False"
+    ],
+    "original_empty_strings": "preserved"
+  },
+  "columns": [
+    {
+      "name": "village_id",
+      "dtype": "string",
+      "definition": "Unit2.2固定里主表欄位；verification_status是里碼配對證據，糖廍正常納入",
+      "unit": "not applicable",
+      "source": "formal village base",
+      "missing_rule": "nonmissing; no eligibility restriction from provisional_match"
+    },
+    {
+      "name": "boundary_code",
+      "dtype": "string",
+      "definition": "Unit2.2固定里主表欄位；verification_status是里碼配對證據，糖廍正常納入",
+      "unit": "not applicable",
+      "source": "formal village base",
+      "missing_rule": "nonmissing; no eligibility restriction from provisional_match"
+    },
+    {
+      "name": "district_name",
+      "dtype": "string",
+      "definition": "Unit2.2固定里主表欄位；verification_status是里碼配對證據，糖廍正常納入",
+      "unit": "not applicable",
+      "source": "formal village base",
+      "missing_rule": "nonmissing; no eligibility restriction from provisional_match"
+    },
+    {
+      "name": "standard_village_name",
+      "dtype": "string",
+      "definition": "Unit2.2固定里主表欄位；verification_status是里碼配對證據，糖廍正常納入",
+      "unit": "not applicable",
+      "source": "formal village base",
+      "missing_rule": "nonmissing; no eligibility restriction from provisional_match"
+    },
+    {
+      "name": "verification_status",
+      "dtype": "string",
+      "definition": "Unit2.2固定里主表欄位；verification_status是里碼配對證據，糖廍正常納入",
+      "unit": "not applicable",
+      "source": "formal village base",
+      "missing_rule": "nonmissing; no eligibility restriction from provisional_match"
+    },
+    {
+      "name": "geometry_quality_flag",
+      "dtype": "string",
+      "definition": "Unit2.2固定里主表欄位；verification_status是里碼配對證據，糖廍正常納入",
+      "unit": "not applicable",
+      "source": "formal village base",
+      "missing_rule": "nonmissing; no eligibility restriction from provisional_match"
+    },
+    {
+      "name": "fixed_village_area_m2",
+      "dtype": "Float64",
+      "definition": "完整原固定里面積；非AREA欄，不修界／填洞",
+      "unit": "m²",
+      "source": "Unit2.2 village_area_m2",
+      "missing_rule": "positive, nonmissing"
+    },
+    {
+      "name": "fixed_village_area_km2",
+      "dtype": "Float64",
+      "definition": "人口與設施密度共用原固定面積分母",
+      "unit": "km²",
+      "source": "Unit2.2 village_area_km2",
+      "missing_rule": "positive, nonmissing"
+    },
+    {
+      "name": "analysis_role",
+      "dtype": "string",
+      "definition": "事故分群後外部環境比較，非A主要分群輸入",
+      "unit": "not applicable",
+      "source": "source metadata / Unit1.7 / Unit2.6 specification",
+      "missing_rule": "known metadata strings retained; no imputation of actual observation dates"
+    },
+    {
+      "name": "working_crs",
+      "dtype": "string",
+      "definition": "各來源依各自證據轉換，並非全部直接指定",
+      "unit": "not applicable",
+      "source": "source metadata / Unit1.7 / Unit2.6 specification",
+      "missing_rule": "known metadata strings retained; no imputation of actual observation dates"
+    },
+    {
+      "name": "osm_snapshot_time",
+      "dtype": "string",
+      "definition": "OSM包內README實際快照時間",
+      "unit": "not applicable",
+      "source": "source metadata / Unit1.7 / Unit2.6 specification",
+      "missing_rule": "known metadata strings retained; no imputation of actual observation dates"
+    },
+    {
+      "name": "signal_filename_date",
+      "dtype": "string",
+      "definition": "只代表來源檔名日期",
+      "unit": "not applicable",
+      "source": "source metadata / Unit1.7 / Unit2.6 specification",
+      "missing_rule": "known metadata strings retained; no imputation of actual observation dates"
+    },
+    {
+      "name": "signal_observation_date_status",
+      "dtype": "string",
+      "definition": "實際號誌觀測／設置日未認證，資源更新另見schema",
+      "unit": "not applicable",
+      "source": "source metadata / Unit1.7 / Unit2.6 specification",
+      "missing_rule": "known metadata strings retained; no imputation of actual observation dates"
+    },
+    {
+      "name": "crosswalk_packaging_date",
+      "dtype": "string",
+      "definition": "封裝標記，不是2024全年或2025完整設施存量",
+      "unit": "not applicable",
+      "source": "source metadata / Unit1.7 / Unit2.6 specification",
+      "missing_rule": "known metadata strings retained; no imputation of actual observation dates"
+    },
+    {
+      "name": "road_width_resource_date",
+      "dtype": "string",
+      "definition": "計畫尺寸標註資源時間，不是研究年實測",
+      "unit": "not applicable",
+      "source": "source metadata / Unit1.7 / Unit2.6 specification",
+      "missing_rule": "known metadata strings retained; no imputation of actual observation dates"
+    },
+    {
+      "name": "mrt_snapshot_date",
+      "dtype": "string",
+      "definition": "入口當期快照，無完整設置／撤除史",
+      "unit": "not applicable",
+      "source": "source metadata / Unit1.7 / Unit2.6 specification",
+      "missing_rule": "known metadata strings retained; no imputation of actual observation dates"
+    },
+    {
+      "name": "marked_sidewalk_readiness",
+      "dtype": "string",
+      "definition": "混合標線沒有可靠人行道子集；不建立數值",
+      "unit": "not applicable",
+      "source": "source metadata / Unit1.7 / Unit2.6 specification",
+      "missing_rule": "known metadata strings retained; no imputation of actual observation dates"
+    },
+    {
+      "name": "year_specific_observation",
+      "dtype": "boolean",
+      "definition": "沒有兩套獨立年度B3；不建立S0–S3重複",
+      "unit": "not applicable",
+      "source": "Unit2.6 explicit processing",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "mrt_pre_accident_environment_verified",
+      "dtype": "boolean",
+      "definition": "2026入口不可冒稱2024／2025事故前環境",
+      "unit": "not applicable",
+      "source": "Unit2.6 explicit processing",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "osm_road_length_m",
+      "dtype": "Float64",
+      "definition": "主要指定OSM機動候選線聯集，扣原共同里界線段",
+      "unit": "m",
+      "source": "frozen OSM source + original village polygon",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "osm_major_road_length_m",
+      "dtype": "Float64",
+      "definition": "六個研究major類同規則聯集線長；major為全部候選子集",
+      "unit": "m",
+      "source": "frozen OSM source + original village polygon",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "osm_inclusive_road_length_m",
+      "dtype": "Float64",
+      "definition": "逐里完整覆蓋線長，含共界，不能互斥加總成城市總量",
+      "unit": "m",
+      "source": "frozen OSM source + original village polygon",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "osm_shared_boundary_unallocated_length_m",
+      "dtype": "Float64",
+      "definition": "從本里主要線長扣除的原共同里界線段",
+      "unit": "m",
+      "source": "frozen OSM source + original village polygon",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "osm_inclusive_major_road_length_m",
+      "dtype": "Float64",
+      "definition": "major含共界線長",
+      "unit": "m",
+      "source": "frozen OSM source + original village polygon",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "osm_major_shared_boundary_length_m",
+      "dtype": "Float64",
+      "definition": "major原共界未歸屬線長",
+      "unit": "m",
+      "source": "frozen OSM source + original village polygon",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "osm_major_other_overlap_length_m",
+      "dtype": "Float64",
+      "definition": "major與其他納入類別重合線長；保留分類重疊診斷",
+      "unit": "m",
+      "source": "frozen OSM source + original village polygon",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "osm_raw_clipped_length_sum_m",
+      "dtype": "Float64",
+      "definition": "原線逐里交集長度和，僅稽核，不當唯一道路長度",
+      "unit": "m",
+      "source": "frozen OSM source + original village polygon",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "osm_raw_minus_union_length_m",
+      "dtype": "Float64",
+      "definition": "原線交集和減同域union，浮點微負值保留作數值診斷",
+      "unit": "m",
+      "source": "frozen OSM source + original village polygon",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "osm_positive_intersection_source_count",
+      "dtype": "Int64",
+      "definition": "與里有正線長交集的原始候選線數，不是實體道路條數",
+      "unit": "source line records",
+      "source": "frozen OSM source + original village polygon",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "osm_road_length_km",
+      "dtype": "Float64",
+      "definition": "主要候選線表示長度換算",
+      "unit": "km",
+      "source": "osm_road_length_m / 1000",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "osm_major_road_length_km",
+      "dtype": "Float64",
+      "definition": "同口徑major線表示長度換算",
+      "unit": "km",
+      "source": "osm_major_road_length_m / 1000",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "osm_road_density",
+      "dtype": "Float64",
+      "definition": "已觀測指定道路線表示km／完整里面積km²；不是VKT或容量",
+      "unit": "km/km²",
+      "source": "osm_road_length_km / fixed_village_area_km2",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "osm_major_road_ratio",
+      "dtype": "Float64",
+      "definition": "六類研究major線聯集長／相同全部候選線聯集長；不是官方等級或流量占比",
+      "unit": "fraction",
+      "source": "same-scope major / all road union",
+      "missing_rule": "zero road denominator => NA; processing failure => NA"
+    },
+    {
+      "name": "signal_raw_unique_assigned_record_count",
+      "dtype": "Int64",
+      "definition": "基本品質過濾前，幾何唯一歸里的原紀錄",
+      "unit": "source records",
+      "source": "frozen signals TAB source / exact-coordinate grouping",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "observed_signal_record_count",
+      "dtype": "Int64",
+      "definition": "屬主要A口徑位置之可讀、非機房測試原紀錄數，尚未座標去重",
+      "unit": "source records",
+      "source": "frozen signals TAB source / exact-coordinate grouping",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "observed_unique_signal_location_count",
+      "dtype": "Int64",
+      "definition": "主要A口徑唯一原數值座標位置數，不是完整實體路口數",
+      "unit": "coordinate locations",
+      "source": "frozen signals TAB source / exact-coordinate grouping",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "signal_geometry_only_unique_location_count",
+      "dtype": "Int64",
+      "definition": "B口徑：相同基本品質與唯一內部幾何，允許區名不一致",
+      "unit": "coordinate locations",
+      "source": "frozen signals TAB source / exact-coordinate grouping",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "signal_main_without_lcs_location_count",
+      "dtype": "Int64",
+      "definition": "A口徑排除僅由LCS紀錄支持的位置，並非認定LCS不是設施",
+      "unit": "coordinate locations",
+      "source": "frozen signals TAB source / exact-coordinate grouping",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "signal_geometry_without_lcs_location_count",
+      "dtype": "Int64",
+      "definition": "B口徑排除僅由LCS支持的位置",
+      "unit": "coordinate locations",
+      "source": "frozen signals TAB source / exact-coordinate grouping",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "signal_explicit_test_record_count",
+      "dtype": "Int64",
+      "definition": "幾何可歸里的機房測試用原紀錄",
+      "unit": "source records",
+      "source": "frozen signals TAB source / exact-coordinate grouping",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "signal_lcs_record_count",
+      "dtype": "Int64",
+      "definition": "幾何可歸里的LCS原紀錄；其實際設備單位尚未認證",
+      "unit": "source records",
+      "source": "frozen signals TAB source / exact-coordinate grouping",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "signal_source_district_conflict_record_count",
+      "dtype": "Int64",
+      "definition": "可判讀來源區名與空間歸區明確不一致的原紀錄",
+      "unit": "source records",
+      "source": "frozen signals TAB source / exact-coordinate grouping",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "signal_source_district_unknown_record_count",
+      "dtype": "Int64",
+      "definition": "幾何歸里但來源區名不可判讀，與明確衝突分開",
+      "unit": "source records",
+      "source": "frozen signals TAB source / exact-coordinate grouping",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "signal_same_coordinate_record_count",
+      "dtype": "Int64",
+      "definition": "幾何歸里之同位置重複群原紀錄數，非多餘筆數",
+      "unit": "source records",
+      "source": "frozen signals TAB source / exact-coordinate grouping",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "signal_same_coordinate_multiple_name_group_count",
+      "dtype": "Int64",
+      "definition": "同座標多名稱群數，不任意近距離併路口",
+      "unit": "coordinate locations",
+      "source": "frozen signals TAB source / exact-coordinate grouping",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "signal_same_coordinate_conflicting_district_group_count",
+      "dtype": "Int64",
+      "definition": "同位置原紀錄有互相衝突已識別區名的群數",
+      "unit": "coordinate locations",
+      "source": "frozen signals TAB source / exact-coordinate grouping",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "observed_signal_location_density",
+      "dtype": "Float64",
+      "definition": "主要A口徑，全部非測試有效成員區名皆已識別且吻合；唯一觀測位置／完整里面積，不認證實體路口",
+      "unit": "locations/km²",
+      "source": "observed_unique_signal_location_count / fixed_village_area_km2",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "signal_geometry_only_location_density",
+      "dtype": "Float64",
+      "definition": "B幾何口徑，區名衝突不作主要資格條件；唯一觀測位置／完整里面積，不認證實體路口",
+      "unit": "locations/km²",
+      "source": "signal_geometry_only_unique_location_count / fixed_village_area_km2",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "signal_main_without_lcs_location_density",
+      "dtype": "Float64",
+      "definition": "A排除LCS-only位置敏感度；唯一觀測位置／完整里面積，不認證實體路口",
+      "unit": "locations/km²",
+      "source": "signal_main_without_lcs_location_count / fixed_village_area_km2",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "signal_geometry_without_lcs_location_density",
+      "dtype": "Float64",
+      "definition": "B排除LCS-only位置敏感度；唯一觀測位置／完整里面積，不認證實體路口",
+      "unit": "locations/km²",
+      "source": "signal_geometry_without_lcs_location_count / fixed_village_area_km2",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "observed_signal_locations_per_osm_road_km",
+      "dtype": "Float64",
+      "definition": "補充：主要A位置／同口徑OSM線表示km，跨來源時點不同",
+      "unit": "locations/km",
+      "source": "main signal locations / osm_road_length_km",
+      "missing_rule": "zero road denominator => NA"
+    },
+    {
+      "name": "observed_crosswalk_area_m2",
+      "dtype": "Float64",
+      "definition": "六明示行穿標線層union後與原里面交集，非設施數",
+      "unit": "m²",
+      "source": "frozen six-layer crossing source / polygon union",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "observed_crosswalk_area_km2",
+      "dtype": "Float64",
+      "definition": "已觀測行穿標線面積換算",
+      "unit": "km²",
+      "source": "frozen six-layer crossing source / polygon union",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "crosswalk_area_ratio",
+      "dtype": "Float64",
+      "definition": "標線聯集面積／完整里面積，非完整性／安全評分",
+      "unit": "fraction",
+      "source": "frozen six-layer crossing source / polygon union",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "crosswalk_raw_intersection_area_sum_m2",
+      "dtype": "Float64",
+      "definition": "原構件交集面積和，僅比較重複，不當可靠聯集面積",
+      "unit": "m²",
+      "source": "frozen six-layer crossing source / polygon union",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "crosswalk_raw_minus_union_area_m2",
+      "dtype": "Float64",
+      "definition": "原構件交集和減聯集之診斷差，微量負值保留",
+      "unit": "m²",
+      "source": "frozen six-layer crossing source / polygon union",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "crosswalk_positive_intersection_source_count",
+      "dtype": "Int64",
+      "definition": "原Polygon正面積交集筆數，非完整行穿設施數",
+      "unit": "source polygon components",
+      "source": "Unit2.6 explicit processing",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "crosswalk_duplicate_geometry_source_intersection_count",
+      "dtype": "Int64",
+      "definition": "來源正規化重複面中與此里正面積相交之筆數",
+      "unit": "source polygon components",
+      "source": "Unit2.6 explicit processing",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "annotated_road_width_sample_count",
+      "dtype": "Int64",
+      "definition": "精確geometry＋width去重後，中點唯一歸里的標註樣本數",
+      "unit": "annotation samples",
+      "source": "frozen planned/cadastral width dimension lines",
+      "missing_rule": "no valid samples => count 0, summary NA; never length-weight or impute"
+    },
+    {
+      "name": "median_annotated_road_width",
+      "dtype": "Float64",
+      "definition": "中點唯一歸里標註樣本中位數，非實測通行路寬",
+      "unit": "m",
+      "source": "frozen planned/cadastral width dimension lines",
+      "missing_rule": "no valid samples => count 0, summary NA; never length-weight or impute"
+    },
+    {
+      "name": "annotated_road_width_q1",
+      "dtype": "Float64",
+      "definition": "標註樣本25百分位，線性分位算子",
+      "unit": "m",
+      "source": "frozen planned/cadastral width dimension lines",
+      "missing_rule": "no valid samples => count 0, summary NA; never length-weight or impute"
+    },
+    {
+      "name": "annotated_road_width_q3",
+      "dtype": "Float64",
+      "definition": "標註樣本75百分位，線性分位算子",
+      "unit": "m",
+      "source": "frozen planned/cadastral width dimension lines",
+      "missing_rule": "no valid samples => count 0, summary NA; never length-weight or impute"
+    },
+    {
+      "name": "annotated_road_width_min",
+      "dtype": "Float64",
+      "definition": "標註樣本最小值，不刪極端值",
+      "unit": "m",
+      "source": "frozen planned/cadastral width dimension lines",
+      "missing_rule": "no valid samples => count 0, summary NA; never length-weight or impute"
+    },
+    {
+      "name": "annotated_road_width_max",
+      "dtype": "Float64",
+      "definition": "標註樣本最大值，不刪極端值",
+      "unit": "m",
+      "source": "frozen planned/cadastral width dimension lines",
+      "missing_rule": "no valid samples => count 0, summary NA; never length-weight or impute"
+    },
+    {
+      "name": "annotated_road_width_assigned_source_record_count",
+      "dtype": "Int64",
+      "definition": "本里去重樣本對應原始來源筆數，保留追溯",
+      "unit": "source annotations",
+      "source": "frozen planned/cadastral width dimension lines",
+      "missing_rule": "no valid samples => count 0, summary NA; never length-weight or impute"
+    },
+    {
+      "name": "annotated_road_width_cross_village_line_sample_count",
+      "dtype": "Int64",
+      "definition": "中點歸本里但整線與多里有正長度交集之樣本",
+      "unit": "annotation samples",
+      "source": "frozen planned/cadastral width dimension lines",
+      "missing_rule": "no valid samples => count 0, summary NA; never length-weight or impute"
+    },
+    {
+      "name": "annotated_road_width_same_geometry_conflict_sample_count",
+      "dtype": "Int64",
+      "definition": "相同幾何不同寬度之樣本，未任取第一筆",
+      "unit": "annotation samples",
+      "source": "frozen planned/cadastral width dimension lines",
+      "missing_rule": "no valid samples => count 0, summary NA; never length-weight or impute"
+    },
+    {
+      "name": "annotated_road_width_same_midpoint_distinct_width_sample_count",
+      "dtype": "Int64",
+      "definition": "同中點不同寬度旗標，並非一律錯誤或自動合併",
+      "unit": "annotation samples",
+      "source": "frozen planned/cadastral width dimension lines",
+      "missing_rule": "no valid samples => count 0, summary NA; never length-weight or impute"
+    },
+    {
+      "name": "annotated_road_width_line_intersection_sample_count",
+      "dtype": "Int64",
+      "definition": "診斷：精確去重後全線與此里正長相交樣本數，可跨里重複",
+      "unit": "annotation samples",
+      "source": "frozen planned/cadastral width dimension lines",
+      "missing_rule": "no valid samples => count 0, summary NA; never length-weight or impute"
+    },
+    {
+      "name": "annotated_road_width_line_intersection_median",
+      "dtype": "Float64",
+      "definition": "診斷：精確去重後全線相交樣本中位數，不作主值",
+      "unit": "m",
+      "source": "frozen planned/cadastral width dimension lines",
+      "missing_rule": "no valid samples => count 0, summary NA; never length-weight or impute"
+    },
+    {
+      "name": "annotated_road_width_excluding_geometry_conflicts_median",
+      "dtype": "Float64",
+      "definition": "診斷：排除同幾何異寬樣本後中位數，主值不任意合併",
+      "unit": "m",
+      "source": "frozen planned/cadastral width dimension lines",
+      "missing_rule": "no valid samples => count 0, summary NA; never length-weight or impute"
+    },
+    {
+      "name": "annotated_road_width_no_valid_samples",
+      "dtype": "boolean",
+      "definition": "缺標註樣本，統計值為NA而非0",
+      "unit": "not applicable",
+      "source": "Unit2.6 explicit processing",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "observed_mrt_entrance_count",
+      "dtype": "Int64",
+      "definition": "2026快照中唯一內部歸里的出入口紀錄數，非站數",
+      "unit": "entrance records",
+      "source": "frozen MRT CSV",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "mrt_entrance_density",
+      "dtype": "Float64",
+      "definition": "入口紀錄／完整里面積；零入口不等於無可及性",
+      "unit": "entrances/km²",
+      "source": "observed_mrt_entrance_count / fixed_village_area_km2",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "mrt_entrance_buffer_300m_area_m2",
+      "dtype": "Float64",
+      "definition": "全部有效含市外入口300m buffer先union後與原里面相交；quad_segs=16",
+      "unit": "m²",
+      "source": "frozen MRT all-entrance union + original villages",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "mrt_entrance_buffer_300m_ratio",
+      "dtype": "Float64",
+      "definition": "300m直線覆蓋／完整里面積，非步行路網或流量",
+      "unit": "fraction",
+      "source": "buffer union area / fixed_village_area_m2",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "mrt_entrance_buffer_300m_crossborder_extra_area_m2",
+      "dtype": "Float64",
+      "definition": "保留市外入口相較僅市內入口新增覆蓋面積，不重複加總",
+      "unit": "m²",
+      "source": "all-source buffer union minus within-city-entrance buffer union",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "mrt_entrance_buffer_500m_area_m2",
+      "dtype": "Float64",
+      "definition": "全部有效含市外入口500m buffer先union後與原里面相交；quad_segs=16",
+      "unit": "m²",
+      "source": "frozen MRT all-entrance union + original villages",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "mrt_entrance_buffer_500m_ratio",
+      "dtype": "Float64",
+      "definition": "500m直線覆蓋／完整里面積，非步行路網或流量",
+      "unit": "fraction",
+      "source": "buffer union area / fixed_village_area_m2",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "mrt_entrance_buffer_500m_crossborder_extra_area_m2",
+      "dtype": "Float64",
+      "definition": "保留市外入口相較僅市內入口新增覆蓋面積，不重複加總",
+      "unit": "m²",
+      "source": "all-source buffer union minus within-city-entrance buffer union",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "mrt_entrance_buffer_800m_area_m2",
+      "dtype": "Float64",
+      "definition": "全部有效含市外入口800m buffer先union後與原里面相交；quad_segs=16",
+      "unit": "m²",
+      "source": "frozen MRT all-entrance union + original villages",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "mrt_entrance_buffer_800m_ratio",
+      "dtype": "Float64",
+      "definition": "800m直線覆蓋／完整里面積，非步行路網或流量",
+      "unit": "fraction",
+      "source": "buffer union area / fixed_village_area_m2",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "mrt_entrance_buffer_800m_crossborder_extra_area_m2",
+      "dtype": "Float64",
+      "definition": "保留市外入口相較僅市內入口新增覆蓋面積，不重複加總",
+      "unit": "m²",
+      "source": "all-source buffer union minus within-city-entrance buffer union",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "coverage_ratio_roundoff_flag",
+      "dtype": "boolean",
+      "definition": "行穿／MRT覆蓋比例微量超0–1旗標，保留原比例，不作排除或clip",
+      "unit": "not applicable",
+      "source": "Unit2.6 explicit processing",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "coverage_ratio_max_excess_m2",
+      "dtype": "Float64",
+      "definition": "四項覆蓋面積超完整里面積之最大正超額，只作數值診斷",
+      "unit": "m²",
+      "source": "Unit2.6 explicit processing",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "osm_major_ratio_roundoff_flag",
+      "dtype": "boolean",
+      "definition": "major比例微量超界診斷，原比例不clip",
+      "unit": "not applicable",
+      "source": "Unit2.6 explicit processing",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "osm_road_density_readiness_status",
+      "dtype": "string",
+      "definition": "來源與方法的逐特徵技術readiness；不是人工研究驗收",
+      "unit": "not applicable",
+      "source": "feature readiness matrix",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "osm_road_density_value_state",
+      "dtype": "string",
+      "definition": "區分觀測零、無樣本、零分母與處理失敗；不作完整案例刪里",
+      "unit": "not applicable",
+      "source": "actual feature / denominator / sample count",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "osm_major_road_ratio_readiness_status",
+      "dtype": "string",
+      "definition": "來源與方法的逐特徵技術readiness；不是人工研究驗收",
+      "unit": "not applicable",
+      "source": "feature readiness matrix",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "osm_major_road_ratio_value_state",
+      "dtype": "string",
+      "definition": "區分觀測零、無樣本、零分母與處理失敗；不作完整案例刪里",
+      "unit": "not applicable",
+      "source": "actual feature / denominator / sample count",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "observed_signal_location_density_readiness_status",
+      "dtype": "string",
+      "definition": "來源與方法的逐特徵技術readiness；不是人工研究驗收",
+      "unit": "not applicable",
+      "source": "feature readiness matrix",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "observed_signal_location_density_value_state",
+      "dtype": "string",
+      "definition": "區分觀測零、無樣本、零分母與處理失敗；不作完整案例刪里",
+      "unit": "not applicable",
+      "source": "actual feature / denominator / sample count",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "crosswalk_area_ratio_readiness_status",
+      "dtype": "string",
+      "definition": "來源與方法的逐特徵技術readiness；不是人工研究驗收",
+      "unit": "not applicable",
+      "source": "feature readiness matrix",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "crosswalk_area_ratio_value_state",
+      "dtype": "string",
+      "definition": "區分觀測零、無樣本、零分母與處理失敗；不作完整案例刪里",
+      "unit": "not applicable",
+      "source": "actual feature / denominator / sample count",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "median_annotated_road_width_readiness_status",
+      "dtype": "string",
+      "definition": "來源與方法的逐特徵技術readiness；不是人工研究驗收",
+      "unit": "not applicable",
+      "source": "feature readiness matrix",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "median_annotated_road_width_value_state",
+      "dtype": "string",
+      "definition": "區分觀測零、無樣本、零分母與處理失敗；不作完整案例刪里",
+      "unit": "not applicable",
+      "source": "actual feature / denominator / sample count",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "mrt_entrance_density_readiness_status",
+      "dtype": "string",
+      "definition": "來源與方法的逐特徵技術readiness；不是人工研究驗收",
+      "unit": "not applicable",
+      "source": "feature readiness matrix",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "mrt_entrance_density_value_state",
+      "dtype": "string",
+      "definition": "區分觀測零、無樣本、零分母與處理失敗；不作完整案例刪里",
+      "unit": "not applicable",
+      "source": "actual feature / denominator / sample count",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "mrt_entrance_buffer_500m_ratio_readiness_status",
+      "dtype": "string",
+      "definition": "來源與方法的逐特徵技術readiness；不是人工研究驗收",
+      "unit": "not applicable",
+      "source": "feature readiness matrix",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "mrt_entrance_buffer_500m_ratio_value_state",
+      "dtype": "string",
+      "definition": "區分觀測零、無樣本、零分母與處理失敗；不作完整案例刪里",
+      "unit": "not applicable",
+      "source": "actual feature / denominator / sample count",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "mrt_entrance_buffer_300m_ratio_readiness_status",
+      "dtype": "string",
+      "definition": "來源與方法的逐特徵技術readiness；不是人工研究驗收",
+      "unit": "not applicable",
+      "source": "feature readiness matrix",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "mrt_entrance_buffer_300m_ratio_value_state",
+      "dtype": "string",
+      "definition": "區分觀測零、無樣本、零分母與處理失敗；不作完整案例刪里",
+      "unit": "not applicable",
+      "source": "actual feature / denominator / sample count",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "mrt_entrance_buffer_800m_ratio_readiness_status",
+      "dtype": "string",
+      "definition": "來源與方法的逐特徵技術readiness；不是人工研究驗收",
+      "unit": "not applicable",
+      "source": "feature readiness matrix",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "mrt_entrance_buffer_800m_ratio_value_state",
+      "dtype": "string",
+      "definition": "區分觀測零、無樣本、零分母與處理失敗；不作完整案例刪里",
+      "unit": "not applicable",
+      "source": "actual feature / denominator / sample count",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "signal_geometry_only_location_density_readiness_status",
+      "dtype": "string",
+      "definition": "來源與方法的逐特徵技術readiness；不是人工研究驗收",
+      "unit": "not applicable",
+      "source": "feature readiness matrix",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "signal_geometry_only_location_density_value_state",
+      "dtype": "string",
+      "definition": "區分觀測零、無樣本、零分母與處理失敗；不作完整案例刪里",
+      "unit": "not applicable",
+      "source": "actual feature / denominator / sample count",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "signal_main_without_lcs_location_density_readiness_status",
+      "dtype": "string",
+      "definition": "來源與方法的逐特徵技術readiness；不是人工研究驗收",
+      "unit": "not applicable",
+      "source": "feature readiness matrix",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "signal_main_without_lcs_location_density_value_state",
+      "dtype": "string",
+      "definition": "區分觀測零、無樣本、零分母與處理失敗；不作完整案例刪里",
+      "unit": "not applicable",
+      "source": "actual feature / denominator / sample count",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "signal_geometry_without_lcs_location_density_readiness_status",
+      "dtype": "string",
+      "definition": "來源與方法的逐特徵技術readiness；不是人工研究驗收",
+      "unit": "not applicable",
+      "source": "feature readiness matrix",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "signal_geometry_without_lcs_location_density_value_state",
+      "dtype": "string",
+      "definition": "區分觀測零、無樣本、零分母與處理失敗；不作完整案例刪里",
+      "unit": "not applicable",
+      "source": "actual feature / denominator / sample count",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "any_spatial_processing_failed",
+      "dtype": "boolean",
+      "definition": "任一空間處理實際失敗；每個特徵另有value_state，不一概把所有特徵設NA",
+      "unit": "not applicable",
+      "source": "Unit2.6 explicit processing",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "any_core_feature_missing",
+      "dtype": "boolean",
+      "definition": "七核心任一缺失，不刪除該行政里",
+      "unit": "not applicable",
+      "source": "Unit2.6 explicit processing",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    },
+    {
+      "name": "source_complete_census_certified",
+      "dtype": "boolean",
+      "definition": "所有快照均不冒充同時點完整設施普查",
+      "unit": "not applicable",
+      "source": "Unit2.6 explicit processing",
+      "missing_rule": "source-specific missing/zero rules; processing failure => NA"
+    }
+  ],
+  "source_inputs": {
+    "data/raw/taiwan-250101-free.shp.zip": "ad19e79129efc0a447db5fe5d684e732199a900251f04f2aacef821cfa9ff1ab",
+    "data/raw/號誌路口經緯度一覽20230706.csv": "4de42a369f6b6ba38df29ff2d357f8ad5aec7a237b8709edc431d77c3cfb29a7",
+    "data/raw/(交工處)行人穿越線圖資_202407121519.zip": "a7f4241ea1ecccfb09050fb38f4d8537a7f5ec1d4134eb7b8929217601ba0493",
+    "data/raw/路寬檔_提供.zip": "a92d7b7225509489181606158d1d9cbe3b1a4c83b120ee12d577460109852d70",
+    "data/raw/(交工處)標線型人行道圖資_202610300914.zip": "c17a853905ee242f88a9cbdefd4cf59130c08ab0eae40495365b6d36857a70a9",
+    "data/raw/臺北捷運車站出入口座標_1150804.csv": "134d8488c240fb23e04535db6a94da73006f890c83617eeedaa9b26c9f120015",
+    "data/raw/G97_A_CAVLGE_P.shp": "f7fb4813a2283198ca564f5686823c454c5fd832d2f6981a2ee88a94719be3cc",
+    "data/raw/G97_A_CAVLGE_P.shx": "ab7bc5e63229f676d3580b68e98db59b91a2d327c74ca23b0000ca1c568d414e",
+    "data/raw/G97_A_CAVLGE_P.dbf": "2f43f92e84279a45b2512cf453e9b72f706d1ad1402665c946b1a354f75d8577",
+    "data/raw/G97_A_CAVLGE_P.prj": "8dac7d82ea889063f9eaa7df408fcaeb7307d32831ea973b6534d0139a4523c5",
+    "data/raw/G97_A_CAVLGE_P.cpg": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824",
+    "data/processed/taipei_village_base.csv": "db0a225df3568ddb2a47eab1e1d28843e1594dec37956c57eea926e444968209",
+    "data/processed/taipei_village_base_schema.json": "a7e5e3b4d77ab506736ecc940e26a87df6cace3a738cbdaeef1e835e6bed7070",
+    "data/processed/taipei_village_base_documentation.ipynb": "a843d587788b4ea6a943cc05d9413908cf8b66b2f73f9fdbec01e2ab52edd535",
+    "data/code/taipei_transportation_infrastructure_validation.ipynb": "5fa4a342b2f49359c560929ce9aecf40f6f09e285dc05447b56af94c448e8508",
+    "data/code/unit17_validation_config.json": "7554b54042b43dd8fd2ec2c5cfa6f218e9c6acae2376ff7e0aee0e14e73a17a7",
+    "data/code/unit17_validation_support.py": "1a18dd248daf08074a5ba7ec659a489fe7b17852195259e8084727d4fd6f3080",
+    "data/raw/unit17_osm_raw_documentation.ipynb": "e71a3c28d0edf1307e0842d61b9371df34fd1b46be5840532ce7784ba7e37294",
+    "data/raw/unit17_signals_raw_documentation.ipynb": "3f38193c3dde1a0ad4034889a93fd7df73c60d890bc2a2e9a3411e8caa5b24a4",
+    "data/raw/unit17_crossings_raw_documentation.ipynb": "b930a5a38df43b426c1982359d34e9676e59d57eccfa76c029d7a6819a8e1289",
+    "data/raw/unit17_road_width_raw_documentation.ipynb": "b34d11b2b57ba3f3e974fde75cfdaeec831089e9737cba18fd0a66af383ce242",
+    "data/raw/unit17_sidewalk_raw_documentation.ipynb": "79ed45e4d846d75709895565d396ac802676489ea6cc89caa238117634697a48",
+    "data/raw/unit17_mrt_raw_documentation.ipynb": "215cb596f1c0b8c3aefedc5bda3d7b53ce6230b4d753db4d22d90e3e3a613d85",
+    "data/raw/unit17_supplementary_source_evidence.zip": "f5394c215f0db5a0124ea831d0552fe9aa26ea1c5901797a5a8fcce042f6b3bf",
+    "data/raw/unit17_supplementary_source_evidence_documentation.ipynb": "92726536d73af85ea8ad9dd884ed64ad92d9c8f67c203fcd4a7097be7ed6deba",
+    "data/code/taipei_village_boundary_validation.ipynb": "662dbee2dc42c3552b12628a1e89fcc81b07155c225277117f50d07e0145a343",
+    "data/code/prepare_taipei_village_base_and_crash_spatial_assignment.ipynb": "ef8a3d21f38ecb902f9495720b0094363ebd57cf444b837176fe2b815992abc4",
+    "data/code/unit25_zoning_support.py": "a5d1a8bbc8b0473921340b01af09506902123030502a61035def77c83af7b2a4",
+    "data/code/unit26_transportation_support.py": "dcdbeb261cec78d6eb3d967755da79607d25186671dea3988d61696db7f6c557"
+  },
+  "handoff_only_inputs": {
+    "data/processed/taipei_dataset_a_annual.csv": "4e264176c970263777eb4c564f427e1f839a45b31552a37bc4bdbfbed6b09422",
+    "data/processed/taipei_dataset_a_annual_schema.json": "4d0c5b7b307b1cca4261a9595cd1ca894f549d88e06bed1b0b071dcf7c40fb21",
+    "data/processed/taipei_dataset_a_pooled.csv": "081c7dd42c94e16a5684f27edaebd310a9c556bae7460783dd87fde8d26ea46a",
+    "data/processed/taipei_dataset_a_pooled_schema.json": "7878146fac39d4bfabee965b6001d0cf5e101ca1d76778599fec4b480ad59b5a",
+    "data/processed/taipei_dataset_b1_annual.csv": "d4ad76e82ad6f00d5b146c00c0e065d2095cd9fd36fe6bbbad5feb40705ae795",
+    "data/processed/taipei_dataset_b1_annual_schema.json": "89bb5ace9a7abf9bcedcc1ff0d6b2f91d45578f7c6cfe20a685bd6802d8fa7ca",
+    "data/processed/taipei_dataset_b1_pooled.csv": "3b02fb7b338b59f2552972ccb98efa0d723e525826b301cdda021efa9ddd4e50",
+    "data/processed/taipei_dataset_b1_pooled_schema.json": "63f46e1ae0cba9c19549ee5f8b9ad39084a22f5d2d738b62567b1b3f5e86f340",
+    "data/processed/taipei_dataset_c_annual.csv": "9ab1970ed0f790ebdf31e1726094493305da00ac4efaf84b8a554f7debfa560e",
+    "data/processed/taipei_dataset_c_annual_schema.json": "4a8151a9a5dcd716cc03312b303c4455cb47210192c43b86cf3a0e06d268cb6f",
+    "data/processed/taipei_dataset_c_pooled.csv": "caceea61ff906b3e2f0b4796a31af3373a929307a0c7f7094fb9373794f76bc6",
+    "data/processed/taipei_dataset_c_pooled_schema.json": "44baac19975650d792e23e81c5463b84e00f299c9c606ef0f95abf8b3756d3ab",
+    "data/processed/taipei_dataset_b2.csv": "1af7ce133e62a1188e8755a1e4e7bc55db8b89d639f089f1c75319c8a9ee0269",
+    "data/processed/taipei_dataset_b2_schema.json": "d5857362444df6bea1f606330d0363d792cc1a7f56812c9bb4917ce1b5e3a102"
+  },
+  "core_candidate_features": [
+    "osm_road_density",
+    "osm_major_road_ratio",
+    "observed_signal_location_density",
+    "crosswalk_area_ratio",
+    "median_annotated_road_width",
+    "mrt_entrance_buffer_500m_ratio",
+    "mrt_entrance_density"
+  ],
+  "source_metadata": {
+    "osm": {
+      "title": "Geofabrik OSM道路",
+      "provider": "Geofabrik／OpenStreetMap contributors",
+      "url": "https://download.geofabrik.de/asia/taiwan.html",
+      "publication": "歷史資源檔名250101；精確發布時間未認證",
+      "period": "包內README明示2025-01-01T21:21:00Z快照；非2024／2025逐年獨立路網",
+      "limitation": "僅讀道路及研究區外圍bbox；線表示密度非實體中心線、交通流量或VKT；免費格式欠完整OSM節點拓樸",
+      "license": "Open Database License 1.0；需OpenStreetMap contributors標示及遵守ODbL"
+    },
+    "signals": {
+      "title": "號誌路口位置",
+      "provider": "臺北市交通局交通管制工程處",
+      "url": "https://data.taipei/dataset/detail?id=4a599738-6550-448a-9a78-03b26c67e249",
+      "publication": "資源更新2025-07-15",
+      "period": "檔名20230706非每筆觀測／設置時間；實際快照時點仍未認證",
+      "limitation": "原檔為tab分隔；路口位置紀錄不等於燈頭或設備數，完整歷史號誌存量未證",
+      "license": "政府資料開放授權條款第1版；依官方頁，來源與版本須保留"
+    },
+    "crossings": {
+      "title": "行人穿越線圖資",
+      "provider": "臺北市交通局交通管制工程處",
+      "url": "https://data.taipei/dataset/detail?id=4d6bd0c6-9f56-408b-bb96-ac41134a95d5",
+      "publication": "目前資源頁更新2026-03-19；本機ZIP成員時間2024-07-12",
+      "period": "2024-07-12封裝標記，非全年有效或2025新增完整紀錄；RDDATE需排除1899占位",
+      "limitation": "六個明示行穿線圖層，Polygon構件不先假定完整設施；長寬欄0與單位未證，面積以有效幾何聯集診斷",
+      "license": "政府資料開放授權條款第1版；依官方頁，來源與版本須保留"
+    },
+    "road_width": {
+      "title": "道路路寬標註",
+      "provider": "臺北市都市發展局",
+      "url": "https://data.taipei/dataset/detail?id=068be2c7-eea1-4303-91f8-fbf50c9b2aec",
+      "publication": "資源2023-12-28；metadata2026-06-17",
+      "period": "ZIP內資料修改2023-12-28，XML製作2021；非2024／2025完整年度實測",
+      "limitation": "官方稱依都市計畫參酌地籍標註；線長與標註寬度相近，不能當道路縱向長度作權重或實測車行空間",
+      "license": "政府資料開放授權條款第1版；依官方頁，來源與版本須保留"
+    },
+    "sidewalk": {
+      "title": "標線型人行道來源候選",
+      "provider": "臺北市交通局交通管制工程處",
+      "url": "https://data.taipei/dataset/detail?id=d647b3af-4bbd-4e8f-b420-8f6c1bc1b597",
+      "publication": "資源2026-10-30",
+      "period": "2026-10-30快照；RDDATE僅現存紀錄歷史資格，不含拆除／遷移歷史",
+      "limitation": "實檔含多種LICODE並重現行穿線；缺確切人行道代碼篩選依據，不能全部43016面當人行道",
+      "license": "政府資料開放授權條款第1版；依官方頁，來源與版本須保留"
+    },
+    "mrt": {
+      "title": "臺北捷運出入口",
+      "provider": "臺北大眾捷運股份有限公司",
+      "url": "https://data.taipei/dataset/detail?id=cfa4778c-62c1-497b-b704-756231de348b",
+      "publication": "資源2026-08-04",
+      "period": "1150804檔名及更新快照，無逐出入口設置／撤除日期",
+      "limitation": "固定設施快照，不證明研究年存在；站名與入口分開、保留跨市點，直線緩衝非實際步行可及性",
+      "license": "政府資料開放授權條款第1版；依官方頁，來源與版本須保留"
+    }
+  },
+  "source_crs": {
+    "osm": {
+      "raw": "EPSG:4326",
+      "work": "EPSG:3826",
+      "evidence_grade": "A metadata",
+      "evidence": "actual archive PRJ; coordinate accuracy itself not certified"
+    },
+    "crossings": {
+      "raw": "EPSG:3826",
+      "work": "EPSG:3826",
+      "evidence_grade": "A metadata",
+      "evidence": "actual archive PRJ; coordinate accuracy itself not certified"
+    },
+    "road_width": {
+      "raw": "EPSG:3826",
+      "work": "EPSG:3826",
+      "evidence_grade": "A metadata",
+      "evidence": "actual archive PRJ; coordinate accuracy itself not certified"
+    },
+    "signals": {
+      "raw": "EPSG:4326 working interpretation",
+      "work": "EPSG:3826",
+      "evidence_grade": "B working convention",
+      "evidence": "Unit1.7 source-specific coordinate fields and official page; no file-specific datum certification"
+    },
+    "mrt": {
+      "raw": "EPSG:4326 working interpretation",
+      "work": "EPSG:3826",
+      "evidence_grade": "B working convention",
+      "evidence": "Unit1.7 source-specific coordinate fields and official page; no file-specific datum certification"
+    }
+  },
+  "source_quality": {
+    "osm": {
+      "members": [
+        {
+          "member": "gis_osm_roads_free_1.shp",
+          "total_features": 737817,
+          "loaded": 93215,
+          "raw_crs": "EPSG:4326",
+          "raw_bounds": [
+            121.4078628,
+            24.9275881,
+            121.7012499,
+            25.2544975
+          ],
+          "types": {
+            "LineString": 93215
+          }
+        }
+      ],
+      "loaded_rows": 93215,
+      "invalid_or_empty_or_wrong_type": 0,
+      "raw_WKB_duplicate_rows": 2,
+      "types": {
+        "LineString": 93215
+      },
+      "original_geometry_WKB_digest": "677cd17c54efbcfc61668666d2bca060a709a389ed55078a619eb1311f9e78f0",
+      "national_source_features": 737817,
+      "bbox_loaded": 93215,
+      "study_related": 73507,
+      "regional_included_lines": 40322,
+      "included_fclasses": [
+        "busway",
+        "living_street",
+        "motorway",
+        "motorway_link",
+        "primary",
+        "primary_link",
+        "residential",
+        "secondary",
+        "secondary_link",
+        "service",
+        "tertiary",
+        "tertiary_link",
+        "trunk",
+        "trunk_link",
+        "unclassified"
+      ],
+      "unknown_mapping_rows": 0,
+      "selected_raw_WKB_duplicate_rows": 0,
+      "selected_normalized_geometry_duplicate_rows": 4,
+      "osm_id_duplicate_rows": 0,
+      "selected_reference_length_sum_m": 5853182.711816416,
+      "selected_line_union_length_m": 5853111.664268274,
+      "city_road_length_m": 3706203.383370213,
+      "city_major_length_m": 397055.6634852989,
+      "city_raw_clipped_length_sum_m": 3706224.7689267294,
+      "city_duplicate_overlap_removed_m": 21.385556516237557,
+      "city_major_other_overlap_m": 0.0,
+      "city_cross_layer_exact_overlap_m": 0.0,
+      "layer_strata": [
+        {
+          "layer": "-3",
+          "records": 1,
+          "represented_union_city_length_m": 0.0
+        },
+        {
+          "layer": "-2",
+          "records": 2,
+          "represented_union_city_length_m": 792.8245064764017
+        },
+        {
+          "layer": "-1",
+          "records": 286,
+          "represented_union_city_length_m": 37579.87445315807
+        },
+        {
+          "layer": "0",
+          "records": 38450,
+          "represented_union_city_length_m": 3423544.5212427713
+        },
+        {
+          "layer": "1",
+          "records": 1015,
+          "represented_union_city_length_m": 111151.25161375944
+        },
+        {
+          "layer": "2",
+          "records": 381,
+          "represented_union_city_length_m": 73095.42653761068
+        },
+        {
+          "layer": "3",
+          "records": 155,
+          "represented_union_city_length_m": 52671.5641711375
+        },
+        {
+          "layer": "4",
+          "records": 31,
+          "represented_union_city_length_m": 6900.315643949176
+        },
+        {
+          "layer": "5",
+          "records": 1,
+          "represented_union_city_length_m": 467.60519835013844
+        }
+      ],
+      "city_shared_boundary_road_length_m": 0.0,
+      "city_multi_village_coverage_length_m": 0.038635145857228236,
+      "village_road_effective_sum_m": 3706203.422006569,
+      "village_inclusive_sum_m": 3706203.4220065284,
+      "village_shared_sum_m": 0.0,
+      "inclusive_sum_minus_city_m": 0.038636315148323774,
+      "effective_sum_minus_city_m": 0.03863635566085577,
+      "boundary_policy": "exclude exact shared original-village boundary line segments from all primary village road lengths; retain inclusive and unallocated shared lengths; no first-village allocation",
+      "format_evidence": {
+        "url": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf",
+        "document_version": "2026-04-02",
+        "reviewed_at": "2026-11-27",
+        "scope": "general field/class definitions, not certification of all 2025 export semantics; actual PRJ/fields/fclass read from frozen 2025 ZIP",
+        "previous_capture": "Unit1.7 geofabrik_road_fields_web.json contains an access error; retained unchanged, not treated as a successful PDF archive",
+        "research_major": "Unit1.7 narrow six-class major group retained; official document major heading also includes secondary/tertiary, which are not silently added here"
+      }
+    },
+    "crossings": {
+      "members": [
+        {
+          "member": "斑馬紋行人穿越線/grapline_09.shp",
+          "total_features": 364,
+          "loaded": 364,
+          "raw_crs": "EPSG:3826",
+          "raw_bounds": [
+            297023.50540028,
+            2763293.776119925,
+            312913.0200003757,
+            2783186.9659195
+          ],
+          "types": {
+            "Polygon": 344,
+            "MultiPolygon": 20
+          }
+        },
+        {
+          "member": "斑馬紋行人穿越線/grapline_A9.shp",
+          "total_features": 393,
+          "loaded": 393,
+          "raw_crs": "EPSG:3826",
+          "raw_bounds": [
+            300301.18230030156,
+            2764819.4137373925,
+            312901.17960036633,
+            2782410.2910195156
+          ],
+          "types": {
+            "Polygon": 381,
+            "MultiPolygon": 12
+          }
+        },
+        {
+          "member": "枕木紋行人穿越線-間隔80cm/grapline_18.shp",
+          "total_features": 1659,
+          "loaded": 1659,
+          "raw_crs": "EPSG:3826",
+          "raw_bounds": [
+            297093.6625741837,
+            2762403.7420156035,
+            312984.20176647336,
+            2784527.35311872
+          ],
+          "types": {
+            "Polygon": 1659
+          }
+        },
+        {
+          "member": "枕木紋行人穿越線-間隔80cm-/grapline_B8.shp",
+          "total_features": 1451,
+          "loaded": 1451,
+          "raw_crs": "EPSG:3826",
+          "raw_bounds": [
+            297036.8754002815,
+            2763269.2103968505,
+            312604.4025003638,
+            2781978.8329304894
+          ],
+          "types": {
+            "Polygon": 1448,
+            "MultiPolygon": 3
+          }
+        },
+        {
+          "member": "枕木紋行人穿越線-間隔40cm/grapline_08.shp",
+          "total_features": 7354,
+          "loaded": 7354,
+          "raw_crs": "EPSG:3826",
+          "raw_bounds": [
+            296696.3241002775,
+            2762392.643119941,
+            313003.7077003716,
+            2785558.021419451
+          ],
+          "types": {
+            "Polygon": 7337,
+            "MultiPolygon": 17
+          }
+        },
+        {
+          "member": "枕木紋行人穿越線-間隔40cm-/grapline_A8.shp",
+          "total_features": 8422,
+          "loaded": 8422,
+          "raw_crs": "EPSG:3826",
+          "raw_bounds": [
+            296793.16610027733,
+            2762389.968919941,
+            312858.6852003706,
+            2785784.333819444
+          ],
+          "types": {
+            "Polygon": 8402,
+            "MultiPolygon": 20
+          }
+        }
+      ],
+      "loaded_rows": 19643,
+      "invalid_or_empty_or_wrong_type": 0,
+      "raw_WKB_duplicate_rows": 2414,
+      "types": {
+        "Polygon": 19571,
+        "MultiPolygon": 72
+      },
+      "original_geometry_WKB_digest": "f0a8aed6f2dd46feb634b57ae1598ec8927e48787480fcb8ec89a487d624b2ad",
+      "normalized_duplicate_geometry_rows": 2414,
+      "raw_polygon_area_sum_m2": 771751.0883554548,
+      "polygon_union_area_m2": 675854.2924997755,
+      "duplicate_overlap_removed_total_m2": 95896.79585567932,
+      "city_union_area_m2": 675558.48078387,
+      "village_union_area_sum_m2": 675558.5906252506,
+      "village_sum_minus_city_m2": 0.10984138061758131,
+      "observed_zero_villages": 0,
+      "licodes": {
+        "A8": 8422,
+        "08": 7354,
+        "18": 1659,
+        "B8": 1451,
+        "A9": 393,
+        "09": 364
+      },
+      "missing_rddate": 1319,
+      "pre1950_placeholder_dates": 10,
+      "semantic_unit": "six-layer crossing-marking polygon components; union area only, not complete facilities/length; 2024 packaging not annual census"
+    },
+    "road_width": {
+      "members": [
+        {
+          "member": "roadsize2.shp",
+          "total_features": 22676,
+          "loaded": 22676,
+          "raw_crs": "EPSG:3826",
+          "raw_bounds": [
+            296588.42308840586,
+            2763381.3759872434,
+            313023.9286638041,
+            2782648.787536552
+          ],
+          "types": {
+            "LineString": 22676
+          }
+        }
+      ],
+      "loaded_rows": 22676,
+      "invalid_or_empty_or_wrong_type": 0,
+      "raw_WKB_duplicate_rows": 548,
+      "types": {
+        "LineString": 22676
+      },
+      "original_geometry_WKB_digest": "e5dd07799105528f80638f599e9eda54672a92307e1028ef9b5f963a37d073b9",
+      "parseable_width": 22676,
+      "positive_valid_annotations": 22676,
+      "line_length_within_1cm_of_annotation": 22655,
+      "raw_exact_geometry_width_duplicate_rows": 548,
+      "distinct_geometry_width_samples": 22401,
+      "same_geometry_conflicting_width_groups": 0,
+      "same_midpoint_distinct_width_positions": 0,
+      "midpoint_unique_assigned_samples": 22401,
+      "midpoint_outside_samples": 0,
+      "midpoint_boundary_or_multiple_samples": 0,
+      "cross_village_dimension_line_samples": 3780,
+      "full_line_not_covered_by_midpoint_village_samples": 3780,
+      "original_line_intersection_valid_villages": 453,
+      "new_midpoint_valid_villages": 453,
+      "new_no_sample_villages": 3,
+      "changed_village_medians": 143,
+      "policy": "one exact normalized-geometry + parsed-width sample; direction normalization only, no snapping/proximity merge; midpoint strict unique interior attribution; retain different widths and flag conflicts; no longitudinal weighting",
+      "limitations": "planned/cadastral dimension annotation sample, not measured passable road width or representative road-length sample; co-located distinct geometries not automatically errors"
+    },
+    "signals": {
+      "loaded_rows": 2710,
+      "valid_world_coordinates": 2699,
+      "valid_projected_points": 2699,
+      "missing_or_invalid_coordinates": 11,
+      "projection_failure": 0,
+      "zero_coordinate_pairs": 1,
+      "encoding": "CP950 strict",
+      "separator": "TAB",
+      "unique_assigned": 2697,
+      "outside": 2,
+      "boundary_or_multiple": 0,
+      "unassigned_invalid": 11,
+      "source_id_unique": true,
+      "raw_explicit_test_names": 5,
+      "raw_LCS_names": 14,
+      "valid_coordinate_LCS_names": 3,
+      "valid_coordinate_test_names": 5,
+      "exact_duplicate_record_rows": 0,
+      "same_coordinate_duplicate_rows": 11,
+      "same_coordinate_different_name_rows": 11,
+      "raw_assigned_district_conflicts": 118,
+      "raw_district_unknown": 0,
+      "raw_unique_valid_coordinate_locations": 2690,
+      "main_A_records": 2576,
+      "main_A_locations": 2568,
+      "geometry_B_locations": 2684,
+      "main_A_without_LCS_locations": 2567,
+      "geometry_B_without_LCS_locations": 2682,
+      "primary_policy": "A: exact coordinate location with basic readable non-test records; strict unique interior and ALL eligible members recognized source district agrees with spatial district; unknown differs from conflict; no first-record choice",
+      "alternative_policy": "B: same basic and geometry rules, no district agreement requirement; both A/B retain LCS, and exclusions of LCS-only locations are separately saved without reclassifying LCS as nonfacility",
+      "test_policy": "only exact explicit 機房測試用 substring excluded, five source names support nonformal test interpretation",
+      "deduplication": "unique exact parsed numeric coordinate pairs only; no proximity merge or physical-intersection dedup claim",
+      "readiness_reason": "Partially ready: location record unit, LCS meaning/completeness/time and 118 source-district discrepancies not certified as actual intersections"
+    },
+    "mrt": {
+      "loaded_rows": 390,
+      "valid_world_coordinates": 390,
+      "valid_projected_points": 390,
+      "missing_or_invalid_coordinates": 0,
+      "projection_failure": 0,
+      "zero_coordinate_pairs": 0,
+      "encoding": "CP950 strict",
+      "separator": "comma",
+      "unique_assigned": 280,
+      "outside": 110,
+      "boundary_or_multiple": 0,
+      "unassigned_invalid": 0,
+      "source_id_unique": true,
+      "station_name_labels": 119,
+      "station_label_unparsed": 0,
+      "source_exact_duplicate_rows": 0,
+      "same_coordinate_rows": 0,
+      "outside_entrances_within_800m": 15,
+      "zero_entrance_villages": 318,
+      "buffer_effects": [
+        {
+          "radius_m": 300,
+          "city_union_area_m2": 28002336.288042028,
+          "village_area_sum_m2": 28002336.29369475,
+          "village_sum_minus_city_m2": 0.005652721971273422,
+          "extra_city_area_from_outside_entrances_m2": 16556.125955507072,
+          "raw_sum_individual_buffer_area_m2": 110092852.01816791,
+          "all_entrance_buffer_union_area_m2": 43568766.41932072,
+          "total_buffer_overlap_removed_m2": 66524085.598847196
+        },
+        {
+          "radius_m": 500,
+          "city_union_area_m2": 58374045.25272581,
+          "village_area_sum_m2": 58374045.26183698,
+          "village_sum_minus_city_m2": 0.009111173450946808,
+          "extra_city_area_from_outside_entrances_m2": 102257.14561470371,
+          "raw_sum_individual_buffer_area_m2": 305813477.828232,
+          "all_entrance_buffer_union_area_m2": 95995138.7541733,
+          "total_buffer_overlap_removed_m2": 209818339.0740587
+        },
+        {
+          "radius_m": 800,
+          "city_union_area_m2": 92927724.36758062,
+          "village_area_sum_m2": 92927724.37669651,
+          "village_sum_minus_city_m2": 0.00911588966846466,
+          "extra_city_area_from_outside_entrances_m2": 431736.81912425143,
+          "raw_sum_individual_buffer_area_m2": 782882503.2402434,
+          "all_entrance_buffer_union_area_m2": 168262235.9927317,
+          "total_buffer_overlap_removed_m2": 614620267.2475117
+        }
+      ],
+      "buffer_policy": "all valid source entrances including outside-city points; union before actual village polygon intersection; EPSG3826, quad_segs=16; no historical-date filtering",
+      "unit": "entrance records, not stations or ridership; exact station labels are diagnostic, no official station code",
+      "snapshot": "2026-08-04 current snapshot, not 2024/2025 pre-accident or independent annual observation"
+    },
+    "sidewalk": {
+      "processing_status": "Blocked",
+      "features_not_computed": true,
+      "existing_verified_rows": 43016,
+      "existing_licodes": 30,
+      "existing_known_crossing_code_rows": 20494,
+      "existing_crossing_key_overlap": 19643,
+      "evidence": "Unit1.7 notebook/helper/config, read only; no mixed-layer extraction or new classification"
+    }
+  },
+  "road_classification": [
+    {
+      "fclass": "bridleway",
+      "source_definition": "騎馬路徑",
+      "research_group": "walking",
+      "included": false,
+      "major": false,
+      "inclusion_reason": "步行／自行車／產業道路或未知類別，依Unit1.7不納主要機動候選",
+      "bbox_source_records": 2,
+      "regional_records": 2,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "busway",
+      "source_definition": "公車專用道路",
+      "research_group": "service",
+      "included": true,
+      "major": false,
+      "inclusion_reason": "Unit1.7機動車候選研究規格",
+      "bbox_source_records": 34,
+      "regional_records": 34,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "cycleway",
+      "source_definition": "自行車道",
+      "research_group": "cycling",
+      "included": false,
+      "major": false,
+      "inclusion_reason": "步行／自行車／產業道路或未知類別，依Unit1.7不納主要機動候選",
+      "bbox_source_records": 1510,
+      "regional_records": 1263,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "footway",
+      "source_definition": "步行路徑",
+      "research_group": "walking",
+      "included": false,
+      "major": false,
+      "inclusion_reason": "步行／自行車／產業道路或未知類別，依Unit1.7不納主要機動候選",
+      "bbox_source_records": 24965,
+      "regional_records": 21975,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "living_street",
+      "source_definition": "行人優先街道",
+      "research_group": "local",
+      "included": true,
+      "major": false,
+      "inclusion_reason": "Unit1.7機動車候選研究規格",
+      "bbox_source_records": 298,
+      "regional_records": 146,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "motorway",
+      "source_definition": "高速道路",
+      "research_group": "major",
+      "included": true,
+      "major": true,
+      "inclusion_reason": "Unit1.7機動車候選研究規格",
+      "bbox_source_records": 412,
+      "regional_records": 260,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "motorway_link",
+      "source_definition": "高速道路連接匝道",
+      "research_group": "major",
+      "included": true,
+      "major": true,
+      "inclusion_reason": "Unit1.7機動車候選研究規格",
+      "bbox_source_records": 462,
+      "regional_records": 310,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "path",
+      "source_definition": "未指定用途路徑",
+      "research_group": "walking",
+      "included": false,
+      "major": false,
+      "inclusion_reason": "步行／自行車／產業道路或未知類別，依Unit1.7不納主要機動候選",
+      "bbox_source_records": 5151,
+      "regional_records": 4116,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "pedestrian",
+      "source_definition": "行人專用街道",
+      "research_group": "walking",
+      "included": false,
+      "major": false,
+      "inclusion_reason": "步行／自行車／產業道路或未知類別，依Unit1.7不納主要機動候選",
+      "bbox_source_records": 739,
+      "regional_records": 602,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "primary",
+      "source_definition": "主要道路",
+      "research_group": "major",
+      "included": true,
+      "major": true,
+      "inclusion_reason": "Unit1.7機動車候選研究規格",
+      "bbox_source_records": 1271,
+      "regional_records": 879,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "primary_link",
+      "source_definition": "主要道路連接匝道",
+      "research_group": "major",
+      "included": true,
+      "major": true,
+      "inclusion_reason": "Unit1.7機動車候選研究規格",
+      "bbox_source_records": 110,
+      "regional_records": 84,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "residential",
+      "source_definition": "住宅區道路",
+      "research_group": "local",
+      "included": true,
+      "major": false,
+      "inclusion_reason": "Unit1.7機動車候選研究規格",
+      "bbox_source_records": 11148,
+      "regional_records": 8770,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "secondary",
+      "source_definition": "次要道路",
+      "research_group": "secondary",
+      "included": true,
+      "major": false,
+      "inclusion_reason": "Unit1.7機動車候選研究規格",
+      "bbox_source_records": 2741,
+      "regional_records": 2335,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "secondary_link",
+      "source_definition": "次要道路連接匝道",
+      "research_group": "secondary",
+      "included": true,
+      "major": false,
+      "inclusion_reason": "Unit1.7機動車候選研究規格",
+      "bbox_source_records": 259,
+      "regional_records": 184,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "service",
+      "source_definition": "出入建物或停車場等服務道路",
+      "research_group": "service",
+      "included": true,
+      "major": false,
+      "inclusion_reason": "Unit1.7機動車候選研究規格",
+      "bbox_source_records": 30315,
+      "regional_records": 22105,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "steps",
+      "source_definition": "階梯",
+      "research_group": "walking",
+      "included": false,
+      "major": false,
+      "inclusion_reason": "步行／自行車／產業道路或未知類別，依Unit1.7不納主要機動候選",
+      "bbox_source_records": 5261,
+      "regional_records": 4566,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "tertiary",
+      "source_definition": "第三級道路",
+      "research_group": "secondary",
+      "included": true,
+      "major": false,
+      "inclusion_reason": "Unit1.7機動車候選研究規格",
+      "bbox_source_records": 3722,
+      "regional_records": 2794,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "tertiary_link",
+      "source_definition": "第三級道路連接匝道",
+      "research_group": "secondary",
+      "included": true,
+      "major": false,
+      "inclusion_reason": "Unit1.7機動車候選研究規格",
+      "bbox_source_records": 177,
+      "regional_records": 129,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "track",
+      "source_definition": "農林等產業道路",
+      "research_group": "other_nonmotor_or_unconfirmed",
+      "included": false,
+      "major": false,
+      "inclusion_reason": "步行／自行車／產業道路或未知類別，依Unit1.7不納主要機動候選",
+      "bbox_source_records": 945,
+      "regional_records": 553,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "track_grade1",
+      "source_definition": "產業道路路面等級1",
+      "research_group": "other_nonmotor_or_unconfirmed",
+      "included": false,
+      "major": false,
+      "inclusion_reason": "步行／自行車／產業道路或未知類別，依Unit1.7不納主要機動候選",
+      "bbox_source_records": 128,
+      "regional_records": 70,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "track_grade2",
+      "source_definition": "產業道路路面等級2",
+      "research_group": "other_nonmotor_or_unconfirmed",
+      "included": false,
+      "major": false,
+      "inclusion_reason": "步行／自行車／產業道路或未知類別，依Unit1.7不納主要機動候選",
+      "bbox_source_records": 15,
+      "regional_records": 9,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "track_grade3",
+      "source_definition": "產業道路路面等級3",
+      "research_group": "other_nonmotor_or_unconfirmed",
+      "included": false,
+      "major": false,
+      "inclusion_reason": "步行／自行車／產業道路或未知類別，依Unit1.7不納主要機動候選",
+      "bbox_source_records": 11,
+      "regional_records": 8,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "track_grade4",
+      "source_definition": "產業道路路面等級4",
+      "research_group": "other_nonmotor_or_unconfirmed",
+      "included": false,
+      "major": false,
+      "inclusion_reason": "步行／自行車／產業道路或未知類別，依Unit1.7不納主要機動候選",
+      "bbox_source_records": 10,
+      "regional_records": 5,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "track_grade5",
+      "source_definition": "產業道路路面等級5",
+      "research_group": "other_nonmotor_or_unconfirmed",
+      "included": false,
+      "major": false,
+      "inclusion_reason": "步行／自行車／產業道路或未知類別，依Unit1.7不納主要機動候選",
+      "bbox_source_records": 17,
+      "regional_records": 12,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "trunk",
+      "source_definition": "重要幹道",
+      "research_group": "major",
+      "included": true,
+      "major": true,
+      "inclusion_reason": "Unit1.7機動車候選研究規格",
+      "bbox_source_records": 402,
+      "regional_records": 363,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "trunk_link",
+      "source_definition": "重要幹道連接匝道",
+      "research_group": "major",
+      "included": true,
+      "major": true,
+      "inclusion_reason": "Unit1.7機動車候選研究規格",
+      "bbox_source_records": 606,
+      "regional_records": 485,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "unclassified",
+      "source_definition": "較小地方道路，並非未知碼",
+      "research_group": "local",
+      "included": true,
+      "major": false,
+      "inclusion_reason": "Unit1.7機動車候選研究規格",
+      "bbox_source_records": 2485,
+      "regional_records": 1444,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    },
+    {
+      "fclass": "unknown",
+      "source_definition": "未定道路或路徑種類",
+      "research_group": "other_nonmotor_or_unconfirmed",
+      "included": false,
+      "major": false,
+      "inclusion_reason": "步行／自行車／產業道路或未知類別，依Unit1.7不納主要機動候選",
+      "bbox_source_records": 19,
+      "regional_records": 4,
+      "source_documentation": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf"
+    }
+  ],
+  "format_documentation_evidence": {
+    "url": "https://download.geofabrik.de/osm-data-in-gis-formats-free.pdf",
+    "document_version": "2026-04-02",
+    "reviewed_at": "2026-11-27",
+    "scope": "general field/class definitions, not certification of all 2025 export semantics; actual PRJ/fields/fclass read from frozen 2025 ZIP",
+    "previous_capture": "Unit1.7 geofabrik_road_fields_web.json contains an access error; retained unchanged, not treated as a successful PDF archive",
+    "research_major": "Unit1.7 narrow six-class major group retained; official document major heading also includes secondary/tertiary, which are not silently added here"
+  },
+  "attribution": "© OpenStreetMap contributors, Open Database License 1.0; Geofabrik extract; government sources per source_metadata",
+  "feature_readiness": [
+    {
+      "feature": "osm_road_density",
+      "source": "data/raw/taiwan-250101-free.shp.zip",
+      "source_sha256": "ad19e79129efc0a447db5fe5d684e732199a900251f04f2aacef821cfa9ff1ab",
+      "observation_unit": "specified motor-candidate line representation",
+      "numerator": "same-class-independent all included line union km excluding shared boundary",
+      "denominator": "fixed_village_area_km2",
+      "raw_crs": "EPSG:4326",
+      "working_crs": "EPSG:3826",
+      "crs_evidence": "A metadata",
+      "time_reference": "包內README明示2025-01-01T21:21:00Z快照；非2024／2025逐年獨立路網",
+      "spatial_completeness": "source coverage not certified as a full census; frozen original villages preserved",
+      "readiness_status": "Ready with explicit assumptions",
+      "recommended_analytical_use": "priority external comparison candidate",
+      "key_limitations": "not centerline / traffic / VKT; fixed OSM snapshot, 2D union, class and boundary assumptions",
+      "human_acceptance": "DE / DA / PM pending",
+      "valid_N": 456,
+      "missing_N": 0,
+      "zero_N": 0,
+      "min": 2.469895300801538,
+      "q25": 19.585106829601493,
+      "median": 27.22671356221906,
+      "q75": 33.61842264130843,
+      "max": 48.86821307189778,
+      "mean": 25.908185833619413,
+      "std_ddof1": 9.911898931550754,
+      "value_state_counts": {
+        "observed_positive_with_source_limits": 456
+      },
+      "spatial_processing_valid_values": 456,
+      "formal_analysis_selected": false
+    },
+    {
+      "feature": "osm_major_road_ratio",
+      "source": "data/raw/taiwan-250101-free.shp.zip",
+      "source_sha256": "ad19e79129efc0a447db5fe5d684e732199a900251f04f2aacef821cfa9ff1ab",
+      "observation_unit": "six-class narrow research major line representation",
+      "numerator": "major line union km in same primary boundary policy",
+      "denominator": "osm_road_length_km",
+      "raw_crs": "EPSG:4326",
+      "working_crs": "EPSG:3826",
+      "crs_evidence": "A metadata",
+      "time_reference": "包內README明示2025-01-01T21:21:00Z快照；非2024／2025逐年獨立路網",
+      "spatial_completeness": "source coverage not certified as a full census; frozen original villages preserved",
+      "readiness_status": "Ready with explicit assumptions",
+      "recommended_analytical_use": "priority external comparison candidate",
+      "key_limitations": "Unit1.7 six classes, not official road hierarchy or traffic share; no road denominator => NA",
+      "human_acceptance": "DE / DA / PM pending",
+      "valid_N": 456,
+      "missing_N": 0,
+      "zero_N": 238,
+      "min": 0.0,
+      "q25": 0.0,
+      "median": 0.0,
+      "q75": 0.13507448878609862,
+      "max": 0.48823605569137174,
+      "mean": 0.07647979967602517,
+      "std_ddof1": 0.106696400049307,
+      "value_state_counts": {
+        "observed_zero_not_confirmed_absent": 238,
+        "observed_positive_with_source_limits": 218
+      },
+      "spatial_processing_valid_values": 456,
+      "formal_analysis_selected": false
+    },
+    {
+      "feature": "observed_signal_location_density",
+      "source": "data/raw/號誌路口經緯度一覽20230706.csv",
+      "source_sha256": "4de42a369f6b6ba38df29ff2d357f8ad5aec7a237b8709edc431d77c3cfb29a7",
+      "observation_unit": "unique exact coordinate locations in conservative A policy",
+      "numerator": "readable non-test, unique interior, all basic member districts recognized and matching locations",
+      "denominator": "fixed_village_area_km2",
+      "raw_crs": "EPSG:4326 working interpretation",
+      "working_crs": "EPSG:3826",
+      "crs_evidence": "B working convention",
+      "time_reference": "檔名20230706非每筆觀測／設置時間；實際快照時點仍未認證",
+      "spatial_completeness": "source coverage not certified as a full census; frozen original villages preserved",
+      "readiness_status": "Partially ready",
+      "recommended_analytical_use": "conditional priority; DA review of A/B and LCS sensitivity",
+      "key_limitations": "not physical intersections; uncertain LCS meanings/date/completeness, duplicate and source district conflicts retained",
+      "human_acceptance": "DE / DA / PM pending",
+      "valid_N": 456,
+      "missing_N": 0,
+      "zero_N": 27,
+      "min": 0.0,
+      "q25": 8.674375803825207,
+      "median": 19.60640827681843,
+      "q75": 33.63573300450515,
+      "max": 116.58407717267755,
+      "mean": 22.441216355732887,
+      "std_ddof1": 17.40042479346515,
+      "value_state_counts": {
+        "observed_positive_with_source_limits": 429,
+        "observed_zero_not_confirmed_absent": 23,
+        "locations_excluded_by_primary_quality_policy": 4
+      },
+      "spatial_processing_valid_values": 456,
+      "formal_analysis_selected": false
+    },
+    {
+      "feature": "crosswalk_area_ratio",
+      "source": "data/raw/(交工處)行人穿越線圖資_202407121519.zip",
+      "source_sha256": "a7f4241ea1ecccfb09050fb38f4d8537a7f5ec1d4134eb7b8929217601ba0493",
+      "observation_unit": "six-layer crossing-marking polygon union",
+      "numerator": "observed marking union area_m2",
+      "denominator": "fixed_village_area_m2",
+      "raw_crs": "EPSG:3826",
+      "working_crs": "EPSG:3826",
+      "crs_evidence": "A metadata",
+      "time_reference": "2024-07-12封裝標記，非全年有效或2025新增完整紀錄；RDDATE需排除1899占位",
+      "spatial_completeness": "source coverage not certified as a full census; frozen original villages preserved",
+      "readiness_status": "Partially ready",
+      "recommended_analytical_use": "supplementary observed markings comparison",
+      "key_limitations": "components not full facilities; source coverage and historical stock unknown",
+      "human_acceptance": "DE / DA / PM pending",
+      "valid_N": 456,
+      "missing_N": 0,
+      "zero_N": 0,
+      "min": 1.9256595314796926e-05,
+      "q25": 0.002620507056395491,
+      "median": 0.006484089113132275,
+      "q75": 0.009135330277745116,
+      "max": 0.01929095520447812,
+      "mean": 0.006334387617151763,
+      "std_ddof1": 0.00411007222814241,
+      "value_state_counts": {
+        "observed_positive_with_source_limits": 456
+      },
+      "spatial_processing_valid_values": 456,
+      "formal_analysis_selected": false
+    },
+    {
+      "feature": "median_annotated_road_width",
+      "source": "data/raw/路寬檔_提供.zip",
+      "source_sha256": "a92d7b7225509489181606158d1d9cbe3b1a4c83b120ee12d577460109852d70",
+      "observation_unit": "unique exact geometry + width annotation, assigned by midpoint",
+      "numerator": "median of unique-midpoint valid positive annotation widths",
+      "denominator": "median operator over sample count",
+      "raw_crs": "EPSG:3826",
+      "working_crs": "EPSG:3826",
+      "crs_evidence": "A metadata",
+      "time_reference": "ZIP內資料修改2023-12-28，XML製作2021；非2024／2025完整年度實測",
+      "spatial_completeness": "source coverage not certified as a full census; frozen original villages preserved",
+      "readiness_status": "Partially ready",
+      "recommended_analytical_use": "supplementary planned annotation sample description",
+      "key_limitations": "not measured road width / length-representative sample; midpoint assumption; no samples => NA",
+      "human_acceptance": "DE / DA / PM pending",
+      "valid_N": 453,
+      "missing_N": 3,
+      "zero_N": 0,
+      "min": 5.45,
+      "q25": 8.0,
+      "median": 8.0,
+      "q75": 10.0,
+      "max": 37.0,
+      "mean": 9.28274834437086,
+      "std_ddof1": 3.4686107791757625,
+      "value_state_counts": {
+        "observed_positive_with_source_limits": 453,
+        "no_valid_annotation_samples": 3
+      },
+      "spatial_processing_valid_values": 453,
+      "formal_analysis_selected": false
+    },
+    {
+      "feature": "mrt_entrance_density",
+      "source": "data/raw/臺北捷運車站出入口座標_1150804.csv",
+      "source_sha256": "134d8488c240fb23e04535db6a94da73006f890c83617eeedaa9b26c9f120015",
+      "observation_unit": "unique-interior source entrance records",
+      "numerator": "observed_mrt_entrance_count",
+      "denominator": "fixed_village_area_km2",
+      "raw_crs": "EPSG:4326 working interpretation",
+      "working_crs": "EPSG:3826",
+      "crs_evidence": "B working convention",
+      "time_reference": "1150804檔名及更新快照，無逐出入口設置／撤除日期",
+      "spatial_completeness": "source coverage not certified as a full census; frozen original villages preserved",
+      "readiness_status": "Ready with explicit assumptions",
+      "recommended_analytical_use": "supplementary 2026 current-environment description only",
+      "key_limitations": "not stations/ridership; not 2024/2025 pre-accident environment",
+      "human_acceptance": "DE / DA / PM pending",
+      "valid_N": 456,
+      "missing_N": 0,
+      "zero_N": 318,
+      "min": 0.0,
+      "q25": 0.0,
+      "median": 0.0,
+      "q75": 2.646806317519628,
+      "max": 32.82146208801454,
+      "mean": 2.6312948101563607,
+      "std_ddof1": 5.343689742859067,
+      "value_state_counts": {
+        "zero_entrances_not_zero_accessibility": 318,
+        "observed_positive_with_source_limits": 138
+      },
+      "spatial_processing_valid_values": 456,
+      "formal_analysis_selected": false
+    },
+    {
+      "feature": "mrt_entrance_buffer_500m_ratio",
+      "source": "data/raw/臺北捷運車站出入口座標_1150804.csv",
+      "source_sha256": "134d8488c240fb23e04535db6a94da73006f890c83617eeedaa9b26c9f120015",
+      "observation_unit": "all entrance 500m straight-line buffer union including outside entrances",
+      "numerator": "mrt_entrance_buffer_500m_area_m2",
+      "denominator": "fixed_village_area_m2",
+      "raw_crs": "EPSG:4326 working interpretation",
+      "working_crs": "EPSG:3826",
+      "crs_evidence": "B working convention",
+      "time_reference": "1150804檔名及更新快照，無逐出入口設置／撤除日期",
+      "spatial_completeness": "source coverage not certified as a full census; frozen original villages preserved",
+      "readiness_status": "Ready with explicit assumptions",
+      "recommended_analytical_use": "supplementary 500m operational candidate only",
+      "key_limitations": "quad_segs16, Euclidean not walking network, 2026 snapshot not prediction input",
+      "human_acceptance": "DE / DA / PM pending",
+      "valid_N": 456,
+      "missing_N": 0,
+      "zero_N": 108,
+      "min": 0.0,
+      "q25": 0.02118239745565154,
+      "median": 0.5468085037711143,
+      "q75": 0.95763706756581,
+      "max": 1.0000000000000229,
+      "mean": 0.5092869445346747,
+      "std_ddof1": 0.40906536223813383,
+      "value_state_counts": {
+        "observed_positive_with_source_limits": 348,
+        "observed_zero_not_confirmed_absent": 108
+      },
+      "spatial_processing_valid_values": 456,
+      "formal_analysis_selected": false
+    },
+    {
+      "feature": "mrt_entrance_buffer_300m_ratio",
+      "source": "data/raw/臺北捷運車站出入口座標_1150804.csv",
+      "source_sha256": "134d8488c240fb23e04535db6a94da73006f890c83617eeedaa9b26c9f120015",
+      "observation_unit": "all entrance 300m straight-line buffer union",
+      "numerator": "mrt_entrance_buffer_300m_area_m2",
+      "denominator": "fixed_village_area_m2",
+      "raw_crs": "EPSG:4326 working interpretation",
+      "working_crs": "EPSG:3826",
+      "crs_evidence": "B working convention",
+      "time_reference": "1150804檔名及更新快照，無逐出入口設置／撤除日期",
+      "spatial_completeness": "source coverage not certified as a full census; frozen original villages preserved",
+      "readiness_status": "Ready with explicit assumptions",
+      "recommended_analytical_use": "supplementary radius sensitivity",
+      "key_limitations": "all external entrance points retained; current 2026 snapshot, no travel or exposure inference",
+      "human_acceptance": "DE / DA / PM pending",
+      "valid_N": 456,
+      "missing_N": 0,
+      "zero_N": 162,
+      "min": 0.0,
+      "q25": 0.0,
+      "median": 0.10851285769170808,
+      "q75": 0.4556459790902163,
+      "max": 1.0000000000000002,
+      "mean": 0.2491610600453418,
+      "std_ddof1": 0.29850591822007017,
+      "value_state_counts": {
+        "observed_positive_with_source_limits": 294,
+        "observed_zero_not_confirmed_absent": 162
+      },
+      "spatial_processing_valid_values": 456,
+      "formal_analysis_selected": false
+    },
+    {
+      "feature": "mrt_entrance_buffer_800m_ratio",
+      "source": "data/raw/臺北捷運車站出入口座標_1150804.csv",
+      "source_sha256": "134d8488c240fb23e04535db6a94da73006f890c83617eeedaa9b26c9f120015",
+      "observation_unit": "all entrance 800m straight-line buffer union",
+      "numerator": "mrt_entrance_buffer_800m_area_m2",
+      "denominator": "fixed_village_area_m2",
+      "raw_crs": "EPSG:4326 working interpretation",
+      "working_crs": "EPSG:3826",
+      "crs_evidence": "B working convention",
+      "time_reference": "1150804檔名及更新快照，無逐出入口設置／撤除日期",
+      "spatial_completeness": "source coverage not certified as a full census; frozen original villages preserved",
+      "readiness_status": "Ready with explicit assumptions",
+      "recommended_analytical_use": "supplementary radius sensitivity",
+      "key_limitations": "all external entrance points retained; current 2026 snapshot, no travel or exposure inference",
+      "human_acceptance": "DE / DA / PM pending",
+      "valid_N": 456,
+      "missing_N": 0,
+      "zero_N": 62,
+      "min": 0.0,
+      "q25": 0.3887521466018689,
+      "median": 0.9999999999999325,
+      "q75": 1.0,
+      "max": 1.0000000006673901,
+      "mean": 0.7178165979109788,
+      "std_ddof1": 0.3958239317159163,
+      "value_state_counts": {
+        "observed_positive_with_source_limits": 394,
+        "observed_zero_not_confirmed_absent": 62
+      },
+      "spatial_processing_valid_values": 456,
+      "formal_analysis_selected": false
+    },
+    {
+      "feature": "signal_geometry_only_location_density",
+      "source": "data/raw/號誌路口經緯度一覽20230706.csv",
+      "source_sha256": "4de42a369f6b6ba38df29ff2d357f8ad5aec7a237b8709edc431d77c3cfb29a7",
+      "observation_unit": "geometry B ignores district conflict as an eligibility rule",
+      "numerator": "corresponding exact-coordinate location count",
+      "denominator": "fixed_village_area_km2",
+      "raw_crs": "EPSG:4326 working interpretation",
+      "working_crs": "EPSG:3826",
+      "crs_evidence": "B working convention",
+      "time_reference": "檔名20230706非每筆觀測／設置時間；實際快照時點仍未認證",
+      "spatial_completeness": "source coverage not certified as a full census; frozen original villages preserved",
+      "readiness_status": "Partially ready",
+      "recommended_analytical_use": "sensitivity to main conservative signal candidate",
+      "key_limitations": "same basic non-test/readable and unique-interior rules; not a complete physical intersection count",
+      "human_acceptance": "DE / DA / PM pending",
+      "valid_N": 456,
+      "missing_N": 0,
+      "zero_N": 23,
+      "min": 0.0,
+      "q25": 9.301856238503083,
+      "median": 21.36016179779766,
+      "q75": 35.032441967148586,
+      "max": 116.58407717267755,
+      "mean": 23.61530043037076,
+      "std_ddof1": 17.76975712000009,
+      "value_state_counts": {
+        "observed_positive_with_source_limits": 433,
+        "observed_zero_not_confirmed_absent": 23
+      },
+      "spatial_processing_valid_values": 456,
+      "formal_analysis_selected": false
+    },
+    {
+      "feature": "signal_main_without_lcs_location_density",
+      "source": "data/raw/號誌路口經緯度一覽20230706.csv",
+      "source_sha256": "4de42a369f6b6ba38df29ff2d357f8ad5aec7a237b8709edc431d77c3cfb29a7",
+      "observation_unit": "conservative A excludes LCS-only supporting locations",
+      "numerator": "corresponding exact-coordinate location count",
+      "denominator": "fixed_village_area_km2",
+      "raw_crs": "EPSG:4326 working interpretation",
+      "working_crs": "EPSG:3826",
+      "crs_evidence": "B working convention",
+      "time_reference": "檔名20230706非每筆觀測／設置時間；實際快照時點仍未認證",
+      "spatial_completeness": "source coverage not certified as a full census; frozen original villages preserved",
+      "readiness_status": "Partially ready",
+      "recommended_analytical_use": "sensitivity to main conservative signal candidate",
+      "key_limitations": "same basic non-test/readable and unique-interior rules; not a complete physical intersection count",
+      "human_acceptance": "DE / DA / PM pending",
+      "valid_N": 456,
+      "missing_N": 0,
+      "zero_N": 27,
+      "min": 0.0,
+      "q25": 8.674375803825207,
+      "median": 19.60640827681843,
+      "q75": 33.63573300450515,
+      "max": 116.58407717267755,
+      "mean": 22.414643497100155,
+      "std_ddof1": 17.351227007091275,
+      "value_state_counts": {
+        "observed_positive_with_source_limits": 429,
+        "observed_zero_not_confirmed_absent": 27
+      },
+      "spatial_processing_valid_values": 456,
+      "formal_analysis_selected": false
+    },
+    {
+      "feature": "signal_geometry_without_lcs_location_density",
+      "source": "data/raw/號誌路口經緯度一覽20230706.csv",
+      "source_sha256": "4de42a369f6b6ba38df29ff2d357f8ad5aec7a237b8709edc431d77c3cfb29a7",
+      "observation_unit": "geometry B excludes LCS-only supporting locations",
+      "numerator": "corresponding exact-coordinate location count",
+      "denominator": "fixed_village_area_km2",
+      "raw_crs": "EPSG:4326 working interpretation",
+      "working_crs": "EPSG:3826",
+      "crs_evidence": "B working convention",
+      "time_reference": "檔名20230706非每筆觀測／設置時間；實際快照時點仍未認證",
+      "spatial_completeness": "source coverage not certified as a full census; frozen original villages preserved",
+      "readiness_status": "Partially ready",
+      "recommended_analytical_use": "sensitivity to main conservative signal candidate",
+      "key_limitations": "same basic non-test/readable and unique-interior rules; not a complete physical intersection count",
+      "human_acceptance": "DE / DA / PM pending",
+      "valid_N": 456,
+      "missing_N": 0,
+      "zero_N": 23,
+      "min": 0.0,
+      "q25": 9.301856238503083,
+      "median": 21.36016179779766,
+      "q75": 35.032441967148586,
+      "max": 116.58407717267755,
+      "mean": 23.588424316750675,
+      "std_ddof1": 17.72373330090088,
+      "value_state_counts": {
+        "observed_positive_with_source_limits": 433,
+        "observed_zero_not_confirmed_absent": 23
+      },
+      "spatial_processing_valid_values": 456,
+      "formal_analysis_selected": false
+    }
+  ],
+  "blocked_features": [
+    {
+      "feature": "intersection_density",
+      "readiness_status": "Blocked",
+      "key_limitations": "缺完整節點／轉向／立體拓樸，平面交叉不當實體路口",
+      "formal_numeric_column_created": false,
+      "recommended_analytical_use": "do not use"
+    },
+    {
+      "feature": "complete_topological_intersection_count",
+      "readiness_status": "Blocked",
+      "key_limitations": "免費線圖層缺完整節點與立體道路拓樸",
+      "formal_numeric_column_created": false,
+      "recommended_analytical_use": "do not use"
+    },
+    {
+      "feature": "complete_crosswalk_count",
+      "readiness_status": "Blocked",
+      "key_limitations": "一Polygon不是完整設施",
+      "formal_numeric_column_created": false,
+      "recommended_analytical_use": "do not use"
+    },
+    {
+      "feature": "crosswalk_length_density",
+      "readiness_status": "Blocked",
+      "key_limitations": "標線面構件不提供可靠穿越長度",
+      "formal_numeric_column_created": false,
+      "recommended_analytical_use": "do not use"
+    },
+    {
+      "feature": "length_weighted_road_width",
+      "readiness_status": "Blocked",
+      "key_limitations": "尺寸線不是縱向道路權重",
+      "formal_numeric_column_created": false,
+      "recommended_analytical_use": "do not use"
+    },
+    {
+      "feature": "narrow_road_length_ratio",
+      "readiness_status": "Blocked",
+      "key_limitations": "無可靠縱向分母與窄寬門檻",
+      "formal_numeric_column_created": false,
+      "recommended_analytical_use": "do not use"
+    },
+    {
+      "feature": "wide_road_length_ratio",
+      "readiness_status": "Blocked",
+      "key_limitations": "無可靠縱向分母與窄寬門檻",
+      "formal_numeric_column_created": false,
+      "recommended_analytical_use": "do not use"
+    },
+    {
+      "feature": "marked_sidewalk_density",
+      "readiness_status": "Blocked",
+      "key_limitations": "混合標線未驗證人行道子集",
+      "formal_numeric_column_created": false,
+      "recommended_analytical_use": "do not use"
+    },
+    {
+      "feature": "complete_signalized_intersection_count",
+      "readiness_status": "Blocked",
+      "key_limitations": "位置紀錄未認證實體路口單位",
+      "formal_numeric_column_created": false,
+      "recommended_analytical_use": "do not use"
+    },
+    {
+      "feature": "marked_sidewalk_area_ratio",
+      "readiness_status": "Blocked",
+      "key_limitations": "混合標線未驗證人行道子集，不能計算正式面積或覆蓋率",
+      "formal_numeric_column_created": false,
+      "recommended_analytical_use": "do not use"
+    },
+    {
+      "feature": "traffic_volume_or_VKT",
+      "readiness_status": "Blocked",
+      "key_limitations": "沒有交通流量或行駛公里暴露資料",
+      "formal_numeric_column_created": false,
+      "recommended_analytical_use": "do not use"
+    },
+    {
+      "feature": "walking_network_accessibility",
+      "readiness_status": "Blocked",
+      "key_limitations": "直線緩衝不是步行路網",
+      "formal_numeric_column_created": false,
+      "recommended_analytical_use": "do not use"
+    }
+  ],
+  "spatial_reconciliation": [
+    {
+      "source": "osm",
+      "measure": "length_m",
+      "city_union": 3706203.383370213,
+      "village_inclusive_sum": 3706203.4220065284,
+      "village_primary_sum": 3706203.422006569,
+      "shared_village_sum": 0.0,
+      "city_shared_union": 0.0,
+      "inclusive_sum_minus_city": 0.038636315148323774,
+      "pairwise_multiple_coverage_upper_bound": 0.038646134265599597,
+      "tolerance": 0.1
+    },
+    {
+      "source": "crossings",
+      "measure": "area_m2",
+      "city_union": 675558.48078387,
+      "village_sum": 675558.5906252506,
+      "sum_minus_city": 0.10984138061758131,
+      "pairwise_multiple_coverage_upper_bound": 0.10984111529543625,
+      "tolerance": 0.1
+    },
+    {
+      "source": "mrt_300",
+      "measure": "area_m2",
+      "city_union": 28002336.288042028,
+      "village_sum": 28002336.29369475,
+      "sum_minus_city": 0.005652721971273422,
+      "pairwise_multiple_coverage_upper_bound": 0.005652770323831347,
+      "tolerance": 0.1
+    },
+    {
+      "source": "mrt_500",
+      "measure": "area_m2",
+      "city_union": 58374045.25272581,
+      "village_sum": 58374045.26183698,
+      "sum_minus_city": 0.009111173450946808,
+      "pairwise_multiple_coverage_upper_bound": 0.009241917627732374,
+      "tolerance": 0.1
+    },
+    {
+      "source": "mrt_800",
+      "measure": "area_m2",
+      "city_union": 92927724.36758062,
+      "village_sum": 92927724.37669651,
+      "sum_minus_city": 0.00911588966846466,
+      "pairwise_multiple_coverage_upper_bound": 0.009247213612477182,
+      "tolerance": 0.1
+    }
+  ],
+  "working_crs": "EPSG:3826",
+  "numerical_policy": {
+    "area_tolerance_m2": 0.1,
+    "length_tolerance_m": 0.1,
+    "source_geometries_repaired": false,
+    "original_villages_changed": false,
+    "ratios": "retain original floating results; no clipping to disguise errors; ratio tolerance from 0.1m² / original village area; road ratio tolerance 1e-10",
+    "buffer_approximation": "Shapely buffer quad_segs=16, radii 300/500/800m; nested original polygons, no arbitrary snapping"
+  },
+  "population_linkage": "Tangbu accepted as same 456-village policy; provisional_match retained as evidence, not a reason for NA",
+  "limitations": [
+    "B3僅分群後外部環境比較，不直接加入Dataset A主要分群；D原版為主，D改良版／Prediction暫緩",
+    "OSM指定類線表示，非完整實體中心線、道路容量、流量或VKT；平行分離車道保留，平面union可能合併不同立體層級",
+    "主要道路是Unit1.7研究六類分組，不是臺灣法定道路等級或交通量占比",
+    "號誌為已觀測唯一座標位置，不是完整實體號誌路口、燈頭或管制能力；LCS單位未認證，包含／排除另報",
+    "行穿僅標線面聯集，不是完整設施數、穿越長度、配置完整性或安全程度",
+    "計畫路寬為尺寸標註樣本，不是實測可通行寬度、車道數或長度代表樣本；中點唯一歸里為明示操作假設",
+    "MRT為2026出入口快照，不是2024／2025完整存量；入口數不是站數、搭乘人次或行人暴露",
+    "300／500／800m為EPSG3826直線buffer候選；500m不是已認證通用步行門檻，非路網、時間或通勤人流",
+    "來源日期語義不同，沒有同時點完整設施普查或兩套年度獨立觀測；不得冒充事前環境／預測資料",
+    "觀測0不證明現實不存在；無路寬樣本為NA，Blocked不填0，處理失敗保留ID與NA，不完整案例刪里",
+    "固定原里界孔洞／微量重疊不修補，城市union與逐里和不同；source snapshot completeness unverified",
+    "B3不提供交通暴露、真正事故風險或因果識別；未作正式EDA／模型／推論或最終整合",
+    "本輪Codex協助；DE交付確認、DA驗收、PM審查及學生本人Git提交待完成"
+  ],
+  "human_acceptance": "Codex assisted; DE handoff / DA acceptance / PM review pending"
+}

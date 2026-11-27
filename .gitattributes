@@ -1,1 +1,100 @@
 econ-5166-student-kit/data/raw/taiwan-250101-free.shp.zip filter=lfs diff=lfs merge=lfs -text
+"econ-5166-student-kit/PROJECT.md" -text
+"econ-5166-student-kit/data/code/prepare_taipei_crashes_2024_2025.ipynb" -text
+"econ-5166-student-kit/data/code/prepare_taipei_dataset_a_and_c.ipynb" -text
+"econ-5166-student-kit/data/code/prepare_taipei_dataset_b1.ipynb" -text
+"econ-5166-student-kit/data/code/prepare_taipei_dataset_b2.ipynb" -text
+"econ-5166-student-kit/data/code/prepare_taipei_dataset_b3.ipynb" -text
+"econ-5166-student-kit/data/code/prepare_taipei_final_analytical_datasets.ipynb" text eol=lf
+"econ-5166-student-kit/data/code/prepare_taipei_village_base_and_crash_spatial_assignment.ipynb" -text
+"econ-5166-student-kit/data/code/taipei_2024_2025_crash_validation.ipynb" text eol=crlf
+"econ-5166-student-kit/data/code/taipei_data_integration_readiness.ipynb" text eol=crlf
+"econ-5166-student-kit/data/code/taipei_population_validation.ipynb" text eol=crlf
+"econ-5166-student-kit/data/code/taipei_supplementary_accident_boundary_validation.ipynb" -text
+"econ-5166-student-kit/data/code/taipei_transportation_infrastructure_validation.ipynb" -text
+"econ-5166-student-kit/data/code/taipei_urban_planning_crs_validation.ipynb" text eol=crlf
+"econ-5166-student-kit/data/code/taipei_urban_planning_geometry_validation.ipynb" text eol=crlf
+"econ-5166-student-kit/data/code/taipei_village_boundary_validation.ipynb" text eol=crlf
+"econ-5166-student-kit/data/code/unit17_validation_config.json" -text
+"econ-5166-student-kit/data/code/unit17_validation_support.py" text eol=lf
+"econ-5166-student-kit/data/code/unit22_spatial_support.py" text eol=lf
+"econ-5166-student-kit/data/code/unit23_feature_support.py" text eol=lf
+"econ-5166-student-kit/data/code/unit24_population_support.py" text eol=lf
+"econ-5166-student-kit/data/code/unit25_zoning_support.py" -text
+"econ-5166-student-kit/data/code/unit26_transportation_support.py" text eol=lf
+"econ-5166-student-kit/data/code/unit27_integration_support.py" text eol=lf
+"econ-5166-student-kit/data/code/validate_taipei_analysis_ready.py" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_crash_spatial_assignment_2024_2025.csv" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_crash_spatial_assignment_2024_2025_documentation.ipynb" -text
+"econ-5166-student-kit/data/processed/taipei_crash_spatial_assignment_2024_2025_schema.json" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_crashes_2024_2025_standardized.csv" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_crashes_2024_2025_standardized_documentation.ipynb" -text
+"econ-5166-student-kit/data/processed/taipei_crashes_2024_2025_standardized_schema.json" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_dataset_a_annual.csv" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_dataset_a_annual_documentation.ipynb" -text
+"econ-5166-student-kit/data/processed/taipei_dataset_a_annual_schema.json" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_dataset_a_pooled.csv" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_dataset_a_pooled_documentation.ipynb" -text
+"econ-5166-student-kit/data/processed/taipei_dataset_a_pooled_schema.json" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_dataset_b1_annual.csv" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_dataset_b1_annual_documentation.ipynb" -text
+"econ-5166-student-kit/data/processed/taipei_dataset_b1_annual_schema.json" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_dataset_b1_pooled.csv" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_dataset_b1_pooled_documentation.ipynb" -text
+"econ-5166-student-kit/data/processed/taipei_dataset_b1_pooled_schema.json" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_dataset_b2.csv" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_dataset_b2_documentation.ipynb" -text
+"econ-5166-student-kit/data/processed/taipei_dataset_b2_schema.json" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_dataset_b3.csv" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_dataset_b3_documentation.ipynb" -text
+"econ-5166-student-kit/data/processed/taipei_dataset_b3_schema.json" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_dataset_c_annual.csv" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_dataset_c_annual_documentation.ipynb" -text
+"econ-5166-student-kit/data/processed/taipei_dataset_c_annual_schema.json" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_dataset_c_pooled.csv" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_dataset_c_pooled_documentation.ipynb" -text
+"econ-5166-student-kit/data/processed/taipei_dataset_c_pooled_schema.json" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_feature_registry.json" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_feature_registry_documentation.ipynb" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_final_analytical_annual.csv" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_final_analytical_annual_documentation.ipynb" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_final_analytical_annual_schema.json" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_final_analytical_pooled.csv" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_final_analytical_pooled_documentation.ipynb" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_final_analytical_pooled_schema.json" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_village_base.csv" text eol=lf
+"econ-5166-student-kit/data/processed/taipei_village_base_documentation.ipynb" -text
+"econ-5166-student-kit/data/processed/taipei_village_base_schema.json" text eol=lf
+"econ-5166-student-kit/data/processed/urban_zoning_crosswalk.csv" -text
+"econ-5166-student-kit/data/processed/urban_zoning_crosswalk_documentation.ipynb" text eol=crlf
+"econ-5166-student-kit/data/processed/urban_zoning_crosswalk_v2.csv" text eol=lf
+"econ-5166-student-kit/data/processed/urban_zoning_crosswalk_v2_documentation.ipynb" -text
+"econ-5166-student-kit/data/processed/urban_zoning_crosswalk_v2_schema.json" text eol=lf
+"econ-5166-student-kit/data/processed/village_crosswalk.csv" -text
+"econ-5166-student-kit/data/processed/village_crosswalk_documentation.ipynb" text eol=crlf
+"econ-5166-student-kit/data/raw/112迄今各里人口數按年齡分.csv" -text
+"econ-5166-student-kit/data/raw/113年-臺北市死傷交通事故明細.csv" -text
+"econ-5166-student-kit/data/raw/113年臺北市道路交通事故斑點圖 .csv" -text
+"econ-5166-student-kit/data/raw/114年-臺北市死傷交通事故明細.csv" text eol=crlf
+"econ-5166-student-kit/data/raw/114年臺北市道路交通事故斑點圖.csv" -text
+"econ-5166-student-kit/data/raw/taipei_2024_2025_crashes_raw_documentation.ipynb" text eol=crlf
+"econ-5166-student-kit/data/raw/taipei_population_age_raw_documentation.ipynb" text eol=crlf
+"econ-5166-student-kit/data/raw/taipei_urban_planning_raw_documentation.ipynb" text eol=crlf
+"econ-5166-student-kit/data/raw/taipei_village_boundaries_raw_documentation.ipynb" text eol=crlf
+"econ-5166-student-kit/data/raw/unit13_official_code_evidence_documentation.ipynb" text eol=crlf
+"econ-5166-student-kit/data/raw/unit14_urban_planning_evidence_documentation.ipynb" text eol=crlf
+"econ-5166-student-kit/data/raw/unit15_zoning_classification_evidence_documentation.ipynb" text eol=crlf
+"econ-5166-student-kit/data/raw/unit17_accident_points_raw_documentation.ipynb" -text
+"econ-5166-student-kit/data/raw/unit17_crossings_raw_documentation.ipynb" -text
+"econ-5166-student-kit/data/raw/unit17_historical_boundaries_raw_documentation.ipynb" -text
+"econ-5166-student-kit/data/raw/unit17_mrt_raw_documentation.ipynb" -text
+"econ-5166-student-kit/data/raw/unit17_national_accidents_raw_documentation.ipynb" -text
+"econ-5166-student-kit/data/raw/unit17_osm_raw_documentation.ipynb" -text
+"econ-5166-student-kit/data/raw/unit17_road_width_raw_documentation.ipynb" -text
+"econ-5166-student-kit/data/raw/unit17_sidewalk_raw_documentation.ipynb" -text
+"econ-5166-student-kit/data/raw/unit17_signals_raw_documentation.ipynb" -text
+"econ-5166-student-kit/data/raw/unit17_supplementary_source_evidence_documentation.ipynb" -text
+"econ-5166-student-kit/data/raw/unit17_supplementary_source_evidence_manifest.json" text eol=lf
+"econ-5166-student-kit/data/raw/unit17_supplementary_source_evidence_manifest_documentation.ipynb" -text
+"econ-5166-student-kit/data/raw/臺北捷運車站出入口座標_1150804.csv" -text
+"econ-5166-student-kit/data/raw/號誌路口經緯度一覽20230706.csv" -text

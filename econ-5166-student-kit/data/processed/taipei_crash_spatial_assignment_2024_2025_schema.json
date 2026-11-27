@@ -1,0 +1,859 @@
+{
+  "unit": "2.2",
+  "created_at": "2026-11-26",
+  "dataset_path": "data/processed/taipei_crash_spatial_assignment_2024_2025.csv",
+  "role": "spatial_assignment",
+  "observation_unit": "one original Unit2.1 candidate accident, all retained",
+  "expected_rows": 45130,
+  "producer": "data/code/prepare_taipei_village_base_and_crash_spatial_assignment.ipynb",
+  "helper": "data/code/unit22_spatial_support.py",
+  "documentation": "data/processed/taipei_crash_spatial_assignment_2024_2025_documentation.ipynb",
+  "source_inputs": {
+    "data/processed/taipei_crashes_2024_2025_standardized.csv": "b2ac0704068319b74f9aef2a28ad810d0cef473894a2a5cd23976f3fa7d2c252",
+    "data/processed/taipei_crashes_2024_2025_standardized_schema.json": "c3f064b3572d940489bdc86bb5c49dfaea8a228a3e7addbc8f9544bad324b650",
+    "data/processed/taipei_crashes_2024_2025_standardized_documentation.ipynb": "7d5dd73cc2f33308c7b4cdc63ff47839feb34c35baef830b70114ae5e4cc6e0b",
+    "data/code/prepare_taipei_crashes_2024_2025.ipynb": "c14dbd34bd3d776339e292b820a049b792a30ec49f2a8fc0173440ed6e146a9e",
+    "data/raw/G97_A_CAVLGE_P.shp": "f7fb4813a2283198ca564f5686823c454c5fd832d2f6981a2ee88a94719be3cc",
+    "data/raw/G97_A_CAVLGE_P.shx": "ab7bc5e63229f676d3580b68e98db59b91a2d327c74ca23b0000ca1c568d414e",
+    "data/raw/G97_A_CAVLGE_P.dbf": "2f43f92e84279a45b2512cf453e9b72f706d1ad1402665c946b1a354f75d8577",
+    "data/raw/G97_A_CAVLGE_P.prj": "8dac7d82ea889063f9eaa7df408fcaeb7307d32831ea973b6534d0139a4523c5",
+    "data/raw/G97_A_CAVLGE_P.cpg": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824",
+    "data/raw/113村里界.zip": "32d7f1d611f91b1c63bea7290dd4db93b919bf380cce92b634fca992c974dd94",
+    "data/raw/114村里界.zip": "08d2feeced98473215703defdbe9da8f8d551f2fb221029557b813e1a3dd8845",
+    "data/processed/village_crosswalk.csv": "dd9e762419c302cf5b4bb19daad2673d7d54d0bb750204e7e33ecbf1a9983f69",
+    "data/processed/village_crosswalk_documentation.ipynb": "768ebaac028b635c93b9c768efefdb504c902d49da586e5f33180a7c9855fce8",
+    "data/code/taipei_village_boundary_validation.ipynb": "662dbee2dc42c3552b12628a1e89fcc81b07155c225277117f50d07e0145a343",
+    "data/code/taipei_population_validation.ipynb": "e26ff652ccfa2113db041322a99a000d8cb6d71acccdab66c35448fcddaab7d8",
+    "data/code/taipei_data_integration_readiness.ipynb": "6048ff52d7653c9ec9d4b32cf2b78da2fb1b22dc0db0164cc48c4d2d98dd338b",
+    "data/code/taipei_supplementary_accident_boundary_validation.ipynb": "f9df6bce7c6cdfcee95df55aa83de7187a3db3bcc76dfe76356699f6caab4dc6",
+    "data/code/unit17_validation_config.json": "7554b54042b43dd8fd2ec2c5cfa6f218e9c6acae2376ff7e0aee0e14e73a17a7",
+    "data/code/unit17_validation_support.py": "1a18dd248daf08074a5ba7ec659a489fe7b17852195259e8084727d4fd6f3080",
+    "data/code/unit22_spatial_support.py": "06af690caf93af87b0f203d354fc894310aee87eca1d9f6f33df6930b13863fc"
+  },
+  "csv": {
+    "encoding": "utf-8-sig",
+    "missing_sentinel": "__MISSING__",
+    "line_terminator": "LF",
+    "keep_default_na": false,
+    "boolean_values": [
+      "True",
+      "False"
+    ],
+    "candidate_id_arrays": "JSON sorted string arrays; []=queried with no hits; NA=not queried"
+  },
+  "columns": [
+    {
+      "name": "record_id",
+      "dtype": "string",
+      "definition": "研究ID＝來源年＋原檔SHA256＋原CSV邏輯列；不是官方事故ID",
+      "unit": "not applicable",
+      "source": "Unit2.1正式CSV：record_id",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "source_year",
+      "dtype": "Int64",
+      "definition": "來源檔對應西元年",
+      "unit": "year",
+      "source": "Unit2.1正式CSV：source_year",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "source_row_number",
+      "dtype": "Int64",
+      "definition": "原CSV邏輯資料列，1起算，不含表頭；非物理行號",
+      "unit": "row",
+      "source": "Unit2.1正式CSV：source_row_number",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "coordinate_x_raw",
+      "dtype": "string",
+      "definition": "原字串：原始點位 X 數值；範圍近似經度但座標基準未確認",
+      "unit": "not applicable",
+      "source": "Unit2.1正式CSV：coordinate_x_raw",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "coordinate_y_raw",
+      "dtype": "string",
+      "definition": "原字串：原始點位 Y 數值；範圍近似緯度但座標基準未確認",
+      "unit": "not applicable",
+      "source": "Unit2.1正式CSV：coordinate_y_raw",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "longitude_candidate",
+      "dtype": "Float64",
+      "definition": "X之經度工作解讀；datum未正式認證，採EPSG4326工作慣例",
+      "unit": "degree candidate",
+      "source": "Unit2.1正式CSV：longitude_candidate",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "latitude_candidate",
+      "dtype": "Float64",
+      "definition": "Y之緯度工作解讀；datum未正式認證，無CRS轉換或geometry",
+      "unit": "degree candidate",
+      "source": "Unit2.1正式CSV：latitude_candidate",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "coordinate_parse_valid",
+      "dtype": "boolean",
+      "definition": "X及Y皆可解析為有限數；不是里內或CRS認證",
+      "unit": "logical flag；True/False/NA依欄定義",
+      "source": "Unit2.1正式CSV：coordinate_parse_valid",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "coordinate_missing_flag",
+      "dtype": "boolean",
+      "definition": "任一原座標空白；不補值",
+      "unit": "logical flag；True/False/NA依欄定義",
+      "source": "Unit2.1正式CSV：coordinate_missing_flag",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "original_district_label_raw",
+      "dtype": "string",
+      "definition": "原事故區序字串原值，數字部分不映射官方CPTID",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "original_district_name",
+      "dtype": "string",
+      "definition": "只取原區序明示12區名，正規式^兩數字＋區名$；不猜數字順序",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "original_district_readable",
+      "dtype": "boolean",
+      "definition": "原區序是否能明確確認行政區；未知不成立保守一致",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "accident_address_raw",
+      "dtype": "string",
+      "definition": "原事故地址，不改寫、不地理編碼、不表示居民地址",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "address_district_name",
+      "dtype": "string",
+      "definition": "只取地址開頭明確區名，可有臺北市／台北市前綴，不從路名猜測",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "address_district_readable",
+      "dtype": "boolean",
+      "definition": "地址區名可判讀；False不等於地址衝突",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "raw_address_district_conflict",
+      "dtype": "boolean",
+      "definition": "兩來源文字區名之衝突，與地址對空間衝突分開；不可比較NA",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "point_valid",
+      "dtype": "boolean",
+      "definition": "來源旗標及全球範圍有效且投影有限；不是位置正確性認證",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "point_easting_3826_m",
+      "dtype": "Float64",
+      "definition": "工作4326→3826的Easting，無補值",
+      "unit": "m",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "point_northing_3826_m",
+      "dtype": "Float64",
+      "definition": "工作4326→3826的Northing，無補值",
+      "unit": "m",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_geometry_status",
+      "dtype": "string",
+      "definition": "幾何互斥狀態；見schema geometry_states，唯一必須within／covered_by同一且各1",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_geometry_unique",
+      "dtype": "boolean",
+      "definition": "唯一內部配對成立，單純covered_by唯一不成立",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_geometric_village_id",
+      "dtype": "string",
+      "definition": "唯一內部時的共同10碼研究ID，否則NA",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_spatial_district",
+      "dtype": "string",
+      "definition": "僅幾何唯一時之空間區名，其他NA",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_unique_original_boundary_code",
+      "dtype": "string",
+      "definition": "唯一內部原圖資碼；固定10碼／歷史11碼，不混用",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_within_candidate_count",
+      "dtype": "Int64",
+      "definition": "within候選數；有效Point無命中0，無Point為NA",
+      "unit": "candidate count",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_within_candidate_ids",
+      "dtype": "string",
+      "definition": "排序JSON陣列之共同10碼within候選；[]查無命中，NA未查",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_within_original_codes",
+      "dtype": "string",
+      "definition": "排序JSON原圖資within碼，歷史11碼保留",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_covered_by_candidate_count",
+      "dtype": "Int64",
+      "definition": "covered_by候選數；有效Point無命中0，無Point為NA",
+      "unit": "candidate count",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_covered_by_candidate_ids",
+      "dtype": "string",
+      "definition": "排序JSON陣列之共同10碼covered_by候選；[]查無命中，NA未查",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_covered_by_original_codes",
+      "dtype": "string",
+      "definition": "排序JSON原圖資covered_by碼，歷史11碼保留",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_district_comparable",
+      "dtype": "boolean",
+      "definition": "唯一幾何且原區名可判；此集合才作區名衝突率分母",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_district_match",
+      "dtype": "boolean",
+      "definition": "原區名與空間區名是否一致；不可比較NA",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_district_conflict",
+      "dtype": "boolean",
+      "definition": "原區名與空間區名明確衝突；不可比較NA，不當無衝突",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_address_comparable",
+      "dtype": "boolean",
+      "definition": "唯一幾何且地址區名可判；地址衝突率獨立分母",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_address_match",
+      "dtype": "boolean",
+      "definition": "地址區名與空間區名一致；不可比較NA",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_address_conflict",
+      "dtype": "boolean",
+      "definition": "地址與空間區名明確衝突；未知NA不單獨排除保守配對",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_address_status",
+      "dtype": "string",
+      "definition": "unreadable／not_spatially_comparable／consistent／conflict",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_conservative_eligible",
+      "dtype": "boolean",
+      "definition": "幾何唯一、原區名可判且一致、地址無明確空間衝突",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_assignment_status",
+      "dtype": "string",
+      "definition": "完整互斥主狀態，按schema priority定義，含0筆狀態",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_distance_to_original_district_m",
+      "dtype": "Float64",
+      "definition": "Point距此版本原區名所屬里幾何聯集之距離；僅診斷，不重派",
+      "unit": "m",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_distance_valid",
+      "dtype": "boolean",
+      "definition": "該版本距離可計算：Point有效且原區名明確",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_geometry_status",
+      "dtype": "string",
+      "definition": "幾何互斥狀態；見schema geometry_states，唯一必須within／covered_by同一且各1",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_geometry_unique",
+      "dtype": "boolean",
+      "definition": "唯一內部配對成立，單純covered_by唯一不成立",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_geometric_village_id",
+      "dtype": "string",
+      "definition": "唯一內部時的共同10碼研究ID，否則NA",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_spatial_district",
+      "dtype": "string",
+      "definition": "僅幾何唯一時之空間區名，其他NA",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_unique_original_boundary_code",
+      "dtype": "string",
+      "definition": "唯一內部原圖資碼；固定10碼／歷史11碼，不混用",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_within_candidate_count",
+      "dtype": "Int64",
+      "definition": "within候選數；有效Point無命中0，無Point為NA",
+      "unit": "candidate count",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_within_candidate_ids",
+      "dtype": "string",
+      "definition": "排序JSON陣列之共同10碼within候選；[]查無命中，NA未查",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_within_original_codes",
+      "dtype": "string",
+      "definition": "排序JSON原圖資within碼，歷史11碼保留",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_covered_by_candidate_count",
+      "dtype": "Int64",
+      "definition": "covered_by候選數；有效Point無命中0，無Point為NA",
+      "unit": "candidate count",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_covered_by_candidate_ids",
+      "dtype": "string",
+      "definition": "排序JSON陣列之共同10碼covered_by候選；[]查無命中，NA未查",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_covered_by_original_codes",
+      "dtype": "string",
+      "definition": "排序JSON原圖資covered_by碼，歷史11碼保留",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_district_comparable",
+      "dtype": "boolean",
+      "definition": "唯一幾何且原區名可判；此集合才作區名衝突率分母",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_district_match",
+      "dtype": "boolean",
+      "definition": "原區名與空間區名是否一致；不可比較NA",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_district_conflict",
+      "dtype": "boolean",
+      "definition": "原區名與空間區名明確衝突；不可比較NA，不當無衝突",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_address_comparable",
+      "dtype": "boolean",
+      "definition": "唯一幾何且地址區名可判；地址衝突率獨立分母",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_address_match",
+      "dtype": "boolean",
+      "definition": "地址區名與空間區名一致；不可比較NA",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_address_conflict",
+      "dtype": "boolean",
+      "definition": "地址與空間區名明確衝突；未知NA不單獨排除保守配對",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_address_status",
+      "dtype": "string",
+      "definition": "unreadable／not_spatially_comparable／consistent／conflict",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_conservative_eligible",
+      "dtype": "boolean",
+      "definition": "幾何唯一、原區名可判且一致、地址無明確空間衝突",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_assignment_status",
+      "dtype": "string",
+      "definition": "完整互斥主狀態，按schema priority定義，含0筆狀態",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_distance_to_original_district_m",
+      "dtype": "Float64",
+      "definition": "Point距此版本原區名所屬里幾何聯集之距離；僅診斷，不重派",
+      "unit": "m",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_distance_valid",
+      "dtype": "boolean",
+      "definition": "該版本距離可計算：Point有效且原區名明確",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "eligible_s0",
+      "dtype": "boolean",
+      "definition": "S0納入資格；S0主，S1／S2／S3敏感，不刪不合格原事故",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "village_id_s0",
+      "dtype": "string",
+      "definition": "S0資格成立之共同10碼研究ID，資格False必NA",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "eligible_s1",
+      "dtype": "boolean",
+      "definition": "S1納入資格；S0主，S1／S2／S3敏感，不刪不合格原事故",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "village_id_s1",
+      "dtype": "string",
+      "definition": "S1資格成立之共同10碼研究ID，資格False必NA",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "eligible_s2",
+      "dtype": "boolean",
+      "definition": "S2納入資格；S0主，S1／S2／S3敏感，不刪不合格原事故",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "village_id_s2",
+      "dtype": "string",
+      "definition": "S2資格成立之共同10碼研究ID，資格False必NA",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "eligible_s3",
+      "dtype": "boolean",
+      "definition": "S3納入資格；S0主，S1／S2／S3敏感，不刪不合格原事故",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "village_id_s3",
+      "dtype": "string",
+      "definition": "S3資格成立之共同10碼研究ID，資格False必NA",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_boundary_year",
+      "dtype": "Int64",
+      "definition": "所採官方歷史年版；不是認證全年每日有效",
+      "unit": "year",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_boundary_code",
+      "dtype": "string",
+      "definition": "歷史幾何唯一時原11碼VILLCODE；仍須共同ID連接",
+      "unit": "not applicable",
+      "source": "Unit2.1／固定與年度歷史Spatial predicates",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_historical_geometry_assignment_same",
+      "dtype": "boolean",
+      "definition": "兩NA視同未指派；一NA與有效ID不同；兩有效ID字串相等才一致",
+      "unit": "not applicable",
+      "source": "四種正式規格逐筆比較；NA語義明示",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "geometry_eligibility_changed",
+      "dtype": "boolean",
+      "definition": "固定與歷史geometry資格xor，不把NA→ID當兩個有效里之換里",
+      "unit": "not applicable",
+      "source": "四種正式規格逐筆比較；NA語義明示",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "geometry_assigned_to_unassigned",
+      "dtype": "boolean",
+      "definition": "固定有效→歷史無法納入（geometry）",
+      "unit": "not applicable",
+      "source": "四種正式規格逐筆比較；NA語義明示",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "geometry_unassigned_to_assigned",
+      "dtype": "boolean",
+      "definition": "固定無法納入→歷史有效（geometry）",
+      "unit": "not applicable",
+      "source": "四種正式規格逐筆比較；NA語義明示",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_historical_conservative_assignment_same",
+      "dtype": "boolean",
+      "definition": "兩NA視同未指派；一NA與有效ID不同；兩有效ID字串相等才一致",
+      "unit": "not applicable",
+      "source": "四種正式規格逐筆比較；NA語義明示",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "conservative_eligibility_changed",
+      "dtype": "boolean",
+      "definition": "固定與歷史conservative資格xor，不把NA→ID當兩個有效里之換里",
+      "unit": "not applicable",
+      "source": "四種正式規格逐筆比較；NA語義明示",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "conservative_assigned_to_unassigned",
+      "dtype": "boolean",
+      "definition": "固定有效→歷史無法納入（conservative）",
+      "unit": "not applicable",
+      "source": "四種正式規格逐筆比較；NA語義明示",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "conservative_unassigned_to_assigned",
+      "dtype": "boolean",
+      "definition": "固定無法納入→歷史有效（conservative）",
+      "unit": "not applicable",
+      "source": "四種正式規格逐筆比較；NA語義明示",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "geometric_village_changed",
+      "dtype": "boolean",
+      "definition": "兩邊都幾何唯一且研究里碼不同；缺一邊不稱兩有效里換里",
+      "unit": "not applicable",
+      "source": "四種正式規格逐筆比較；NA語義明示",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "geometric_district_changed",
+      "dtype": "boolean",
+      "definition": "兩邊都幾何唯一且空間行政區不同，不含失去／新增配對",
+      "unit": "not applicable",
+      "source": "四種正式規格逐筆比較；NA語義明示",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "geometry_status_changed",
+      "dtype": "boolean",
+      "definition": "幾何互斥狀態不同，非保守區名／地址狀態差",
+      "unit": "not applicable",
+      "source": "四種正式規格逐筆比較；NA語義明示",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "geometry_village_or_status_changed",
+      "dtype": "boolean",
+      "definition": "與Unit1.7可比：幾何里碼（未指派作同一空狀態）或幾何狀態變更",
+      "unit": "not applicable",
+      "source": "四種正式規格逐筆比較；NA語義明示",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "district_or_assignment_availability_changed",
+      "dtype": "boolean",
+      "definition": "空間區名或其可指派性改變；不冒充皆為有效區換區",
+      "unit": "not applicable",
+      "source": "四種正式規格逐筆比較；NA語義明示",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "district_conflict_to_consistent",
+      "dtype": "boolean",
+      "definition": "固定明確區名衝突→歷史明確一致；原239診斷口徑",
+      "unit": "not applicable",
+      "source": "四種正式規格逐筆比較；NA語義明示",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "district_consistent_to_conflict",
+      "dtype": "boolean",
+      "definition": "固定明確一致→歷史明確衝突；不含原未配對",
+      "unit": "not applicable",
+      "source": "四種正式規格逐筆比較；NA語義明示",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "new_district_conflict_including_unassigned",
+      "dtype": "boolean",
+      "definition": "歷史新衝突，包括固定未可比較者；與原215診斷口徑對照",
+      "unit": "not applicable",
+      "source": "四種正式規格逐筆比較；NA語義明示",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "geometry_change_reason",
+      "dtype": "string",
+      "definition": "換里＝兩邊幾何唯一ID不同；資格變更＝geometry資格xor；四類互斥",
+      "unit": "not applicable",
+      "source": "固定／年度歷史比較",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "conservative_change_reason",
+      "dtype": "string",
+      "definition": "換里＝兩邊幾何唯一ID不同；資格變更＝conservative資格xor；四類互斥",
+      "unit": "not applicable",
+      "source": "固定／年度歷史比較",
+      "missing_rule": "NA不補0；原字串空白保留"
+    }
+  ],
+  "crs": {
+    "fixed_source": "EPSG:3826",
+    "history_source": "EPSG:3824",
+    "accident_source": "EPSG:4326 working assumption; source datum uncertified",
+    "measurement": "EPSG:3826 metre; areas m² and km²"
+  },
+  "id_namespaces": {
+    "village_id": "fixed CPTVID 10 digits, string",
+    "population_code": "existing crosswalk 11 digits, string",
+    "historical_boundary_code": "VILLCODE 11 digits, string; join through existing population_code crosswalk",
+    "record_id": "unchanged Unit2.1 research ID, not official unique event"
+  },
+  "geometry_quality": {
+    "fixed_villages": 456,
+    "districts": 12,
+    "positive_overlap_pairs": 157,
+    "individual_polygon_interior_rings": 1,
+    "city_union_interior_holes": 335,
+    "source_geometry_unchanged": true
+  },
+  "historical_sources": [
+    {
+      "year": 2024,
+      "path": "data/raw/113村里界.zip",
+      "member": "村里界歷史圖資_113/VILLAGE_NLSC_1131128.shp",
+      "national_primary_rows": 7953,
+      "taipei_rows": 456,
+      "original_crs": "EPSG:3824",
+      "working_crs": "EPSG:3826",
+      "match": "one-to-one existing population-code crosswalk",
+      "snapshot_caveat": "官方年版單一快照；11401031保留原字串，不強解日期"
+    },
+    {
+      "year": 2025,
+      "path": "data/raw/114村里界.zip",
+      "member": "村里界歷史圖資_114/VILLAGE_NLSC_11401031.shp",
+      "national_primary_rows": 7956,
+      "taipei_rows": 456,
+      "original_crs": "EPSG:3824",
+      "working_crs": "EPSG:3826",
+      "match": "one-to-one existing population-code crosswalk",
+      "snapshot_caveat": "官方年版單一快照；11401031保留原字串，不強解日期"
+    }
+  ],
+  "assignment_specifications": {
+    "s0": "PRIMARY: fixed geometry unique within=covered_by same sole village; original district readable and consistent; no explicit address/spatial conflict",
+    "s1": "SENSITIVITY: fixed geometry unique only; district/address conflicts retained",
+    "s2": "SENSITIVITY: source-year historical boundary plus same conservative tests as S0",
+    "s3": "SENSITIVITY: source-year historical geometry unique only"
+  },
+  "assignment_priority": {
+    "missing_coordinates": "1 原座標缺失，不建立Point",
+    "invalid_coordinates": "2 非缺失但不可解析／非有限／候選經緯度越界或投影失敗",
+    "outside_or_hole": "3 有效Point的within及covered_by均無候選",
+    "boundary_nonunique": "4 共同邊界／頂點或單一邊界；不是唯一內部",
+    "multiple_geometry": "5 多個內部或其他多重幾何候選，不任選第一筆",
+    "predicate_mismatch": "6 within非covered_by子集或其他不一致",
+    "original_district_unknown": "7 幾何唯一但來源區名無法確認",
+    "district_conflict": "8 幾何唯一但來源區名與空間區名衝突",
+    "address_conflict": "9 幾何唯一且來源區名一致，但可判讀地址與空間區名衝突",
+    "conservative_success": "10 唯一內部、原區名明確一致、地址沒有明確空間衝突"
+  },
+  "geometry_states": [
+    "missing_coordinates",
+    "invalid_coordinates",
+    "outside_or_hole",
+    "shared_vertex",
+    "shared_boundary",
+    "single_boundary",
+    "multiple_interior",
+    "other_multiple",
+    "predicate_mismatch",
+    "unique_interior"
+  ],
+  "NA_comparison": "both NA=equally unassigned; one NA vs ID=different eligibility; two valid IDs compare strings; geometric village change requires both valid",
+  "area_denominators": "S0/S1 use fixed original village_area; historical geographic density S2/S3 uses corresponding historical_area_year. An explicitly labelled common fixed-denominator comparison is different. No density constructed in Unit2.2.",
+  "limitations": [
+    "historical year editions are snapshots, not every-day legal validity",
+    "no fixed geometry snap/repair/hole fill/overlap removal",
+    "provisional_match Tangbu accepted for all main analyses; original names and status retained",
+    "no nearest village, external coordinate correction or geocoding",
+    "no final village-level Dataset A/B1/B2/B3/C or final low-count threshold",
+    "zero observed assigned accidents is not proof of no real accidents",
+    "description and technical acceptance do not imply DA/PM human review"
+  ]
+}

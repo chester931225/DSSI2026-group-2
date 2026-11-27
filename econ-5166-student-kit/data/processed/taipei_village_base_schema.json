@@ -1,0 +1,459 @@
+{
+  "unit": "2.2",
+  "created_at": "2026-11-26",
+  "dataset_path": "data/processed/taipei_village_base.csv",
+  "role": "geographic_base",
+  "observation_unit": "one fixed research village",
+  "expected_rows": 456,
+  "producer": "data/code/prepare_taipei_village_base_and_crash_spatial_assignment.ipynb",
+  "helper": "data/code/unit22_spatial_support.py",
+  "documentation": "data/processed/taipei_village_base_documentation.ipynb",
+  "source_inputs": {
+    "data/processed/taipei_crashes_2024_2025_standardized.csv": "b2ac0704068319b74f9aef2a28ad810d0cef473894a2a5cd23976f3fa7d2c252",
+    "data/processed/taipei_crashes_2024_2025_standardized_schema.json": "c3f064b3572d940489bdc86bb5c49dfaea8a228a3e7addbc8f9544bad324b650",
+    "data/processed/taipei_crashes_2024_2025_standardized_documentation.ipynb": "7d5dd73cc2f33308c7b4cdc63ff47839feb34c35baef830b70114ae5e4cc6e0b",
+    "data/code/prepare_taipei_crashes_2024_2025.ipynb": "c14dbd34bd3d776339e292b820a049b792a30ec49f2a8fc0173440ed6e146a9e",
+    "data/raw/G97_A_CAVLGE_P.shp": "f7fb4813a2283198ca564f5686823c454c5fd832d2f6981a2ee88a94719be3cc",
+    "data/raw/G97_A_CAVLGE_P.shx": "ab7bc5e63229f676d3580b68e98db59b91a2d327c74ca23b0000ca1c568d414e",
+    "data/raw/G97_A_CAVLGE_P.dbf": "2f43f92e84279a45b2512cf453e9b72f706d1ad1402665c946b1a354f75d8577",
+    "data/raw/G97_A_CAVLGE_P.prj": "8dac7d82ea889063f9eaa7df408fcaeb7307d32831ea973b6534d0139a4523c5",
+    "data/raw/G97_A_CAVLGE_P.cpg": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824",
+    "data/raw/113村里界.zip": "32d7f1d611f91b1c63bea7290dd4db93b919bf380cce92b634fca992c974dd94",
+    "data/raw/114村里界.zip": "08d2feeced98473215703defdbe9da8f8d551f2fb221029557b813e1a3dd8845",
+    "data/processed/village_crosswalk.csv": "dd9e762419c302cf5b4bb19daad2673d7d54d0bb750204e7e33ecbf1a9983f69",
+    "data/processed/village_crosswalk_documentation.ipynb": "768ebaac028b635c93b9c768efefdb504c902d49da586e5f33180a7c9855fce8",
+    "data/code/taipei_village_boundary_validation.ipynb": "662dbee2dc42c3552b12628a1e89fcc81b07155c225277117f50d07e0145a343",
+    "data/code/taipei_population_validation.ipynb": "e26ff652ccfa2113db041322a99a000d8cb6d71acccdab66c35448fcddaab7d8",
+    "data/code/taipei_data_integration_readiness.ipynb": "6048ff52d7653c9ec9d4b32cf2b78da2fb1b22dc0db0164cc48c4d2d98dd338b",
+    "data/code/taipei_supplementary_accident_boundary_validation.ipynb": "f9df6bce7c6cdfcee95df55aa83de7187a3db3bcc76dfe76356699f6caab4dc6",
+    "data/code/unit17_validation_config.json": "7554b54042b43dd8fd2ec2c5cfa6f218e9c6acae2376ff7e0aee0e14e73a17a7",
+    "data/code/unit17_validation_support.py": "1a18dd248daf08074a5ba7ec659a489fe7b17852195259e8084727d4fd6f3080",
+    "data/code/unit22_spatial_support.py": "06af690caf93af87b0f203d354fc894310aee87eca1d9f6f33df6930b13863fc"
+  },
+  "csv": {
+    "encoding": "utf-8-sig",
+    "missing_sentinel": "__MISSING__",
+    "line_terminator": "LF",
+    "keep_default_na": false,
+    "boolean_values": [
+      "True",
+      "False"
+    ],
+    "candidate_id_arrays": "JSON sorted string arrays; []=queried with no hits; NA=not queried"
+  },
+  "columns": [
+    {
+      "name": "village_id",
+      "dtype": "string",
+      "definition": "共同研究10碼ID，原固定CPTVID；不得用歷史／人口碼取代",
+      "unit": "not applicable",
+      "source": "固定SHP／既有crosswalk",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "boundary_code",
+      "dtype": "string",
+      "definition": "固定界原10碼CPTVID",
+      "unit": "not applicable",
+      "source": "固定SHP／既有crosswalk",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "population_code",
+      "dtype": "string",
+      "definition": "既有crosswalk之11碼人口代碼",
+      "unit": "not applicable",
+      "source": "固定SHP／既有crosswalk",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "district_name",
+      "dtype": "string",
+      "definition": "固定里界／crosswalk確認的行政區名",
+      "unit": "not applicable",
+      "source": "固定SHP／既有crosswalk",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "boundary_village_name",
+      "dtype": "string",
+      "definition": "固定界原里名，包含糖蔀里原字形",
+      "unit": "not applicable",
+      "source": "固定SHP／既有crosswalk",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "population_village_name",
+      "dtype": "string",
+      "definition": "人口原里名，包含糖?里原字形",
+      "unit": "not applicable",
+      "source": "固定SHP／既有crosswalk",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "standard_village_name",
+      "dtype": "string",
+      "definition": "正式分析標準里名，糖廍里正常納入",
+      "unit": "not applicable",
+      "source": "固定SHP／既有crosswalk",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "match_method",
+      "dtype": "string",
+      "definition": "既有crosswalk方法原值，未重寫",
+      "unit": "not applicable",
+      "source": "固定SHP／既有crosswalk",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "verification_status",
+      "dtype": "string",
+      "definition": "既有證據狀態，provisional_match不限制糖廍分析資格",
+      "unit": "not applicable",
+      "source": "固定SHP／既有crosswalk",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "district_code_source",
+      "dtype": "string",
+      "definition": "原固定SHP七碼CPTID；不是原事故區序數字碼，未截取或推定順序",
+      "unit": "not applicable",
+      "source": "固定SHP／既有crosswalk",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "village_area_m2",
+      "dtype": "Float64",
+      "definition": "原固定geometry在EPSG3826的面積；主固定分母",
+      "unit": "m²",
+      "source": "固定SHP／既有crosswalk",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "village_area_km2",
+      "dtype": "Float64",
+      "definition": "原固定幾何面積／1e6；不得改用AREA或刪低事故里",
+      "unit": "km²",
+      "source": "固定SHP／既有crosswalk",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "source_AREA_attribute",
+      "dtype": "Float64",
+      "definition": "原AREA屬性僅追溯；單位／產製口徑未由本次認證，不作主要分母",
+      "unit": "原欄單位未認證",
+      "source": "固定SHP／既有crosswalk",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "source_geometry_crs",
+      "dtype": "string",
+      "definition": "原固定PRJ支持的CRS",
+      "unit": "not applicable",
+      "source": "固定SHP／既有crosswalk",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "geometry_type",
+      "dtype": "string",
+      "definition": "固定原幾何類型",
+      "unit": "not applicable",
+      "source": "固定SHP／既有crosswalk",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "geometry_valid",
+      "dtype": "boolean",
+      "definition": "固定原面有效；未執行修復",
+      "unit": "not applicable",
+      "source": "固定SHP／既有crosswalk",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "interior_hole_count",
+      "dtype": "Int64",
+      "definition": "原Polygon interior ring數，未填補",
+      "unit": "個",
+      "source": "固定SHP／既有crosswalk",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "positive_overlap_neighbor_count",
+      "dtype": "Int64",
+      "definition": "具有嚴格正面積交集的其他原里數，不消除交集",
+      "unit": "里",
+      "source": "固定SHP／既有crosswalk",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "positive_overlap_union_m2",
+      "dtype": "Float64",
+      "definition": "每里與其他里正面積交集聯集，僅品質、不扣原面積",
+      "unit": "m²",
+      "source": "固定SHP／既有crosswalk",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "geometry_quality_flag",
+      "dtype": "string",
+      "definition": "原有效面之孔洞／正面積重疊診斷，未修補",
+      "unit": "not applicable",
+      "source": "固定SHP／既有crosswalk",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "fixed_geometry_wkb_sha256",
+      "dtype": "string",
+      "definition": "本次讀取原固定geometry WKB摘要，供版本／不變性核對",
+      "unit": "not applicable",
+      "source": "固定SHP／既有crosswalk",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_boundary_code_2024",
+      "dtype": "string",
+      "definition": "歷史原11碼VILLCODE，經既有人口碼對照共同10碼ID，非截碼",
+      "unit": "not applicable",
+      "source": "data/raw/113村里界.zip::村里界歷史圖資_113/VILLAGE_NLSC_1131128.shp",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_district_code_2024",
+      "dtype": "string",
+      "definition": "歷史原TOWNCODE，與固定CPTID分開保留",
+      "unit": "not applicable",
+      "source": "data/raw/113村里界.zip::村里界歷史圖資_113/VILLAGE_NLSC_1131128.shp",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_village_name_2024",
+      "dtype": "string",
+      "definition": "歷史原里名；年版快照不宣稱全年每天有效",
+      "unit": "not applicable",
+      "source": "data/raw/113村里界.zip::村里界歷史圖資_113/VILLAGE_NLSC_1131128.shp",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_area_m2_2024",
+      "dtype": "Float64",
+      "definition": "該年版原面由3824轉3826後面積，歷史地理密度用此分母",
+      "unit": "m²",
+      "source": "data/raw/113村里界.zip::村里界歷史圖資_113/VILLAGE_NLSC_1131128.shp",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_area_km2_2024",
+      "dtype": "Float64",
+      "definition": "該歷史年版投影面積／1e6，不冒充固定共同分母",
+      "unit": "km²",
+      "source": "data/raw/113村里界.zip::村里界歷史圖資_113/VILLAGE_NLSC_1131128.shp",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_match_status_2024",
+      "dtype": "string",
+      "definition": "沿已接受crosswalk完整一對一，糖廍既定接受且provisional原狀態不變",
+      "unit": "not applicable",
+      "source": "data/raw/113村里界.zip::村里界歷史圖資_113/VILLAGE_NLSC_1131128.shp",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_source_crs_2024",
+      "dtype": "string",
+      "definition": "歷史原始PRJ支持3824；計量轉至3826",
+      "unit": "not applicable",
+      "source": "data/raw/113村里界.zip::村里界歷史圖資_113/VILLAGE_NLSC_1131128.shp",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_fixed_iou_2024",
+      "dtype": "Float64",
+      "definition": "同研究里歷史與固定面之交集／聯集；不認定法定邊界變更",
+      "unit": "0–1",
+      "source": "data/raw/113村里界.zip::村里界歷史圖資_113/VILLAGE_NLSC_1131128.shp",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_fixed_symdiff_m2_2024",
+      "dtype": "Float64",
+      "definition": "同研究里歷史與固定面之對稱差面積",
+      "unit": "m²",
+      "source": "data/raw/113村里界.zip::村里界歷史圖資_113/VILLAGE_NLSC_1131128.shp",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_geometry_wkb_sha256_2024",
+      "dtype": "string",
+      "definition": "轉3826後歷史geometry WKB摘要，沒有修復或替換原檔",
+      "unit": "not applicable",
+      "source": "data/raw/113村里界.zip::村里界歷史圖資_113/VILLAGE_NLSC_1131128.shp",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_boundary_code_2025",
+      "dtype": "string",
+      "definition": "歷史原11碼VILLCODE，經既有人口碼對照共同10碼ID，非截碼",
+      "unit": "not applicable",
+      "source": "data/raw/114村里界.zip::村里界歷史圖資_114/VILLAGE_NLSC_11401031.shp",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_district_code_2025",
+      "dtype": "string",
+      "definition": "歷史原TOWNCODE，與固定CPTID分開保留",
+      "unit": "not applicable",
+      "source": "data/raw/114村里界.zip::村里界歷史圖資_114/VILLAGE_NLSC_11401031.shp",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_village_name_2025",
+      "dtype": "string",
+      "definition": "歷史原里名；年版快照不宣稱全年每天有效",
+      "unit": "not applicable",
+      "source": "data/raw/114村里界.zip::村里界歷史圖資_114/VILLAGE_NLSC_11401031.shp",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_area_m2_2025",
+      "dtype": "Float64",
+      "definition": "該年版原面由3824轉3826後面積，歷史地理密度用此分母",
+      "unit": "m²",
+      "source": "data/raw/114村里界.zip::村里界歷史圖資_114/VILLAGE_NLSC_11401031.shp",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_area_km2_2025",
+      "dtype": "Float64",
+      "definition": "該歷史年版投影面積／1e6，不冒充固定共同分母",
+      "unit": "km²",
+      "source": "data/raw/114村里界.zip::村里界歷史圖資_114/VILLAGE_NLSC_11401031.shp",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_match_status_2025",
+      "dtype": "string",
+      "definition": "沿已接受crosswalk完整一對一，糖廍既定接受且provisional原狀態不變",
+      "unit": "not applicable",
+      "source": "data/raw/114村里界.zip::村里界歷史圖資_114/VILLAGE_NLSC_11401031.shp",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_source_crs_2025",
+      "dtype": "string",
+      "definition": "歷史原始PRJ支持3824；計量轉至3826",
+      "unit": "not applicable",
+      "source": "data/raw/114村里界.zip::村里界歷史圖資_114/VILLAGE_NLSC_11401031.shp",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_fixed_iou_2025",
+      "dtype": "Float64",
+      "definition": "同研究里歷史與固定面之交集／聯集；不認定法定邊界變更",
+      "unit": "0–1",
+      "source": "data/raw/114村里界.zip::村里界歷史圖資_114/VILLAGE_NLSC_11401031.shp",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_fixed_symdiff_m2_2025",
+      "dtype": "Float64",
+      "definition": "同研究里歷史與固定面之對稱差面積",
+      "unit": "m²",
+      "source": "data/raw/114村里界.zip::村里界歷史圖資_114/VILLAGE_NLSC_11401031.shp",
+      "missing_rule": "NA不補0；原字串空白保留"
+    },
+    {
+      "name": "historical_geometry_wkb_sha256_2025",
+      "dtype": "string",
+      "definition": "轉3826後歷史geometry WKB摘要，沒有修復或替換原檔",
+      "unit": "not applicable",
+      "source": "data/raw/114村里界.zip::村里界歷史圖資_114/VILLAGE_NLSC_11401031.shp",
+      "missing_rule": "NA不補0；原字串空白保留"
+    }
+  ],
+  "crs": {
+    "fixed_source": "EPSG:3826",
+    "history_source": "EPSG:3824",
+    "accident_source": "EPSG:4326 working assumption; source datum uncertified",
+    "measurement": "EPSG:3826 metre; areas m² and km²"
+  },
+  "id_namespaces": {
+    "village_id": "fixed CPTVID 10 digits, string",
+    "population_code": "existing crosswalk 11 digits, string",
+    "historical_boundary_code": "VILLCODE 11 digits, string; join through existing population_code crosswalk",
+    "record_id": "unchanged Unit2.1 research ID, not official unique event"
+  },
+  "geometry_quality": {
+    "fixed_villages": 456,
+    "districts": 12,
+    "positive_overlap_pairs": 157,
+    "individual_polygon_interior_rings": 1,
+    "city_union_interior_holes": 335,
+    "source_geometry_unchanged": true
+  },
+  "historical_sources": [
+    {
+      "year": 2024,
+      "path": "data/raw/113村里界.zip",
+      "member": "村里界歷史圖資_113/VILLAGE_NLSC_1131128.shp",
+      "national_primary_rows": 7953,
+      "taipei_rows": 456,
+      "original_crs": "EPSG:3824",
+      "working_crs": "EPSG:3826",
+      "match": "one-to-one existing population-code crosswalk",
+      "snapshot_caveat": "官方年版單一快照；11401031保留原字串，不強解日期"
+    },
+    {
+      "year": 2025,
+      "path": "data/raw/114村里界.zip",
+      "member": "村里界歷史圖資_114/VILLAGE_NLSC_11401031.shp",
+      "national_primary_rows": 7956,
+      "taipei_rows": 456,
+      "original_crs": "EPSG:3824",
+      "working_crs": "EPSG:3826",
+      "match": "one-to-one existing population-code crosswalk",
+      "snapshot_caveat": "官方年版單一快照；11401031保留原字串，不強解日期"
+    }
+  ],
+  "assignment_specifications": {
+    "s0": "PRIMARY: fixed geometry unique within=covered_by same sole village; original district readable and consistent; no explicit address/spatial conflict",
+    "s1": "SENSITIVITY: fixed geometry unique only; district/address conflicts retained",
+    "s2": "SENSITIVITY: source-year historical boundary plus same conservative tests as S0",
+    "s3": "SENSITIVITY: source-year historical geometry unique only"
+  },
+  "assignment_priority": {
+    "missing_coordinates": "1 原座標缺失，不建立Point",
+    "invalid_coordinates": "2 非缺失但不可解析／非有限／候選經緯度越界或投影失敗",
+    "outside_or_hole": "3 有效Point的within及covered_by均無候選",
+    "boundary_nonunique": "4 共同邊界／頂點或單一邊界；不是唯一內部",
+    "multiple_geometry": "5 多個內部或其他多重幾何候選，不任選第一筆",
+    "predicate_mismatch": "6 within非covered_by子集或其他不一致",
+    "original_district_unknown": "7 幾何唯一但來源區名無法確認",
+    "district_conflict": "8 幾何唯一但來源區名與空間區名衝突",
+    "address_conflict": "9 幾何唯一且來源區名一致，但可判讀地址與空間區名衝突",
+    "conservative_success": "10 唯一內部、原區名明確一致、地址沒有明確空間衝突"
+  },
+  "geometry_states": [
+    "missing_coordinates",
+    "invalid_coordinates",
+    "outside_or_hole",
+    "shared_vertex",
+    "shared_boundary",
+    "single_boundary",
+    "multiple_interior",
+    "other_multiple",
+    "predicate_mismatch",
+    "unique_interior"
+  ],
+  "NA_comparison": "both NA=equally unassigned; one NA vs ID=different eligibility; two valid IDs compare strings; geometric village change requires both valid",
+  "area_denominators": "S0/S1 use fixed original village_area; historical geographic density S2/S3 uses corresponding historical_area_year. An explicitly labelled common fixed-denominator comparison is different. No density constructed in Unit2.2.",
+  "limitations": [
+    "historical year editions are snapshots, not every-day legal validity",
+    "no fixed geometry snap/repair/hole fill/overlap removal",
+    "provisional_match Tangbu accepted for all main analyses; original names and status retained",
+    "no nearest village, external coordinate correction or geocoding",
+    "no final village-level Dataset A/B1/B2/B3/C or final low-count threshold",
+    "zero observed assigned accidents is not proof of no real accidents",
+    "description and technical acceptance do not imply DA/PM human review"
+  ]
+}
